@@ -1,4 +1,5 @@
 const Hero = () => {
+    const heroPopInImage = "./assets/images/hero-pop-in.svg";
     return (
         <>
             <section className="p-0 pt-10 bg-primary text-white">
@@ -33,10 +34,7 @@ const Hero = () => {
                             data-aos="zoom-in"
                             data-aos-delay="500"
                         >
-                            <img
-                                src="../../assets/images/demo/app/app-1.svg"
-                                alt="alt tag"
-                            />
+                            <img src={heroPopInImage} alt="alt tag" />
                         </div>
                     </div>
                 </div>
