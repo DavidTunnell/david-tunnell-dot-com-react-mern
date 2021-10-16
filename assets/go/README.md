@@ -1,12 +1,12 @@
-# Thank you for purchasing GO #
+# Thank you for purchasing GO
 
 PURCHASE DATE: October 16, 2021
+
 Invoice: #99584
 
 #### Docs and Examples
 
 The `components` directory contains all the static resources for your Themes docs and examples. To view, just open in your favorite browser!
-
 
 #### Gulpfile.js
 
@@ -28,8 +28,7 @@ $ npm install
 
 From here on out, simply run `gulp` from your terminal and you're good to go!
 
-+ `gulp` - recompiles and minifies your theme assets into your `scss` directory and starts a local server on localhost:3000
-
+-   `gulp` - recompiles and minifies your theme assets into your `scss` directory and starts a local server on localhost:3000
 
 #### Support
 

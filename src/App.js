@@ -1,7 +1,6 @@
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Create from "./components/Create";
-import BlogDetails from "./components/BlogDetails";
 import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -11,7 +10,7 @@ function App() {
         <Router>
             {/* ^ Here the app is wrapped with the router */}
             <div className="App">
-                <Navbar />
+                <Header />
                 <div className="content">
                     {/* Next is the decision of where page content to go based on different routes
                         All routes go in the switch component so only one renders at a time based on route  */}
@@ -19,12 +18,6 @@ function App() {
                         {/* add a route for each component AND the component itself nested*/}
                         <Route exact path="/">
                             <Home />
-                        </Route>
-                        <Route path="/create">
-                            <Create />
-                        </Route>
-                        <Route path="/blogs/:id">
-                            <BlogDetails />
                         </Route>
                         {/* all other routes go to a 404 page - must be at bottom*/}
                         <Route path="/404">
@@ -35,6 +28,7 @@ function App() {
                         </Route>
                     </Switch>
                 </div>
+                <Footer />
             </div>
         </Router>
     );

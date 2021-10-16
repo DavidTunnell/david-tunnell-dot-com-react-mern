@@ -1,12 +1,32 @@
 import { Link } from "react-router-dom";
 const NotFound = () => {
+    const styles = {
+        notFoundStyle: {
+            backgroundImage: "url(./assets/images/404-bg.jpg)",
+        },
+    };
     return (
-        <div className="not-found">
-            <h1>404</h1>
-            <h2>Uh oh...</h2>
-            <p>That page can't be found.</p>
-            <Link to="/">Back to the homepage</Link>
-        </div>
+        <>
+            <div className="viewport">
+                <div
+                    className="image image-overlay image-blur"
+                    style={styles.notFoundStyle}
+                ></div>
+                <div className="container">
+                    <div className="row justify-content-center align-items-center vh-100">
+                        <div className="col-md-6 col-lg-4 text-white text-center">
+                            <h1 className="error-text">404</h1>
+                            <p>
+                                The page you were looking for wasn't found,
+                                <a href="/" className="link">
+                                    click here to return home.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
