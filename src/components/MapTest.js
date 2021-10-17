@@ -186,26 +186,30 @@ const MapTest = () => {
 
     //https://github.com/google-map-react/google-map-react
     return (
-        // Important! Always set the container height explicitly
-        <div style={{ height: "200px", width: "100%" }}>
-            <GoogleMapReact
-                bootstrapURLKeys={{
-                    key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-                }}
-                defaultCenter={googleMapsArguments.center}
-                defaultZoom={googleMapsArguments.zoom}
-                yesIWantToUseGoogleMapApiInternals
-                onGoogleApiLoaded={({ map, maps }) =>
-                    handleApiLoaded(map, maps)
-                }
-            >
-                {/* <MapMarker
-                    key={1}
-                    text={"*test"}
-                    lat={29.45916909688631}
-                    lng={-98.63856639845606}
-                /> */}
-            </GoogleMapReact>
+        <div class="container-hero">
+            <div class="row position-relative">
+                <div class="col" style={{ height: "30em", width: "100%" }}>
+                    <GoogleMapReact
+                        bootstrapURLKeys={{
+                            key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+                        }}
+                        defaultCenter={googleMapsArguments.center}
+                        defaultZoom={googleMapsArguments.zoom}
+                        yesIWantToUseGoogleMapApiInternals
+                        onGoogleApiLoaded={({ map, maps }) =>
+                            handleApiLoaded(map, maps)
+                        }
+                    >
+                        {/* <MapMarker
+                                key={1}
+                                text={"*test"}
+                                lat={29.45916909688631}
+                                lng={-98.63856639845606}
+                            /> */}
+                    </GoogleMapReact>
+                </div>
+                <div class="col position-absolute"> box2 </div>
+            </div>
         </div>
     );
 };
