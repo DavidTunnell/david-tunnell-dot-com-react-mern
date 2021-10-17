@@ -41,12 +41,13 @@ const Portfolio = () => {
         sectionPadding: {
             padding: "7em",
         },
+        preventRunoff: { overflow: "hidden" },
     };
     return (
         <>
             <section
                 class="section-decorated-bottom pt-0"
-                style={styles.sectionPadding}
+                style={styles.preventRunoff}
             >
                 {/* <div class="decorated-bottom text-light">
                     <svg
@@ -80,29 +81,102 @@ const Portfolio = () => {
                                 data-loop="true"
                                 data-center="true"
                             >
-                                {portfolio.map((element) => (
-                                    <article class="tile tile-long">
-                                        <div
-                                            class="tile-image"
-                                            style={{
-                                                backgroundImage: `url(${element.image})`,
-                                            }}
-                                        ></div>
-                                        <a href="/" class="tile-content">
-                                            <div class="tile-header on-hover text-right">
-                                                <h4 class="fs-30 text-white">
-                                                    {element.topRight}
-                                                </h4>
-                                            </div>
-                                            <div class="tile-footer">
-                                                <span class="eyebrow">
-                                                    {element.flavor}
-                                                </span>
-                                                <h3>{element.title}</h3>
-                                            </div>
-                                        </a>
-                                    </article>
-                                ))}
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>California, USA</h3>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>Oahu, Hawaii</h3>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>Bali, Indonesia</h3>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>Arizona, USA</h3>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>Yellowstone, USA</h3>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="tile tile-long">
+                                    <div class="tile-image"></div>
+                                    <a href="" class="tile-content">
+                                        <div class="tile-header on-hover text-right">
+                                            <h4 class="fs-30 text-white">
+                                                $259
+                                            </h4>
+                                        </div>
+                                        <div class="tile-footer">
+                                            <span class="eyebrow">
+                                                5 Day City Tour
+                                            </span>
+                                            <h3>Cappadocia, Turkey</h3>
+                                        </div>
+                                    </a>
+                                </article>
                             </div>
                         </div>
                     </div>
