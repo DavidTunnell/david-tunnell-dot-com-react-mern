@@ -1,17 +1,8 @@
 const Hero = () => {
     const heroPopInImage = "./assets/images/hero-pop-in.svg";
     const bgColors = [
-        "#4ea8de",
-        // "#c81d25",
+        // "#4ea8de",
         "#f94144",
-        // "#1517af",
-        // "#03071E",
-        // "#1517af",
-        // "#005F73",
-        // "#e61f1f",
-        // "#392ea0",
-        // "#370617",
-        // "#03071E",
     ];
     //https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
     const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
