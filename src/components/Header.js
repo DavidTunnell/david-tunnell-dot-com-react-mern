@@ -9,12 +9,13 @@ const Header = () => {
                         <a className="navbar-brand" href="../../index.html">
                             <img
                                 className="navbar-logo navbar-logo-light"
-                                src="../../assets/images/demo/logo/logo-light.svg"
+                                src="./assets/images/logo-light.png"
                                 alt="Logo"
                             />
+
                             <img
                                 className="navbar-logo navbar-logo-dark"
-                                src="../../assets/images/demo/logo/logo-dark.svg"
+                                src="./assets/images/logo-dark.png"
                                 alt="Logo"
                             />
                         </a>
