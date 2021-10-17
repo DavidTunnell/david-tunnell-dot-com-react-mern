@@ -174,15 +174,13 @@ const MapTest = () => {
 
     const handleApiLoaded = (map, maps) => {
         // use map and maps objects
-        console.log(map);
-        console.log("----------------------");
-        console.log(maps);
-        var pin = "../../assets/images/pin-blue.svg";
-        var marker = new maps.Marker({
+        const pin = "../../assets/images/pin-blue.svg";
+        const marker = new maps.Marker({
             position: googleMapsArguments.center,
             icon: pin,
             map: map,
         });
+        map.setOptions({ styles: googleMapsArguments.styles });
         marker.setMap(map);
     };
 
