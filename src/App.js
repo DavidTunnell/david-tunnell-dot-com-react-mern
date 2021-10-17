@@ -2,6 +2,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //top use the react router package, surround the whole app with the router component
@@ -18,6 +20,12 @@ function App() {
                         {/* add a route for each component AND the component itself nested*/}
                         <Route exact path="/">
                             <Home />
+                        </Route>
+                        <Route exact path="/login">
+                            <Login />
+                        </Route>
+                        <Route exact path="/dashboard">
+                            <Dashboard />
                         </Route>
                         {/* all other routes go to a 404 page - must be at bottom*/}
                         <Route path="/404">
