@@ -34,7 +34,7 @@ const Footer = () => {
                             <div class="col-md-2 text-center">
                                 <img
                                     class="logo-sm"
-                                    src="../../assets/images/demo/logo/logo-light.svg"
+                                    src="./assets/images/logo-light.png"
                                     alt="Logo"
                                 />
                             </div>
