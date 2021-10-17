@@ -5,7 +5,6 @@ import AboutCards from "./AboutCards";
 import Portfolio from "./Portfolio";
 import PortfolioAlt from "./PortfolioAlt";
 import Map from "./Map";
-import MapTest from "./MapTest";
 
 const Home = () => {
     return (
@@ -16,7 +15,7 @@ const Home = () => {
             <Portfolio />
             <PortfolioAlt />
             <Contact />
-            <MapTest />
+            <Map />
         </div>
     );
 };

@@ -1,233 +1,76 @@
-const Map = () => {
-    /*
-      <script>
-         function initMap() {
-           // Styles a map in night mode.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.702888, lng: -74.012420},
-          zoom: 12,
-          disableDefaultUI: true,
-          styles: [
-            {
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#f5f5f5"
-                }
-              ]
-            },
-            {
-              "elementType": "labels.icon",
-              "stylers": [
-                {
-                  "visibility": "off"
-                }
-              ]
-            },
-            {
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#616161"
-                }
-              ]
-            },
-            {
-              "elementType": "labels.text.stroke",
-              "stylers": [
-                {
-                  "color": "#f5f5f5"
-                }
-              ]
-            },
-            {
-              "featureType": "administrative.land_parcel",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#bdbdbd"
-                }
-              ]
-            },
-            {
-              "featureType": "poi",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#eeeeee"
-                }
-              ]
-            },
-            {
-              "featureType": "poi",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#757575"
-                }
-              ]
-            },
-            {
-              "featureType": "poi.park",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#e5e5e5"
-                }
-              ]
-            },
-            {
-              "featureType": "poi.park",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#9e9e9e"
-                }
-              ]
-            },
-            {
-              "featureType": "road",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#ffffff"
-                }
-              ]
-            },
-            {
-              "featureType": "road.arterial",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#757575"
-                }
-              ]
-            },
-            {
-              "featureType": "road.highway",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#dadada"
-                }
-              ]
-            },
-            {
-              "featureType": "road.highway",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#616161"
-                }
-              ]
-            },
-            {
-              "featureType": "road.local",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#9e9e9e"
-                }
-              ]
-            },
-            {
-              "featureType": "transit.line",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#e5e5e5"
-                }
-              ]
-            },
-            {
-              "featureType": "transit.station",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#eeeeee"
-                }
-              ]
-            },
-            {
-              "featureType": "water",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "color": "#c9c9c9"
-                }
-              ]
-            },
-            {
-              "featureType": "water",
-              "elementType": "labels.text.fill",
-              "stylers": [
-                {
-                  "color": "#9e9e9e"
-                }
-              ]
-            }
-          ]
+import GoogleMapReact from "google-map-react";
+// import MapMarker from "./MapMarker";
+import { googleMapsArguments, pin } from "../utils/mapSettings";
+
+const MapTest = () => {
+    const handleApiLoaded = (map, maps) => {
+        // use map and maps objects
+
+        const marker = new maps.Marker({
+            position: googleMapsArguments.center,
+            icon: pin,
+            map: map,
         });
-
-        map.panBy(0, -200);
-        
-        var pin ='../../assets/images/pin-blue.svg';
-
-        var marker = new google.maps.Marker({
-          position: map.getCenter(),
-          icon: pin,
-          map: map
+        marker.setMap(map);
+        map.setOptions({
+            styles: googleMapsArguments.stylesDark,
+            disableDefaultUI: true,
         });
-         }
-       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHtKZB7XlS_CVrIFsPbgroMG0SgX3c-po&callback=initMap"
-      async defer></script>
-
-
-
-      
-*/
-    const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
     };
+
+    const styles = {
+        mapStyles: { height: "40em", width: "100%" },
+        cardContainerStyles: {
+            padding: "7em",
+            marginLeft: "6%",
+        },
+        cardStyles: { width: "90%" },
+        preventRunoff: { overflow: "hidden" },
+    };
+
+    //https://github.com/google-map-react/google-map-react
     return (
-        <>
-            <section className="map" style={styles.sectionPadding}>
-                <div className="container">
+        <div class="container-hero" style={styles.preventRunoff}>
+            <div class="row position-relative">
+                <div class="col" style={styles.mapStyles}>
+                    <GoogleMapReact
+                        bootstrapURLKeys={{
+                            key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+                        }}
+                        defaultCenter={googleMapsArguments.center}
+                        defaultZoom={googleMapsArguments.zoom}
+                        yesIWantToUseGoogleMapApiInternals
+                        onGoogleApiLoaded={({ map, maps }) =>
+                            handleApiLoaded(map, maps)
+                        }
+                    ></GoogleMapReact>
+                </div>
+                <div class="col position-absolute">
                     <div className="row">
-                        <div className="col-lg-5">
-                            <div className="boxed p-5">
-                                <h2>USA, New York, Broadway</h2>
+                        <div className="col-lg-5 pt-10 mt-1 ml-10 pl-10 info-card-parent">
+                            <div className="boxed p-5 w-75 info-card">
+                                <h2>Available Remote / Worldwide</h2>
                                 <ul className="list-group list-group-line">
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-map-pin2 fs-24 text-blue"></i>
-                                        <span>5th Avenue</span>
+                                        <span>San Antonio, TX USA</span>
                                     </li>
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-mail fs-24 text-blue"></i>
-                                        <span>example@example.com</span>
+                                        <span>davidtunnell9@gmail.com</span>
                                     </li>
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-phone2 fs-24 text-blue"></i>
-                                        <span>(123) 456-7890</span>
+                                        <span>(210) 454-1039</span>
                                     </li>
                                 </ul>
-                                <a
-                                    href="/"
-                                    className="btn btn-primary btn-block btn-rounded mt-2"
-                                >
-                                    View Full Map
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="map" className="map-area"></div>
-            </section>
-        </>
+            </div>
+        </div>
     );
 };
 
-export default Map;
+export default MapTest;

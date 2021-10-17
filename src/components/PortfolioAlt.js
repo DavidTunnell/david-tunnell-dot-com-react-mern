@@ -31,14 +31,9 @@ const PortfolioAlt = () => {
             id: 6,
         },
     ];
-    const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
-    };
     return (
         <>
-            <section className="bg-white" style={styles.sectionPadding}>
+            <section className="bg-white pt-10 pb-10">
                 <div className="container">
                     <div className="row gutter-1 gutter-md-3 demo-preview">
                         {portfolio.map((element) => (

@@ -1,12 +1,7 @@
 const Contact = () => {
-    const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
-    };
     return (
         <>
-            <section className="bg-light" style={styles.sectionPadding}>
+            <section className="bg-light pt-10 pb-10">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">

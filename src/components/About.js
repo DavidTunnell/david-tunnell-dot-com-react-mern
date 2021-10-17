@@ -1,15 +1,10 @@
 const About = () => {
-    const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
-    };
     return (
         <>
-            <section style={styles.sectionPadding}>
+            <section>
                 <div className="container">
-                    <div className="row justify-content-between">
-                        <div className="col-md-4 text-center">
+                    <div className="row justify-content-between mt-10">
+                        <div className="col-md-4 text-center mb-10">
                             <i className="svg-icon fs-50 text-blue mb-2">
                                 <svg
                                     version="1.0"
@@ -85,7 +80,7 @@ const About = () => {
                                 incididunt ut labore et dolore
                             </p>
                         </div>
-                        <div className="col-md-4 text-center">
+                        <div className="col-md-4 text-center mb-10">
                             <i className="svg-icon fs-50 text-blue mb-2">
                                 <svg
                                     version="1.0"
@@ -125,7 +120,7 @@ const About = () => {
                                 incididunt ut labore
                             </p>
                         </div>
-                        <div className="col-md-4 text-center">
+                        <div className="col-md-4 text-center mb-10">
                             <i className="svg-icon fs-50 text-blue mb-2">
                                 <svg
                                     version="1.1"

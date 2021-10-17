@@ -1,14 +1,9 @@
 const AboutCards = () => {
-    const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
-    };
     return (
         <>
-            <section className="bg-light" style={styles.sectionPadding}>
+            <section className="bg-light">
                 <div className="container">
-                    <div className="row justify-content-between">
+                    <div className="row justify-content-between pt-10 pb-10">
                         <div className="col-12 col-lg-7">
                             <ul className="masonry gallery gutter-2">
                                 <li className="col-md-6">
