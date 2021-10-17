@@ -2,27 +2,39 @@ const Portfolio = () => {
     const portfolio = [
         {
             image: "./assets/images/travel-1.jpg",
-            title: "blah",
+            title: "1",
+            flavor: "test",
+            topRight: "other test",
         },
         {
             image: "./assets/images/travel-2.jpg",
-            title: "blah",
+            title: "2",
+            flavor: "test",
+            topRight: "other test",
         },
         {
             image: "./assets/images/travel-3.jpg",
-            title: "blah",
+            title: "3",
+            flavor: "test",
+            topRight: "other test",
         },
         {
             image: "./assets/images/travel-4.jpg",
-            title: "blah",
+            title: "4",
+            flavor: "test",
+            topRight: "other test",
         },
         {
             image: "./assets/images/travel-5.jpg",
-            title: "blah",
+            title: "5",
+            flavor: "test",
+            topRight: "other test",
         },
         {
             image: "./assets/images/travel-6.jpg",
-            title: "blah",
+            title: "6",
+            flavor: "test",
+            topRight: "other test",
         },
     ];
     const styles = {
@@ -68,131 +80,29 @@ const Portfolio = () => {
                                 data-loop="true"
                                 data-center="true"
                             >
-                                <article class="tile tile-long">
-                                    <div
-                                        class="tile-image"
-                                        style={{
-                                            backgroundImage: `url(${portfolio[0].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>California, USA</h3>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="tile tile-long">
-                                    <div
-                                        class="tile-image"
-                                        style={{
-                                            backgroundImage: `url(${portfolio[1].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>Oahu, Hawaii</h3>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="tile tile-long">
-                                    <div
-                                        style={{
-                                            backgroundImage: `url(${portfolio[2].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>Bali, Indonesia</h3>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="tile tile-long">
-                                    <div
-                                        class="tile-image"
-                                        style={{
-                                            backgroundImage: `url(${portfolio[3].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>Arizona, USA</h3>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="tile tile-long">
-                                    <div
-                                        class="tile-image"
-                                        style={{
-                                            backgroundImage: `url(${portfolio[4].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>Yellowstone, USA</h3>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="tile tile-long">
-                                    <div
-                                        class="tile-image"
-                                        style={{
-                                            backgroundImage: `url(${portfolio[5].image})`,
-                                        }}
-                                    ></div>
-                                    <a href="/" class="tile-content">
-                                        <div class="tile-header on-hover text-right">
-                                            <h4 class="fs-30 text-white">
-                                                $259
-                                            </h4>
-                                        </div>
-                                        <div class="tile-footer">
-                                            <span class="eyebrow">
-                                                5 Day City Tour
-                                            </span>
-                                            <h3>Cappadocia, Turkey</h3>
-                                        </div>
-                                    </a>
-                                </article>
+                                {portfolio.map((element) => (
+                                    <article class="tile tile-long">
+                                        <div
+                                            class="tile-image"
+                                            style={{
+                                                backgroundImage: `url(${element.image})`,
+                                            }}
+                                        ></div>
+                                        <a href="/" class="tile-content">
+                                            <div class="tile-header on-hover text-right">
+                                                <h4 class="fs-30 text-white">
+                                                    {element.topRight}
+                                                </h4>
+                                            </div>
+                                            <div class="tile-footer">
+                                                <span class="eyebrow">
+                                                    {element.flavor}
+                                                </span>
+                                                <h3>{element.title}</h3>
+                                            </div>
+                                        </a>
+                                    </article>
+                                ))}
                             </div>
                         </div>
                     </div>
