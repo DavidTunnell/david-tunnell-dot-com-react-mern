@@ -31,7 +31,7 @@ const Contact = () => {
                                         <input
                                             type="text"
                                             className="form-control form-control-minimal"
-                                            placeholder="Mail"
+                                            placeholder="Email"
                                         />
                                     </div>
                                     <div className="col">
