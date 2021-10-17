@@ -6,55 +6,55 @@ const Contact = () => {
     };
     return (
         <>
-            <section class="bg-light" style={styles.sectionPadding}>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span class="eyebrow mb-1 text-primary">
+            <section className="bg-light" style={styles.sectionPadding}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <span className="eyebrow mb-1 text-primary">
                                 Get in touch
                             </span>
                             <h2>I look forward to hearing from you.</h2>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div className="row">
+                        <div className="col">
                             <form>
-                                <div class="form-row mb-1">
-                                    <div class="col">
+                                <div className="form-row mb-1">
+                                    <div className="col">
                                         <input
                                             type="text"
-                                            class="form-control form-control-minimal"
+                                            className="form-control form-control-minimal"
                                             placeholder="Name"
                                         />
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <input
                                             type="text"
-                                            class="form-control form-control-minimal"
+                                            className="form-control form-control-minimal"
                                             placeholder="Mail"
                                         />
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <input
                                             type="text"
-                                            class="form-control form-control-minimal"
+                                            className="form-control form-control-minimal"
                                             placeholder="Phone"
                                         />
                                     </div>
                                 </div>
-                                <div class="form-row mb-1">
-                                    <div class="col">
+                                <div className="form-row mb-1">
+                                    <div className="col">
                                         <textarea
-                                            class="form-control form-control-minimal"
+                                            className="form-control form-control-minimal"
                                             id="exampleFormControlTextarea1"
                                             rows="3"
                                             placeholder="Your Message"
                                         ></textarea>
                                     </div>
                                 </div>
-                                <div class="form-row mt-3">
-                                    <div class="col">
-                                        <button class="btn btn-primary px-5">
+                                <div className="form-row mt-3">
+                                    <div className="col">
+                                        <button className="btn btn-primary px-5">
                                             Send Mail
                                         </button>
                                     </div>

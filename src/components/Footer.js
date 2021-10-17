@@ -8,60 +8,60 @@ const Footer = () => {
     };
     return (
         <>
-            <footer class="bg-dark text-white">
-                <div class="separator-top">
-                    <div class="container py-5">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-md-5 text-center text-md-left">
-                                <ul class="nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">
+            <footer className="bg-dark text-white">
+                <div className="separator-top">
+                    <div className="container py-5">
+                        <div className="row justify-content-between align-items-center">
+                            <div className="col-md-5 text-center text-md-left">
+                                <ul className="nav">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">
                                             Contacts
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">
                                             About Us
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">
                                             Legal Information
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-md-2 text-center">
+                            <div className="col-md-2 text-center">
                                 <img
-                                    class="logo-sm"
+                                    className="logo-sm"
                                     src="./assets/images/logo-light.png"
                                     alt="Logo"
                                 />
                             </div>
-                            <div class="col-md-5 text-center text-md-right">
-                                <ul class="socials">
+                            <div className="col-md-5 text-center text-md-right">
+                                <ul className="socials">
                                     <li>
                                         <a
                                             href="/"
-                                            class="icon-facebook fs-20"
+                                            className="icon-facebook fs-20"
                                         ></a>
                                     </li>
                                     <li>
                                         <a
                                             href="/"
-                                            class="icon-instagram fs-20"
+                                            className="icon-instagram fs-20"
                                         ></a>
                                     </li>
                                     <li>
                                         <a
                                             href="/"
-                                            class="icon-twitter fs-20"
+                                            className="icon-twitter fs-20"
                                         ></a>
                                     </li>
                                     <li>
                                         <a
                                             href="/"
-                                            class="icon-linkedin fs-20"
+                                            className="icon-linkedin fs-20"
                                         ></a>
                                     </li>
                                 </ul>

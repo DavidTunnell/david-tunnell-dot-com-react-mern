@@ -5,36 +5,42 @@ const Portfolio = () => {
             title: "1",
             flavor: "test",
             topRight: "other test",
+            id: 1,
         },
         {
             image: "./assets/images/travel-2.jpg",
             title: "2",
             flavor: "test",
             topRight: "other test",
+            id: 2,
         },
         {
             image: "./assets/images/travel-3.jpg",
             title: "3",
             flavor: "test",
             topRight: "other test",
+            id: 3,
         },
         {
             image: "./assets/images/travel-4.jpg",
             title: "4",
             flavor: "test",
             topRight: "other test",
+            id: 4,
         },
         {
             image: "./assets/images/travel-5.jpg",
             title: "5",
             flavor: "test",
             topRight: "other test",
+            id: 5,
         },
         {
             image: "./assets/images/travel-6.jpg",
             title: "6",
             flavor: "test",
             topRight: "other test",
+            id: 6,
         },
     ];
     const styles = {
@@ -46,10 +52,10 @@ const Portfolio = () => {
     return (
         <>
             <section
-                class="section-decorated-bottom pt-0"
+                className="section-decorated-bottom pt-0"
                 style={styles.preventRunoff}
             >
-                {/* <div class="decorated-bottom text-light">
+                {/* <div className="decorated-bottom text-light">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1000 40"
@@ -70,11 +76,15 @@ const Portfolio = () => {
                         </path>
                     </svg>
                 </div> */}
-                <div class="container">
-                    <div class="row" data-aos="fade-left" data-aos-delay="500">
-                        <div class="col">
+                <div className="container">
+                    <div
+                        className="row"
+                        data-aos="fade-left"
+                        data-aos-delay="500"
+                    >
+                        <div className="col">
                             <div
-                                class="owl-carousel visible"
+                                className="owl-carousel visible"
                                 data-items="[3,2,1]"
                                 data-margin="20"
                                 data-dots="true"
@@ -82,21 +92,24 @@ const Portfolio = () => {
                                 data-center="true"
                             >
                                 {portfolio.map((element) => (
-                                    <article class="tile tile-long">
+                                    <article
+                                        className="tile tile-long"
+                                        key={element.id}
+                                    >
                                         <div
-                                            class="tile-image"
+                                            className="tile-image"
                                             style={{
                                                 backgroundImage: `url(${element.image})`,
                                             }}
                                         ></div>
-                                        <a href="/" class="tile-content">
-                                            <div class="tile-header on-hover text-right">
-                                                <h4 class="fs-30 text-white">
+                                        <a href="/" className="tile-content">
+                                            <div className="tile-header on-hover text-right">
+                                                <h4 className="fs-30 text-white">
                                                     {element.topRight}
                                                 </h4>
                                             </div>
-                                            <div class="tile-footer">
-                                                <span class="eyebrow">
+                                            <div className="tile-footer">
+                                                <span className="eyebrow">
                                                     {element.flavor}
                                                 </span>
                                                 <h3>{element.title}</h3>

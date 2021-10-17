@@ -184,32 +184,36 @@ const Map = () => {
       async defer></script>
 
 */
-
+    const styles = {
+        sectionPadding: {
+            padding: "7em",
+        },
+    };
     return (
         <>
-            <section class="map">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="boxed p-5">
+            <section className="map" style={styles.sectionPadding}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-5">
+                            <div className="boxed p-5">
                                 <h2>USA, New York, Broadway</h2>
-                                <ul class="list-group list-group-line">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class="icon-map-pin2 fs-24 text-blue"></i>
+                                <ul className="list-group list-group-line">
+                                    <li className="list-group-item d-flex align-items-center">
+                                        <i className="icon-map-pin2 fs-24 text-blue"></i>
                                         <span>5th Avenue</span>
                                     </li>
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class="icon-mail fs-24 text-blue"></i>
+                                    <li className="list-group-item d-flex align-items-center">
+                                        <i className="icon-mail fs-24 text-blue"></i>
                                         <span>example@example.com</span>
                                     </li>
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class="icon-phone2 fs-24 text-blue"></i>
+                                    <li className="list-group-item d-flex align-items-center">
+                                        <i className="icon-phone2 fs-24 text-blue"></i>
                                         <span>(123) 456-7890</span>
                                     </li>
                                 </ul>
                                 <a
                                     href="/"
-                                    class="btn btn-primary btn-block btn-rounded mt-2"
+                                    className="btn btn-primary btn-block btn-rounded mt-2"
                                 >
                                     View Full Map
                                 </a>
@@ -217,7 +221,7 @@ const Map = () => {
                         </div>
                     </div>
                 </div>
-                <div id="map" class="map-area"></div>
+                <div id="map" className="map-area"></div>
             </section>
         </>
     );
