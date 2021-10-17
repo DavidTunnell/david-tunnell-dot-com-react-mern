@@ -5,23 +5,23 @@ const Portfolio = () => {
             title: "blah",
         },
         {
-            image: "../../assets/images/demo/travel/travel-2.jpg",
+            image: "./assets/images/travel-2.jpg",
             title: "blah",
         },
         {
-            image: "../../assets/images/demo/travel/travel-3.jpg",
+            image: "./assets/images/travel-3.jpg",
             title: "blah",
         },
         {
-            image: "../../assets/images/demo/travel/travel-4.jpg",
+            image: "./assets/images/travel-4.jpg",
             title: "blah",
         },
         {
-            image: "../../assets/images/demo/travel/travel-5.jpg",
+            image: "./assets/images/travel-5.jpg",
             title: "blah",
         },
         {
-            image: "../../assets/images/demo/travel/travel-6.jpg",
+            image: "./assets/images/travel-6.jpg",
             title: "blah",
         },
     ];
