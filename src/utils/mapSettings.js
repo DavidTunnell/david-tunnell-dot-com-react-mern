@@ -353,6 +353,6 @@ const googleMapsArguments = {
             ],
         },
     ],
+    pin: "./assets/images/pin.svg",
 };
-const pin = "./assets/images/pin.svg";
-export { googleMapsArguments, pin };
+export { googleMapsArguments };

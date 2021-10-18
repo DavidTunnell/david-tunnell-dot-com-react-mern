@@ -1,13 +1,13 @@
 import GoogleMapReact from "google-map-react";
 // import MapMarker from "./MapMarker";
-import { googleMapsArguments, pin } from "../utils/mapSettings";
+import { googleMapsArguments } from "../utils/mapSettings";
 
 const MapTest = () => {
     const handleApiLoaded = (map, maps) => {
         // use map and maps objects
         const marker = new maps.Marker({
             position: googleMapsArguments.center,
-            icon: pin,
+            icon: googleMapsArguments.pin,
             map: map,
         });
         marker.setMap(map);

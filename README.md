@@ -1,5 +1,19 @@
 # Microblog - A Fullstack MERN App built with React, Node.js, Express.js, MongoDB and Mongoose
 
+---
+
+TODO:
+
+-   update front page to be finished portfolio
+
+-   update structure to client server folders?
+-   create account system and session system
+-   Github pages deployment?
+-   setup contact form email server and DB saving
+-   add scrolling skills section? https://i.imgur.com/qQL0JQi.png but with go template scrolling companies section?
+
+---
+
 Microblog is a fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the '[Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. More details can be found in the [server folder](https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express/tree/main/server).
 
 [A live demo can be found here.](https://sheltered-river-02202.herokuapp.com/)

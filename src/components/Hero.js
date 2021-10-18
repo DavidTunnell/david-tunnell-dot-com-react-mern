@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Hero = () => {
     const heroPopInImage = "./assets/images/hero-pop-in.svg";
     const bgColors = [
@@ -23,29 +24,31 @@ const Hero = () => {
             >
                 <div className="container">
                     <div className="row align-items-center justify-content-between py-5 py-md-10">
-                        <div className="col-12 col-lg-6 text-center text-lg-left">
-                            <h1 className="display-3">
-                                Speed up your workflow with our <b>features.</b>
+                        <div className="col-12 col-lg-6 text-lg-left resume-mobile">
+                            <h1 className="display-3 mb-0">
+                                Hi, I'm <b>David Tunnell</b>.
                             </h1>
-                            <div className="input-group mb-1">
-                                <input
-                                    type="text"
-                                    className="form-control px-3"
-                                    placeholder="your@mail.com"
-                                    aria-label="Get a free copy"
-                                />
-                                <div className="input-group-append">
+                            <h1 className="display-3">
+                                A Fullstack Developer and IT Professional.
+                            </h1>
+                            <div>
+                                <Link>
                                     <button
-                                        className="btn btn-white"
+                                        className="btn btn-white mr-1 mb-1"
                                         type="button"
                                     >
-                                        Subscribe
+                                        Download Full Resume
                                     </button>
-                                </div>
+                                </Link>
+                                <Link>
+                                    <button
+                                        className="btn btn-white mr-1 mb-1"
+                                        type="button"
+                                    >
+                                        Download One Page Resume
+                                    </button>
+                                </Link>
                             </div>
-                            <small>
-                                * we won't share your data with third parties
-                            </small>
                         </div>
                         <div
                             className="col-12 col-lg-6"
