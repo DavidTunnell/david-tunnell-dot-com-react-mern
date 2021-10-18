@@ -6,12 +6,9 @@ import Portfolio from "./Portfolio";
 import PortfolioAlt from "./PortfolioAlt";
 import Map from "./Map";
 import { useEffect } from "react";
-
+import useScrollToTop from "../utils/useScrollToTop";
 const Home = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    });
-
+    useScrollToTop();
     return (
         <div className="home">
             <Hero />

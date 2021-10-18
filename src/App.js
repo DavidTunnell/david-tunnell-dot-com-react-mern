@@ -8,11 +8,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //top use the react router package, surround the whole app with the router component
 function App() {
+    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
+    const gitHubUrl = "https://github.com/DavidTunnell";
+    const stackOverflowUrl =
+        "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
     return (
         <Router>
             {/* ^ Here the app is wrapped with the router */}
             <div className="App">
-                <Header />
+                <Header
+                    linkedInUrl={linkedInUrl}
+                    gitHubUrl={gitHubUrl}
+                    stackOverflowUrl={stackOverflowUrl}
+                />
                 <div className="content">
                     {/* Next is the decision of where page content to go based on different routes
                         All routes go in the switch component so only one renders at a time based on route  */}
@@ -36,7 +44,11 @@ function App() {
                         </Route>
                     </Switch>
                 </div>
-                <Footer />
+                <Footer
+                    linkedInUrl={linkedInUrl}
+                    gitHubUrl={gitHubUrl}
+                    stackOverflowUrl={stackOverflowUrl}
+               z />
             </div>
         </Router>
     );

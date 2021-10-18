@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
-    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
-    const githubUrl = "https://github.com/DavidTunnell";
-    const stackOverflowUrl =
-        "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
+const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
     return (
         <>
             <header className="header-sticky header-dark">
@@ -64,7 +60,7 @@ const Header = () => {
                                 <li className="nav-item">
                                     <a
                                         className="nav-link"
-                                        href={githubUrl}
+                                        href={gitHubUrl}
                                         role="button"
                                         target="_blank"
                                         rel="noreferrer"

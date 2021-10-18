@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Footer = () => {
-    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
-    const githubUrl = "https://github.com/DavidTunnell";
-    const stackOverflowUrl =
-        "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
+const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
     return (
         <>
             <footer className="bg-dark text-white">
@@ -50,7 +46,7 @@ const Footer = () => {
                                             className="icon-github fs-20"
                                             target="_blank"
                                             rel="noreferrer"
-                                            href={githubUrl}
+                                            href={gitHubUrl}
                                         >
                                             {" "}
                                         </a>

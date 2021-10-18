@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import useScrollToTop from "../utils/useScrollToTop";
 const Login = () => {
     const bgImage = "./assets/images/login-bg.jpg";
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    });
+    useScrollToTop();
     return (
         <>
             <div className="viewport">

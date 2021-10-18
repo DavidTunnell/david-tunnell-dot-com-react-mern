@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
     const bgImage = "./assets/images/login-bg.jpg";
     const cardBgColor = "#f5f5f5";
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    });
     return (
         <>
             <div className="viewport">
