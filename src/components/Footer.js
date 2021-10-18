@@ -29,7 +29,7 @@ const Footer = () => {
                                     <img
                                         className="logo-sm"
                                         src="./assets/images/logo-light.png"
-                                        alt="Logo"
+                                        alt="davidtunnell.com logo"
                                     />
                                 </Link>
                             </div>

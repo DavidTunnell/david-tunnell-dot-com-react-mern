@@ -86,9 +86,9 @@ const Header = () => {
                             </ul>
                             <ul className="navbar-nav align-items-center mr-0">
                                 <li className="nav-item dropdown">
-                                    <a
+                                    <Link
                                         className="nav-link dropdown-toggle"
-                                        href="/"
+                                        to="/dashboard"
                                         id="navbarDropdown-2"
                                         role="button"
                                         data-toggle="dropdown"
@@ -96,7 +96,7 @@ const Header = () => {
                                         aria-expanded="false"
                                     >
                                         David Tunnell
-                                    </a>
+                                    </Link>
                                     <div
                                         className="dropdown-menu"
                                         aria-labelledby="navbarDropdown"

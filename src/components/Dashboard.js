@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Dashboard = () => {
     const bgImage = "./assets/images/login-bg.jpg";
     const cardBgColor = "#f5f5f5";
@@ -22,20 +23,20 @@ const Dashboard = () => {
                                 <div className="row justify-content-center">
                                     <div className="col col-md-10 col-lg-8">
                                         <div className="nav nav-tabs mb-1">
-                                            <a
+                                            <Link
                                                 className="nav-item nav-link active"
                                                 data-toggle="tab"
-                                                href="#demo-2-4"
+                                                to="/"
                                             >
                                                 Projects
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 className="nav-item nav-link"
                                                 data-toggle="tab"
-                                                href="#demo-2-5"
+                                                to="/"
                                             >
                                                 Video Games
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

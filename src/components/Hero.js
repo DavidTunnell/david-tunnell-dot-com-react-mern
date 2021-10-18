@@ -52,7 +52,7 @@ const Hero = () => {
                             data-aos="zoom-in"
                             data-aos-delay="500"
                         >
-                            <img src={heroPopInImage} alt="alt tag" />
+                            <img src={heroPopInImage} alt="programmer's back" />
                         </div>
                     </div>
                 </div>

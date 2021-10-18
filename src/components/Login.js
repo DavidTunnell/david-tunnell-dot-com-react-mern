@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Login = () => {
     const bgImage = "./assets/images/login-bg.jpg";
     useEffect(() => {
@@ -52,12 +53,12 @@ const Login = () => {
                                                         id="exampleFormControlInput2"
                                                     />
                                                 </div>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/dashboard"
                                                     className="btn btn-primary btn-block"
                                                 >
                                                     Sign In
-                                                </a>
+                                                </Link>
                                             </form>
                                         </div>
                                     </div>

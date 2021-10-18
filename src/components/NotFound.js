@@ -18,9 +18,9 @@ const NotFound = () => {
                             <h1 className="error-text">404</h1>
                             <p>
                                 The page you were looking for wasn't found,
-                                <a href="/" className="link">
+                                <Link to="/" className="link">
                                     click here to return home.
-                                </a>
+                                </Link>
                             </p>
                         </div>
                     </div>

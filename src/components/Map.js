@@ -5,7 +5,6 @@ import { googleMapsArguments, pin } from "../utils/mapSettings";
 const MapTest = () => {
     const handleApiLoaded = (map, maps) => {
         // use map and maps objects
-
         const marker = new maps.Marker({
             position: googleMapsArguments.center,
             icon: pin,
@@ -20,11 +19,6 @@ const MapTest = () => {
 
     const styles = {
         mapStyles: { height: "40em", width: "100%" },
-        cardContainerStyles: {
-            padding: "7em",
-            marginLeft: "6%",
-        },
-        cardStyles: { width: "90%" },
         preventRunoff: { overflow: "hidden" },
     };
 

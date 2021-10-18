@@ -44,9 +44,6 @@ const Portfolio = () => {
         },
     ];
     const styles = {
-        sectionPadding: {
-            padding: "7em",
-        },
         preventRunoff: { overflow: "hidden" },
     };
     return (
