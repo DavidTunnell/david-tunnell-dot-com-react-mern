@@ -32,7 +32,11 @@ const Hero = () => {
                                 A Fullstack Developer and IT Professional.
                             </h1>
                             <div>
-                                <Link>
+                                <Link
+                                    to="./assets/files/David-Tunnell-Resume-2021-ATS-Template.pdf"
+                                    target="_blank"
+                                    download
+                                >
                                     <button
                                         className="btn btn-white mr-1 mb-1"
                                         type="button"
@@ -40,7 +44,11 @@ const Hero = () => {
                                         Download Full Resume
                                     </button>
                                 </Link>
-                                <Link>
+                                <Link
+                                    to="./assets/files/David-Tunnell-Resume-2021-One-Page.pdf"
+                                    target="_blank"
+                                    download
+                                >
                                     <button
                                         className="btn btn-white mr-1 mb-1"
                                         type="button"
