@@ -30,9 +30,9 @@ const MapTest = () => {
 
     //https://github.com/google-map-react/google-map-react
     return (
-        <div class="container-hero" style={styles.preventRunoff}>
-            <div class="row position-relative">
-                <div class="col" style={styles.mapStyles}>
+        <div className="container-hero" style={styles.preventRunoff}>
+            <div className="row position-relative">
+                <div className="col" style={styles.mapStyles}>
                     <GoogleMapReact
                         bootstrapURLKeys={{
                             key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -45,7 +45,7 @@ const MapTest = () => {
                         }
                     ></GoogleMapReact>
                 </div>
-                <div class="col position-absolute">
+                <div className="col position-absolute">
                     <div className="row">
                         <div className="col-lg-5 pt-10 mt-1 ml-10 pl-10 info-card-parent">
                             <div className="boxed p-5 w-75 info-card">

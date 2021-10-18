@@ -21,11 +21,17 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className="col-md-2 text-center">
-                                <img
-                                    className="logo-sm"
-                                    src="./assets/images/logo-light.png"
-                                    alt="Logo"
-                                />
+                                <Link
+                                    to={{
+                                        pathname: "/",
+                                    }}
+                                >
+                                    <img
+                                        className="logo-sm"
+                                        src="./assets/images/logo-light.png"
+                                        alt="Logo"
+                                    />
+                                </Link>
                             </div>
                             <div className="col-md-5 text-center text-md-right">
                                 <ul className="socials">

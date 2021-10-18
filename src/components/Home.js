@@ -5,8 +5,13 @@ import AboutCards from "./AboutCards";
 import Portfolio from "./Portfolio";
 import PortfolioAlt from "./PortfolioAlt";
 import Map from "./Map";
+import { useEffect } from "react";
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     return (
         <div className="home">
             <Hero />

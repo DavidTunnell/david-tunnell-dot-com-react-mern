@@ -1,16 +1,207 @@
 const Dashboard = () => {
+    const styles = {
+        notFoundStyle: {
+            backgroundImage: "url(./assets/images/404-bg.jpg)",
+        },
+    };
     return (
-        <>
-            <section className="p-0 pt-10 bg-primary text-white">
-                <div className="container">
-                    <div className="row align-items-center justify-content-between py-5 py-md-10">
-                        <div className="col-12 col-lg-6 text-center text-lg-left">
-                            <h1 className="display-3">Dashboard!</h1>
+        <section>
+            <div className="viewport">
+                <div
+                    className="image image-overlay image-blur"
+                    style={styles.notFoundStyle}
+                ></div>
+                <div className="bg-light pt-10">
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col col-md-10 col-lg-8">
+                                <div className="nav nav-tabs mb-1">
+                                    <a
+                                        className="nav-item nav-link active"
+                                        data-toggle="tab"
+                                        href="#demo-2-4"
+                                    >
+                                        Projects
+                                    </a>
+                                    <a
+                                        className="nav-item nav-link"
+                                        data-toggle="tab"
+                                        href="#demo-2-5"
+                                    >
+                                        Video Games
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-light pt-2" style={styles.notFoundStyle}>
+                        <div className="container">
+                            <div className="tab-content">
+                                <div
+                                    className="tab-pane show active"
+                                    role="tabpanel"
+                                >
+                                    <div className="row justify-content-center">
+                                        <div className="col-md-10 col-lg-8">
+                                            <div className="row">
+                                                <div className="col ">
+                                                    <h5 className="mb-2 fs-20 font-weight-normal">
+                                                        General Information
+                                                    </h5>
+                                                    <form>
+                                                        <div className="form-row">
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="firstName">
+                                                                        First
+                                                                        Name
+                                                                    </label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        id="firstName"
+                                                                        aria-describedby="firstName"
+                                                                        placeholder="John/"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="secondName">
+                                                                        Second
+                                                                        Name
+                                                                    </label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        id="secondName"
+                                                                        aria-describedby="secondName"
+                                                                        placeholder="Doe"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-row">
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="userMail">
+                                                                        Email
+                                                                        address
+                                                                    </label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        id="userMail"
+                                                                        aria-describedby="userMail"
+                                                                        placeholder="johndoe@example.com"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-row mt-1 align-items-center">
+                                                            <div className="col-3">
+                                                                <button className="btn btn-secondary">
+                                                                    Save Changes
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div className="row">
+                                                <div className="col">
+                                                    <h5 className="mb-2 fs-20 font-weight-normal">
+                                                        Profile Information
+                                                    </h5>
+                                                    <form>
+                                                        <div className="form-row">
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="userCity">
+                                                                        City
+                                                                    </label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        id="userCity"
+                                                                        aria-describedby="userCity"
+                                                                        placeholder="New York"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="userCountry">
+                                                                        Country
+                                                                    </label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        id="userCountry"
+                                                                        aria-describedby="userCountry"
+                                                                        placeholder="United States"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-row">
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="userTwitter">
+                                                                        Twitter
+                                                                    </label>
+                                                                    <div className="input-group">
+                                                                        <div className="input-group-prepend">
+                                                                            <span className="input-group-text">
+                                                                                @
+                                                                            </span>
+                                                                        </div>
+                                                                        <input
+                                                                            type="text"
+                                                                            id="userTwitter"
+                                                                            className="form-control"
+                                                                            placeholder="Username"
+                                                                            aria-label="Username"
+                                                                            aria-describedby="userTwitter"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-row">
+                                                            <div className="col">
+                                                                <div className="form-group">
+                                                                    <label for="exampleFormControlTextarea1">
+                                                                        About
+                                                                    </label>
+                                                                    <textarea
+                                                                        className="form-control"
+                                                                        id="exampleFormControlTextarea1"
+                                                                        rows="3"
+                                                                    ></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-row">
+                                                            <div className="col-3">
+                                                                <button className="btn btn-secondary">
+                                                                    Save Changes
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 };
 
