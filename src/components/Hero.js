@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 const Hero = () => {
     const heroPopInImage = "./assets/images/hero-pop-in.svg";
+    const fullResumePdf =
+        "./assets/files/David-Tunnell-Resume-2021-ATS-Template.pdf";
+    const onePageResumePdf =
+        "./assets/files/David-Tunnell-Resume-2021-One-Page.pdf";
+
     const bgColors = [
         // "#4ea8de",
         "#f94144",
@@ -33,7 +38,7 @@ const Hero = () => {
                             </h1>
                             <div>
                                 <Link
-                                    to="./assets/files/David-Tunnell-Resume-2021-ATS-Template.pdf"
+                                    to={fullResumePdf}
                                     target="_blank"
                                     download
                                 >
@@ -45,7 +50,7 @@ const Hero = () => {
                                     </button>
                                 </Link>
                                 <Link
-                                    to="./assets/files/David-Tunnell-Resume-2021-One-Page.pdf"
+                                    to={onePageResumePdf}
                                     target="_blank"
                                     download
                                 >
