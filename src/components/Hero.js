@@ -29,7 +29,7 @@ const Hero = () => {
             >
                 <div className="container">
                     <div className="row align-items-center justify-content-between py-5 py-md-10">
-                        <div className="col-12 col-lg-6 text-lg-left resume-mobile">
+                        <div className="col-12 col-lg-6 text-lg-left mobile-center">
                             <h1 className="display-3 mb-0">
                                 Hi, I'm <b>David Tunnell</b>.
                             </h1>
@@ -40,7 +40,7 @@ const Hero = () => {
                                 <Link
                                     to={fullResumePdf}
                                     target="_blank"
-                                    download
+                                    // download
                                 >
                                     <button
                                         className="btn btn-white mr-1 mb-1"
@@ -52,7 +52,7 @@ const Hero = () => {
                                 <Link
                                     to={onePageResumePdf}
                                     target="_blank"
-                                    download
+                                    // download
                                 >
                                     <button
                                         className="btn btn-white mr-1 mb-1"

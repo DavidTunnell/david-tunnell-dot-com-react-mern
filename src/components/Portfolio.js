@@ -41,6 +41,19 @@ const PortfolioAlt = () => {
         <>
             <section className="bg-white pt-10 pb-10">
                 <div className="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-6 text-md-center">
+                            <h2>
+                                Still have some{" "}
+                                <i class="font-weight-bold">questions</i>?
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Sint maiores, consequuntur
+                                tempore, odio voluptatem
+                            </p>
+                        </div>
+                    </div>
                     <div className="row gutter-1 gutter-md-3 demo-preview">
                         {portfolio.map((element) => (
                             <div className="col-6 col-lg-4" key={element.id}>
