@@ -1,11 +1,9 @@
 import Hero from "./Hero";
 import Contact from "./Contact";
 import About from "./About";
-import AboutCards from "./AboutCards";
 import Portfolio from "./Portfolio";
-import PortfolioAlt from "./PortfolioAlt";
 import Map from "./Map";
-import { useEffect } from "react";
+import Skills from "./Skills";
 import useScrollToTop from "../utils/useScrollToTop";
 const Home = () => {
     useScrollToTop();
@@ -13,9 +11,8 @@ const Home = () => {
         <div className="home">
             <Hero />
             <About />
-            <AboutCards />
+            <Skills />
             <Portfolio />
-            <PortfolioAlt />
             <Contact />
             <Map />
         </div>
