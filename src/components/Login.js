@@ -62,7 +62,7 @@ const Login = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="accordion" data-accordion>
+                                {/* <div className="accordion" data-accordion>
                                     <div
                                         className="accordion-control"
                                         data-control
@@ -81,7 +81,7 @@ const Login = () => {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

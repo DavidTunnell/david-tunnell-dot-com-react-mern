@@ -1,24 +1,27 @@
 import { Link } from "react-router-dom";
 
 const Header = () => {
+    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
+    const githubUrl = "https://github.com/DavidTunnell";
+    const stackOverflowUrl =
+        "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
     return (
         <>
             <header className="header-sticky header-dark">
                 <div className="container">
                     <nav className="navbar navbar-expand-lg navbar-dark">
-                        <a className="navbar-brand" href="../../index.html">
+                        <Link className="navbar-brand" to="/">
                             <img
                                 className="navbar-logo navbar-logo-light"
                                 src="./assets/images/logo-light.png"
-                                alt="Logo"
+                                alt="David Tunnell Logo"
                             />
-
                             <img
                                 className="navbar-logo navbar-logo-dark"
                                 src="./assets/images/logo-dark.png"
-                                alt="Logo"
+                                alt="David Tunnell Logo"
                             />
-                        </a>
+                        </Link>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -39,30 +42,45 @@ const Header = () => {
                         >
                             <ul className="navbar-nav align-items-center mr-auto">
                                 <li className="nav-item">
-                                    <a
+                                    <Link
                                         className="nav-link"
-                                        href="../../index.html"
+                                        to="/"
                                         role="button"
                                     >
                                         Home
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <a
+                                        className="nav-link"
+                                        href={linkedInUrl}
+                                        role="button"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        LinkedIn
                                     </a>
                                 </li>
                                 <li className="nav-item">
                                     <a
                                         className="nav-link"
-                                        href="../../index.html"
+                                        href={githubUrl}
                                         role="button"
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
-                                        Link 1
+                                        GitHub
                                     </a>
                                 </li>
                                 <li className="nav-item">
                                     <a
                                         className="nav-link"
-                                        href="../../index.html"
+                                        href={stackOverflowUrl}
                                         role="button"
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
-                                        Link 2
+                                        StackOverflow
                                     </a>
                                 </li>
                             </ul>
@@ -83,37 +101,19 @@ const Header = () => {
                                         className="dropdown-menu"
                                         aria-labelledby="navbarDropdown"
                                     >
-                                        <a
+                                        <Link
                                             className="dropdown-item"
-                                            href="../app/profile.html"
+                                            to="/dashboard"
                                         >
-                                            Public Profile
-                                        </a>
-                                        <a
-                                            className="dropdown-item"
-                                            href="../app/connections.html"
-                                        >
-                                            Connections
-                                        </a>
-                                        <a
-                                            className="dropdown-item"
-                                            href="../app/groups.html"
-                                        >
-                                            Groups
-                                        </a>
+                                            Dashboard
+                                        </Link>
                                         <div className="dropdown-divider"></div>
-                                        <a
+                                        <Link
                                             className="dropdown-item"
-                                            href="../app/settings.html"
+                                            to="/logout"
                                         >
-                                            Settings
-                                        </a>
-                                        <a
-                                            className="dropdown-item"
-                                            href="../app/payments.html"
-                                        >
-                                            Payments
-                                        </a>
+                                            Logout
+                                        </Link>
                                     </div>
                                 </li>
                             </ul>
