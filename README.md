@@ -12,6 +12,10 @@ TODO:
 -   setup contact form email server and DB saving
 -   add scrolling skills section? https://i.imgur.com/qQL0JQi.png but with go template scrolling companies section?
 
+modal styles:
+https://mdbootstrap.com/docs/b4/jquery/modals/additional/ - https://i.imgur.com/8CEPGPB.png
+
+
 ---
 
 https://unsplash.com/photos/QwoNAhbmLLo
