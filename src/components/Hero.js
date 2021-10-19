@@ -5,13 +5,7 @@ const Hero = () => {
         "./assets/files/David-Tunnell-Resume-2021-ATS-Template.pdf";
     const onePageResumePdf =
         "./assets/files/David-Tunnell-Resume-2021-One-Page.pdf";
-
-    const bgColors = [
-        // "#4ea8de",
-        "#f94144",
-    ];
-    //https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
-    const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+    const bgColor = "#f94144";
     return (
         <>
             {/* to set !important in react: https://joshtronic.com/2018/03/22/how-to-important-inline-styles-in-react/ */}
@@ -21,7 +15,7 @@ const Hero = () => {
                     if (el) {
                         el.style.setProperty(
                             "background-color",
-                            randomColor,
+                            bgColor,
                             "important"
                         );
                     }
@@ -68,7 +62,7 @@ const Hero = () => {
                             data-aos="zoom-in"
                             data-aos-delay="500"
                         >
-                            <img src={heroPopInImage} alt="programmer's back" />
+                            <img src={heroPopInImage} alt="Programmer's Back" />
                         </div>
                     </div>
                 </div>

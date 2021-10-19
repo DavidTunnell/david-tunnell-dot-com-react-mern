@@ -1,10 +1,4 @@
 const About = () => {
-    const styles = {
-        svgSectionOne: {
-            strokeDasharray: "174, 176",
-            strokeDashoffset: 0,
-        },
-    };
     return (
         <>
             <section>

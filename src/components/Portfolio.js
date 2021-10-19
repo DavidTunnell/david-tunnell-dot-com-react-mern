@@ -1,42 +1,6 @@
+import { portfolio } from "../utils/data";
+
 const PortfolioAlt = () => {
-    const portfolio = [
-        {
-            image: "./assets/images/portfolio/app.jpg",
-            title: "App",
-            url: "https://www.google.com",
-            id: 1,
-        },
-        {
-            image: "./assets/images/portfolio/service.jpg",
-            title: "Service",
-            url: "https://www.google.com",
-            id: 2,
-        },
-        {
-            image: "./assets/images/portfolio/coworking.jpg",
-            title: "Coworking",
-            url: "https://www.google.com",
-            id: 3,
-        },
-        {
-            image: "./assets/images/portfolio/event.jpg",
-            title: "Event",
-            url: "https://www.google.com",
-            id: 4,
-        },
-        {
-            image: "./assets/images/portfolio/fitness.jpg",
-            title: "Fitness",
-            url: "https://www.google.com",
-            id: 5,
-        },
-        {
-            image: "./assets/images/portfolio/hotel.jpg",
-            title: "Hotel",
-            url: "https://www.google.com",
-            id: 6,
-        },
-    ];
     return (
         <>
             <section className="bg-white pt-10 pb-10">

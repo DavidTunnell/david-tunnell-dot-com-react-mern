@@ -1,5 +1,4 @@
 import GoogleMapReact from "google-map-react";
-// import MapMarker from "./MapMarker";
 import { googleMapsArguments } from "../utils/mapSettings";
 
 const MapTest = () => {
