@@ -25,7 +25,7 @@ const Skills = () => {
             id: 4,
         },
         {
-            graphic: "./assets/images/skills/scrum.svg",
+            graphic: "./assets/images/skills/agile-scrum.png",
             title: "Agile / Scrum",
             url: "https://agilemanifesto.org/",
             id: 5,
