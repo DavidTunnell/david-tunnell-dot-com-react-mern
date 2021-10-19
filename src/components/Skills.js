@@ -9,37 +9,38 @@ const Skills = () => {
     };
     return (
         <>
-            <section class="separator-top">
-                <div class="container mt-5 mb-1">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-6 text-md-center mobile-center">
+            {/* separator-top */}
+            <section className="bg-white">
+                <div className="container pt-4 pb-4">
+                    <div className="row justify-content-center">
+                        <div className="col-md-10 col-lg-6 text-md-center mobile-center">
                             <h2>
                                 Skills and{" "}
-                                <span class="font-weight-bold">
+                                <span className="font-weight-bold">
                                     Technologies
                                 </span>
                             </h2>
                             <p>Never stop learning.</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col partners align-items-center">
+                    <div className="row">
+                        <div className="col partners align-items-center">
                             <div
-                                class="owl-carousel"
+                                className="owl-carousel"
                                 data-items="[6,4,2]"
                                 data-loop="true"
                                 data-autoplay="true"
                             >
                                 {skills.map((element) => (
                                     <div key={element.id}>
-                                        <div class="logo">
+                                        <div className="logo">
                                             <img
                                                 src={element.graphic}
                                                 alt={element.title}
                                                 style={styles.graphics}
                                             />
                                         </div>
-                                        <div class="mt-3 text-muted">
+                                        <div className="mt-3 text-muted">
                                             {element.title}
                                         </div>
                                     </div>
