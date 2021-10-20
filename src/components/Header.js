@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
+const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
     return (
         <>
             <header className="header-sticky header-dark">
                 <div className="container">
                     <nav className="navbar navbar-expand-lg navbar-dark">
-                        <Link className="navbar-brand" to="/">
+                        <Link className="navbar-brand" to="/" onClick={toTop}>
                             <img
                                 className="navbar-logo navbar-logo-light"
                                 src="./assets/images/logo-light.png"
@@ -42,6 +42,7 @@ const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
                                         className="nav-link"
                                         to="/"
                                         role="button"
+                                        onClick={toTop}
                                     >
                                         Home
                                     </Link>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
+const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
     return (
         <>
             <footer className="bg-dark text-white">
@@ -21,6 +21,7 @@ const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl }) => {
                                     to={{
                                         pathname: "/",
                                     }}
+                                    onClick={toTop}
                                 >
                                     <img
                                         className="logo-sm"

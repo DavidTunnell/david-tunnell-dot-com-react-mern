@@ -8,7 +8,7 @@ const PortfolioModal = () => {
                         type="button"
                         class="btn btn-primary"
                         data-toggle="modal"
-                        data-target="#exampleModal-2"
+                        data-target="#myExampleModal"
                     >
                         Launch Modal
                     </button>
@@ -17,12 +17,13 @@ const PortfolioModal = () => {
 
             <div
                 class="modal fade"
-                id="exampleModal-2"
+                id="myExampleModal"
                 tabindex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
+                {/* modal-lg */}
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-image">

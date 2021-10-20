@@ -12,6 +12,9 @@ function App() {
     const gitHubUrl = "https://github.com/DavidTunnell";
     const stackOverflowUrl =
         "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
+    const toTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
         <Router>
             {/* ^ Here the app is wrapped with the router */}
@@ -20,6 +23,7 @@ function App() {
                     linkedInUrl={linkedInUrl}
                     gitHubUrl={gitHubUrl}
                     stackOverflowUrl={stackOverflowUrl}
+                    toTop={toTop}
                 />
                 <div className="content">
                     {/* Next is the decision of where page content to go based on different routes
@@ -48,7 +52,8 @@ function App() {
                     linkedInUrl={linkedInUrl}
                     gitHubUrl={gitHubUrl}
                     stackOverflowUrl={stackOverflowUrl}
-               z />
+                    toTop={toTop}
+                />
             </div>
         </Router>
     );
