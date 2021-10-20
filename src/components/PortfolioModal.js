@@ -25,7 +25,7 @@ const PortfolioModal = () => {
                         type="button"
                         className="btn btn-primary"
                         data-toggle="modal"
-                        data-target="#myExampleModal"
+                        data-target="#project-modal"
                     >
                         Launch Modal
                     </button>
@@ -34,7 +34,7 @@ const PortfolioModal = () => {
 
             <div
                 className="modal fade"
-                id="myExampleModal"
+                id="project-modal"
                 tabIndex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalLabel"
@@ -59,7 +59,7 @@ const PortfolioModal = () => {
                                     ></span>
                                 </button>
 
-                                <div className="boxed p-5 p-lg-10">
+                                <div className="boxed p-5">
                                     <div className="container">
                                         <div className="row justify-content-between align-items-center">
                                             <div className="col-md-5">
@@ -104,46 +104,26 @@ const PortfolioModal = () => {
                                                         other subject.
                                                     </p>
                                                 </div>
-                                                <div class="container bg-light text-center">
-                                                    <div class="row mt-3 p-1">
-                                                        <div class="col">
-                                                            <i class="icon-monitor fs-60"></i>
-                                                        </div>
-                                                        <div class="col">
-                                                            <i className="icon-github fs-60"></i>
-                                                        </div>
-                                                        <div class="w-100"></div>
-                                                        <div class="col">
-                                                            Live Demo
-                                                        </div>
-                                                        <div class="col">
-                                                            GitHub Repo
-                                                        </div>
-                                                    </div>
+                                                <div className="btn-group mt-2 container">
+                                                    <a href="/" target="_blank">
+                                                        <button className="btn bg-light m-1">
+                                                            <div>
+                                                                <i className="icon-monitor fs-60"></i>
+                                                            </div>
+                                                            <div>View Demo</div>
+                                                        </button>
+                                                    </a>
+                                                    <a href="/" target="_blank">
+                                                        <button className="btn bg-light m-1">
+                                                            <div>
+                                                                <i className="icon-github fs-60"></i>
+                                                            </div>
+                                                            <div>
+                                                                GitHub Repo
+                                                            </div>
+                                                        </button>
+                                                    </a>
                                                 </div>
-                                                {/* <div className="mt-3 container-fluid">
-                                                    <a href="/" target="_blank">
-                                                        <button
-                                                            className="btn bg-light mr-1 mb-1"
-                                                            type="button"
-                                                        >
-                                                            <i class="icon-monitor fs-60"></i>
-                                                            Live Demo
-                                                        </button>
-                                                    </a>
-                                                    <a href="/" target="_blank">
-                                                        <button
-                                                            className="btn mr-1 mb-1 bg-light"
-                                                            type="button"
-                                                            // style={
-                                                            //     styles.gitHubButton
-                                                            // }
-                                                        >
-                                                            <i className="icon-github fs-60"></i>
-                                                            GitHub Repo
-                                                        </button>
-                                                    </a>
-                                                </div> */}
                                             </div>
                                             <div className="col-md-6">
                                                 <img

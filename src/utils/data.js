@@ -194,11 +194,14 @@ const portfolio = [
     {
         id: 1,
         image: "./assets/images/portfolio/feedster.jpg",
+        modalImage: "./assets/images/portfolio/feedster.jpg",
         title: "Feedster",
+        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 31, 34, 35],
+        details:
+            "A Twitter content containerizer. Create an account and build custom feeds out of their favorite Twitter users. These feeds can be shared (links), followed and experienced as a group using the comment section. This creates a new way to experience any interest, from a live sporting event to your favorite personalities or any other subject.",
         gitHubUrl:
             "https://github.com/DavidTunnell/feedster-content-containerizer-twitter-api-node-express-mysql-handlebars-sequelize-mvc-fullstack",
         demoUrl: "http://feedster-twitter.herokuapp.com/",
-        details: "test",
     },
     {
         id: 2,

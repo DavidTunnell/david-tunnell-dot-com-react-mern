@@ -25,16 +25,18 @@ const PortfolioAlt = () => {
                         {portfolio.map((element) => (
                             <div className="col-6 col-lg-4" key={element.id}>
                                 <article className="card card-minimal">
-                                    <a
+                                    <summary
                                         href={element.url}
                                         className="card-img-container"
+                                        data-toggle="modal"
+                                        data-target="#project-modal"
                                     >
                                         <img
                                             className="card-img"
                                             src={element.image}
                                             alt={element.title}
                                         />
-                                    </a>
+                                    </summary>
                                     <div className="card-body">
                                         <h5 className="card-title text-center">
                                             <a href={element.url}>
