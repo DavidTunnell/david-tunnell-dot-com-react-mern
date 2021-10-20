@@ -1,18 +1,4 @@
-import ReactDOM from "react-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { badges } from "../utils/data";
-
 const PortfolioModal = ({ projectData }) => {
-    var testArray = [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 31, 34, 35];
-    const getBadges = (arr) => {
-        const returnArray = [];
-        arr.forEach((element) => {
-            returnArray.push(badges.find((x) => x.id === element));
-        });
-        return returnArray;
-    };
-    const badgesForProject = getBadges(testArray);
     return (
         <>
             <div
@@ -47,10 +33,13 @@ const PortfolioModal = ({ projectData }) => {
                                         <div className="row justify-content-between align-items-center">
                                             <div className="col-md-5">
                                                 <h2>
-                                                    <b>{projectData}</b>
+                                                    <b>
+                                                        {projectData &&
+                                                            projectData.title}
+                                                    </b>
                                                 </h2>
                                                 <div className="mb-2">
-                                                    {badgesForProject.map(
+                                                    {projectData.techSkills.map(
                                                         (element) => (
                                                             <div
                                                                 className="badge badge-pill badge-success"

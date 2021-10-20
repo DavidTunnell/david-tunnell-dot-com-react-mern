@@ -1,13 +1,28 @@
 import { portfolio } from "../utils/data";
 import PortfolioModal from "./PortfolioModal";
 import { useState } from "react";
+import { badges } from "../utils/data";
 
 const PortfolioAlt = () => {
-    const [portfolioIdSelected, setPortfolioIdSelected] = useState(null);
+    const [projectData, setProjectData] = useState(null);
     const handlePortfolioCardClick = (event) => {
         const clickedProjectsId =
             event.target.closest(".portfolio-card").dataset.id;
-        setPortfolioIdSelected(clickedProjectsId);
+        const selectedProjectData = portfolio.find(
+            (x) => x.id === parseInt(clickedProjectsId)
+        );
+        selectedProjectData.techSkills = getBadges(
+            selectedProjectData.techSkills
+        );
+        console.log(selectedProjectData);
+        setProjectData(selectedProjectData);
+    };
+    const getBadges = (arr) => {
+        const returnArray = [];
+        arr.forEach((element) => {
+            returnArray.push(badges.find((x) => x.id === element));
+        });
+        return returnArray;
     };
     return (
         <>
@@ -60,7 +75,7 @@ const PortfolioAlt = () => {
                     </div>
                 </div>
             </section>
-            <PortfolioModal projectData={portfolioIdSelected} />
+            {projectData && <PortfolioModal projectData={projectData} />}
         </>
     );
 };
