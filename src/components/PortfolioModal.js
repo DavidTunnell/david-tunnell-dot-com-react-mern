@@ -1,3 +1,7 @@
+import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+
 const PortfolioModal = () => {
     return (
         <>
@@ -23,52 +27,54 @@ const PortfolioModal = () => {
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
-                {/* modal-lg */}
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div
+                    class="modal-dialog modal-dialog-centered modal-xl"
+                    role="document"
+                >
                     <div class="modal-content">
-                        <div class="modal-image">
-                            <img
-                                src="../assets/images/demo/image-square-2.jpg"
-                                alt="text"
-                                class="modal-image"
-                            />
-                            <button
-                                type="button"
-                                class="close close-absolute"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                <span aria-hidden="true" class="icon-x"></span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <h3>Modal title</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Molestias alias ipsam minima,
-                                dolore! Modi enim porro neque quaerat
-                                blanditiis. Ipsa aliquam quam maxime rerum eum
-                                accusamus nulla, molestiae soluta repellendus!
-                            </p>
-                        </div>
-                        <div class="modal-footer gutter-1">
-                            <div class="container-fluid">
-                                <div class="row gutter-1">
-                                    <div class="col-8">
-                                        <button
-                                            type="button"
-                                            class="btn btn-block btn-primary"
-                                        >
-                                            Save changes
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <button
-                                            type="button"
-                                            class="btn btn-block btn-red"
-                                        >
-                                            Cancel
-                                        </button>
+                        <div class="row" data-aos="zoom-in">
+                            <div class="col">
+                                <button
+                                    type="button"
+                                    class="close close-absolute bg-light m-1"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="icon-x"
+                                    ></span>
+                                </button>
+
+                                <div class="boxed p-5 p-lg-10">
+                                    <div class="container">
+                                        <div class="row justify-content-between align-items-center">
+                                            <div class="col-md-5">
+                                                <h2>
+                                                    <b>Feedster</b>
+                                                </h2>
+                                                <div>
+                                                    <div class="badge badge-pill badge-success m-1">
+                                                        React
+                                                    </div>
+                                                    <div class="badge badge-pill badge-primary text-white">
+                                                        .NET Framework
+                                                    </div>
+                                                </div>
+                                                <p>
+                                                    Appropriately reintermediate
+                                                    resource-leveling
+                                                    functionalities through
+                                                    resource.
+                                                </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img
+                                                    src="./assets/images/demo/image-square-3.jpg"
+                                                    alt="blah"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
