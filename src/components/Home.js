@@ -4,7 +4,6 @@ import About from "./About";
 import Portfolio from "./Portfolio";
 import Map from "./Map";
 import Skills from "./Skills";
-import PortfolioModal from "./PortfolioModal";
 import useScrollToTop from "../utils/useScrollToTop";
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
         <div className="home">
             <Hero />
             <About />
-            <PortfolioModal />
             <Portfolio />
             <Skills />
             <Contact />

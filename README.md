@@ -15,7 +15,6 @@ TODO:
 modal styles:
 https://mdbootstrap.com/docs/b4/jquery/modals/additional/ - https://i.imgur.com/8CEPGPB.png
 
-
 ---
 
 https://unsplash.com/photos/QwoNAhbmLLo

@@ -1,4 +1,5 @@
 import { portfolio } from "../utils/data";
+import PortfolioModal from "./PortfolioModal";
 
 const PortfolioAlt = () => {
     // const styles = {
@@ -6,6 +7,7 @@ const PortfolioAlt = () => {
     //         backgroundColor: "#f94144",
     //     },
     // };
+    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
     return (
         <>
             <section className="bg-light pt-9 pb-10">
@@ -50,6 +52,7 @@ const PortfolioAlt = () => {
                     </div>
                 </div>
             </section>
+            <PortfolioModal linkedInUrl={linkedInUrl} />
         </>
     );
 };
