@@ -1,13 +1,14 @@
 import { portfolio } from "../utils/data";
 import PortfolioModal from "./PortfolioModal";
+import { useState } from "react";
 
 const PortfolioAlt = () => {
-    // const styles = {
-    //     bgColor: {
-    //         backgroundColor: "#f94144",
-    //     },
-    // };
-    const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
+    const [portfolioIdSelected, setPortfolioIdSelected] = useState(null);
+    const handlePortfolioCardClick = (event) => {
+        const clickedProjectsId =
+            event.target.closest(".portfolio-card").dataset.id;
+        setPortfolioIdSelected(clickedProjectsId);
+    };
     return (
         <>
             <section className="bg-light pt-9 pb-10">
@@ -25,7 +26,14 @@ const PortfolioAlt = () => {
                     </div>
                     <div className="row gutter-1 gutter-md-3 demo-preview">
                         {portfolio.map((element) => (
-                            <div className="col-6 col-lg-4" key={element.id}>
+                            <div
+                                className="col-6 col-lg-4 portfolio-card"
+                                key={element.id}
+                                data-id={element.id}
+                                onClick={(event) => {
+                                    handlePortfolioCardClick(event);
+                                }}
+                            >
                                 <article className="card card-minimal">
                                     <summary
                                         href={element.url}
@@ -52,7 +60,7 @@ const PortfolioAlt = () => {
                     </div>
                 </div>
             </section>
-            <PortfolioModal linkedInUrl={linkedInUrl} />
+            <PortfolioModal projectData={portfolioIdSelected} />
         </>
     );
 };
