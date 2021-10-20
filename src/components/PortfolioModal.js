@@ -4,7 +4,7 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { badges } from "../utils/data";
 
 const PortfolioModal = () => {
-    var testArray = [1, 5, 10, 20, 30, 21];
+    var testArray = [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 31, 34, 35];
     const getBadges = (arr) => {
         const returnArray = [];
         arr.forEach((element) => {
@@ -12,10 +12,10 @@ const PortfolioModal = () => {
         });
         return returnArray;
     };
-    console.log("=========!!!!!!!!!!!============");
-    console.log(getBadges(testArray));
-    console.log("=========!!!!!!!!!!!============");
-
+    const badgesForProject = getBadges(testArray);
+    const styles = {
+        gitHubButton: { backgroundColor: "#f94144", color: "white" },
+    };
     return (
         <>
             {/* class to see it: show */}
@@ -66,17 +66,84 @@ const PortfolioModal = () => {
                                                 <h2>
                                                     <b>Feedster</b>
                                                 </h2>
+                                                <div className="mb-2">
+                                                    {badgesForProject.map(
+                                                        (element) => (
+                                                            <div
+                                                                className="badge badge-pill badge-success"
+                                                                style={{
+                                                                    backgroundColor:
+                                                                        element.bgColor,
+                                                                    margin: "3px",
+                                                                    color: element.textColor,
+                                                                }}
+                                                                key={element.id}
+                                                            >
+                                                                {element.name}
+                                                            </div>
+                                                        )
+                                                    )}
+                                                </div>
                                                 <div>
-                                                    <div className="badge badge-pill badge-success m-1">
-                                                        React
+                                                    <p>
+                                                        A Twitter content
+                                                        containerizer. Create an
+                                                        account and build custom
+                                                        feeds out of their
+                                                        favorite Twitter users.
+                                                        These feeds can be
+                                                        shared (links), followed
+                                                        and experienced as a
+                                                        group using the comment
+                                                        section. This creates a
+                                                        new way to experience
+                                                        any interest, from a
+                                                        live sporting event to
+                                                        your favorite
+                                                        personalities or any
+                                                        other subject.
+                                                    </p>
+                                                </div>
+                                                <div class="container bg-light text-center">
+                                                    <div class="row mt-3 p-1">
+                                                        <div class="col">
+                                                            <i class="icon-monitor fs-60"></i>
+                                                        </div>
+                                                        <div class="col">
+                                                            <i className="icon-github fs-60"></i>
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col">
+                                                            Live Demo
+                                                        </div>
+                                                        <div class="col">
+                                                            GitHub Repo
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <p>
-                                                    Appropriately reintermediate
-                                                    resource-leveling
-                                                    functionalities through
-                                                    resource.
-                                                </p>
+                                                {/* <div className="mt-3 container-fluid">
+                                                    <a href="/" target="_blank">
+                                                        <button
+                                                            className="btn bg-light mr-1 mb-1"
+                                                            type="button"
+                                                        >
+                                                            <i class="icon-monitor fs-60"></i>
+                                                            Live Demo
+                                                        </button>
+                                                    </a>
+                                                    <a href="/" target="_blank">
+                                                        <button
+                                                            className="btn mr-1 mb-1 bg-light"
+                                                            type="button"
+                                                            // style={
+                                                            //     styles.gitHubButton
+                                                            // }
+                                                        >
+                                                            <i className="icon-github fs-60"></i>
+                                                            GitHub Repo
+                                                        </button>
+                                                    </a>
+                                                </div> */}
                                             </div>
                                             <div className="col-md-6">
                                                 <img
