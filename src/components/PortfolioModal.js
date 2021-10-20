@@ -1,16 +1,29 @@
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { badges } from "../utils/data";
 
 const PortfolioModal = () => {
+    var testArray = [1, 5, 10, 20, 30, 21];
+    const getBadges = (arr) => {
+        const returnArray = [];
+        arr.forEach((element) => {
+            returnArray.push(badges.find((x) => x.id === element));
+        });
+        return returnArray;
+    };
+    console.log("=========!!!!!!!!!!!============");
+    console.log(getBadges(testArray));
+    console.log("=========!!!!!!!!!!!============");
+
     return (
         <>
             {/* class to see it: show */}
-            <div class="row mb-2">
-                <div class="mx-auto">
+            <div className="row mb-2">
+                <div className="mx-auto">
                     <button
                         type="button"
-                        class="btn btn-primary"
+                        className="btn btn-primary"
                         data-toggle="modal"
                         data-target="#myExampleModal"
                     >
@@ -20,45 +33,42 @@ const PortfolioModal = () => {
             </div>
 
             <div
-                class="modal fade"
+                className="modal fade"
                 id="myExampleModal"
-                tabindex="-1"
+                tabIndex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
                 <div
-                    class="modal-dialog modal-dialog-centered modal-xl"
+                    className="modal-dialog modal-dialog-centered modal-xl"
                     role="document"
                 >
-                    <div class="modal-content">
-                        <div class="row" data-aos="zoom-in">
-                            <div class="col">
+                    <div className="modal-content">
+                        <div className="row" data-aos="zoom-in">
+                            <div className="col">
                                 <button
                                     type="button"
-                                    class="close close-absolute bg-light m-1"
+                                    className="close close-absolute bg-light m-1"
                                     data-dismiss="modal"
                                     aria-label="Close"
                                 >
                                     <span
                                         aria-hidden="true"
-                                        class="icon-x"
+                                        className="icon-x"
                                     ></span>
                                 </button>
 
-                                <div class="boxed p-5 p-lg-10">
-                                    <div class="container">
-                                        <div class="row justify-content-between align-items-center">
-                                            <div class="col-md-5">
+                                <div className="boxed p-5 p-lg-10">
+                                    <div className="container">
+                                        <div className="row justify-content-between align-items-center">
+                                            <div className="col-md-5">
                                                 <h2>
                                                     <b>Feedster</b>
                                                 </h2>
                                                 <div>
-                                                    <div class="badge badge-pill badge-success m-1">
+                                                    <div className="badge badge-pill badge-success m-1">
                                                         React
-                                                    </div>
-                                                    <div class="badge badge-pill badge-primary text-white">
-                                                        .NET Framework
                                                     </div>
                                                 </div>
                                                 <p>
@@ -68,7 +78,7 @@ const PortfolioModal = () => {
                                                     resource.
                                                 </p>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div className="col-md-6">
                                                 <img
                                                     src="./assets/images/demo/image-square-3.jpg"
                                                     alt="blah"

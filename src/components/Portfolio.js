@@ -1,17 +1,17 @@
 import { portfolio } from "../utils/data";
 
 const PortfolioAlt = () => {
-    const styles = {
-        bgColor: {
-            backgroundColor: "#f94144",
-        },
-    };
+    // const styles = {
+    //     bgColor: {
+    //         backgroundColor: "#f94144",
+    //     },
+    // };
     return (
         <>
             <section className="bg-light pt-9 pb-10">
                 <div className="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-6 text-md-center">
+                    <div className="row justify-content-center">
+                        <div className="col-md-10 col-lg-6 text-md-center">
                             <h2>Projects / Portfolio</h2>
                             <p>
                                 Some projects have proprietary code bases and
