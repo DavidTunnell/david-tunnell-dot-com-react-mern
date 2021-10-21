@@ -41,34 +41,73 @@ const Contact = () => {
         recaptchaRef.current.execute();
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
-        //Get button to inform user
-        const contactEntry = { name, email, phone, message };
-        await fetchCreate(
-            process.env.REACT_APP_BASE_URL + "/api/contact1/",
-            contactEntry
-        ).then((returnData) => {
-            if (returnData) {
-                setName("");
-                setEmail("");
-                setPhone("");
-                setMessage("");
-                setIsDisabled(true);
-                setIsVisible({ visibility: "visible" });
-            } else {
-                console.log("Error submitting form.");
-                setIsDisabled(true);
-                setName("");
-                setEmail("");
-                setPhone("");
-                setMessage("");
-                setUserFeedback("There was an error, please try again later.");
-                setIsVisible({
-                    visibility: "visible",
-                });
-                setErrorFeedback("error-feedback");
-            }
-        });
+
+        if (
+            name.length === 0 ||
+            email.length === 0 ||
+            phone.length === 0 ||
+            message.length === 0
+        ) {
+            setIsVisible({ visibility: "visible" });
+            setErrorFeedback("error-feedback");
+            setUserFeedback("Please make sure to fill out all fields.");
+        } else if (!validateEmail(email)) {
+            setIsVisible({ visibility: "visible" });
+            setErrorFeedback("error-feedback");
+            setUserFeedback("Please use a valid email address.");
+        } else if (!validatePhoneNumber(phone)) {
+            setIsVisible({ visibility: "visible" });
+            setErrorFeedback("error-feedback");
+            setUserFeedback("Please use a valid phone number.");
+        } else {
+            //Get button to inform user
+            const contactEntry = { name, email, phone, message };
+            await fetchCreate(
+                process.env.REACT_APP_BASE_URL + "/api/contact/",
+                contactEntry
+            ).then((returnData) => {
+                if (returnData) {
+                    setUserFeedback(
+                        "Your message has been received. Thank you."
+                    );
+                    setName("");
+                    setEmail("");
+                    setPhone("");
+                    setMessage("");
+                    setIsDisabled(true);
+                    setErrorFeedback("");
+                    setIsVisible({ visibility: "visible" });
+                } else {
+                    console.log("Error submitting form.");
+                    setIsDisabled(true);
+                    setName("");
+                    setEmail("");
+                    setPhone("");
+                    setMessage("");
+                    setUserFeedback(
+                        "There was an error, please try again later."
+                    );
+                    setIsVisible({
+                        visibility: "visible",
+                    });
+                    setErrorFeedback("error-feedback");
+                }
+            });
+        }
     };
+
+    //https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+    function validateEmail(email) {
+        const re =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    //https://stackoverflow.com/questions/18375929/validate-phone-number-using-javascript
+    function validatePhoneNumber(phone) {
+        const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        return regex.test(phone);
+    }
 
     return (
         <>

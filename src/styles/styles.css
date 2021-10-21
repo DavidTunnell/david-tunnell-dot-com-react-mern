@@ -26,3 +26,7 @@
 .error-feedback {
     color: red !important;
 }
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
