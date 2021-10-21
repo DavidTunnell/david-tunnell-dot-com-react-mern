@@ -1,4 +1,7 @@
 const PortfolioModal = ({ projectData }) => {
+    const removeActive = (e) => {
+        e.target.closest("button").blur();
+    };
     return (
         <>
             <div
@@ -75,7 +78,17 @@ const PortfolioModal = ({ projectData }) => {
                                                             target="_blank"
                                                             rel="noreferrer"
                                                         >
-                                                            <button className="btn bg-light m-1">
+                                                            <button
+                                                                className="btn bg-light m-1"
+                                                                type="button"
+                                                                onClick={(
+                                                                    e
+                                                                ) => {
+                                                                    removeActive(
+                                                                        e
+                                                                    );
+                                                                }}
+                                                            >
                                                                 <div>
                                                                     <i className="icon-monitor fs-60"></i>
                                                                 </div>
@@ -91,7 +104,17 @@ const PortfolioModal = ({ projectData }) => {
                                                             target="_blank"
                                                             rel="noreferrer"
                                                         >
-                                                            <button className="btn bg-light m-1">
+                                                            <button
+                                                                className="btn bg-light m-1"
+                                                                type="button"
+                                                                onClick={(
+                                                                    e
+                                                                ) => {
+                                                                    removeActive(
+                                                                        e
+                                                                    );
+                                                                }}
+                                                            >
                                                                 <div>
                                                                     <i className="icon-github fs-60"></i>
                                                                 </div>
@@ -109,6 +132,9 @@ const PortfolioModal = ({ projectData }) => {
                                                             }
                                                             target="_blank"
                                                             rel="noreferrer"
+                                                            onClick={(e) => {
+                                                                removeActive(e);
+                                                            }}
                                                         >
                                                             <button className="btn bg-light m-1">
                                                                 <div>
