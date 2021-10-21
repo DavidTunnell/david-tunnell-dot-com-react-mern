@@ -30,8 +30,8 @@ const PortfolioModal = ({ projectData }) => {
 
                                 <div className="boxed p-5">
                                     <div className="container">
-                                        <div className="row justify-content-between align-items-center">
-                                            <div className="col-md-5">
+                                        <div className="row justify-content-between align-items-center mobile-modal">
+                                            <div className="col-md-5 mobile-modal">
                                                 <h2>
                                                     <b>
                                                         {projectData &&
@@ -66,38 +66,62 @@ const PortfolioModal = ({ projectData }) => {
                                                         </p>
                                                     )}
                                                 </div>
-                                                <div className="btn-group mt-2 container">
-                                                    <a
-                                                        href={
-                                                            projectData.demoUrl
-                                                        }
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
-                                                        <button className="btn bg-light m-1">
-                                                            <div>
-                                                                <i className="icon-monitor fs-60"></i>
-                                                            </div>
-                                                            <div>View Demo</div>
-                                                        </button>
-                                                    </a>
-                                                    <a
-                                                        href={
-                                                            projectData.gitHubUrl
-                                                        }
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
-                                                        <button className="btn bg-light m-1">
-                                                            <div>
-                                                                <i className="icon-github fs-60"></i>
-                                                            </div>
-                                                            <div>
-                                                                GitHub Repo
-                                                            </div>
-                                                        </button>
-                                                    </a>
-                                                </div>
+                                                {projectData.openSource ? (
+                                                    <div className="btn-group mt-2 container mobile-modal">
+                                                        <a
+                                                            href={
+                                                                projectData.demoUrl
+                                                            }
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <button className="btn bg-light m-1">
+                                                                <div>
+                                                                    <i className="icon-monitor fs-60"></i>
+                                                                </div>
+                                                                <div>
+                                                                    View Demo
+                                                                </div>
+                                                            </button>
+                                                        </a>
+                                                        <a
+                                                            href={
+                                                                projectData.gitHubUrl
+                                                            }
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <button className="btn bg-light m-1">
+                                                                <div>
+                                                                    <i className="icon-github fs-60"></i>
+                                                                </div>
+                                                                <div>
+                                                                    GitHub Repo
+                                                                </div>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                ) : (
+                                                    <div className="d-flex justify-content-center mt-2">
+                                                        <a
+                                                            href={
+                                                                projectData.companyUrl
+                                                            }
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <button className="btn bg-light m-1">
+                                                                <div>
+                                                                    <i className="icon-monitor fs-60"></i>
+                                                                </div>
+                                                                <div>
+                                                                    View Company
+                                                                    Site
+                                                                </div>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                )}
                                             </div>
                                             <div className="col-md-6">
                                                 <img

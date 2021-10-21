@@ -9,11 +9,9 @@ const PortfolioAlt = () => {
     const handlePortfolioCardClick = (event) => {
         const clickedProjectsId =
             event.target.closest(".portfolio-card").dataset.id;
-        console.log(clickedProjectsId);
         const selectedProjectData = portfolio.find(
             (x) => x.id === parseInt(clickedProjectsId)
         );
-
         selectedProjectData.techSkillsData = getBadges(
             selectedProjectData.techSkills
         );
@@ -36,10 +34,8 @@ const PortfolioAlt = () => {
                         <div className="col-md-10 col-lg-6 text-md-center">
                             <h2>Projects / Portfolio</h2>
                             <p>
-                                Some projects have proprietary code bases and
-                                others are available on GitHub. Some apps may be
-                                a sleep and take a few moments to spin up before
-                                loading.
+                                Some app demos may be asleep and take a few
+                                moments to spin up before loading.
                             </p>
                         </div>
                     </div>

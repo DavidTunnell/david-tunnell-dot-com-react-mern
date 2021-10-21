@@ -268,21 +268,6 @@ const portfolio = [
     },
     {
         id: 6,
-        openSource: false,
-        image: "./assets/images/portfolio/zachry-group.jpg",
-        modalImage: "./assets/images/portfolio/zachry-group.jpg",
-        title: "Zachry Group IT Projects",
-        techSkills: [1, 5, 6, 7, 8, 10, 12, 14, 15, 26, 30, 32, 35, 38],
-        details:
-            "My intern project was adopted as the project timekeeping system for the IT Department. It integrated with historical software records via SOAP protocol. I was the lead developer on a mobile Windows Surface app to keep track of industrial plant construction progress in locations without reliable internet connection. I maintained all of the corporate WordPress sites and worked with clients to add features and updates.",
-        gitHubUrl: null,
-        demoUrl: null,
-        disclaimer:
-            "The software I worked on is proprietary so links to the source code and demo is not available.",
-        companyUrl: "https://zachrygroup.com/",
-    },
-    {
-        id: 7,
         openSource: true,
         image: "./assets/images/portfolio/microblog.jpg",
         modalImage: "./assets/images/portfolio/microblog.jpg",
@@ -293,6 +278,22 @@ const portfolio = [
         gitHubUrl:
             "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
         demoUrl: "https://sheltered-river-02202.herokuapp.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 7,
+        openSource: true,
+        image: "./assets/images/portfolio/discogra.jpg",
+        modalImage: "./assets/images/portfolio/discogra.jpg",
+        title: "Discogra: Music Finder",
+        techSkills: [1, 5, 6, 18, 23, 27, 31],
+        details:
+            "A tool using the Discogs.com API and the YouTube API to help users find music they are interested in. Renders dynamic results based on user input. Utilizes local storage to store persistent user data such as saving of users input and data including genres related to searches and previous search history.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
+        demoUrl:
+            "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
         disclaimer: null,
         companyUrl: null,
     },
@@ -314,16 +315,14 @@ const portfolio = [
     {
         id: 9,
         openSource: true,
-        image: "./assets/images/portfolio/discogra.jpg",
-        modalImage: "./assets/images/portfolio/discogra.jpg",
-        title: "Discogra: Music Finder",
-        techSkills: [1, 5, 6, 18, 23, 27, 31],
+        image: "./assets/images/portfolio/previous-portfolio.jpg",
+        modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
+        title: "My Previous Web Portfolio",
+        techSkills: [1, 3, 4, 5, 6, 23, 27],
         details:
-            "A tool using the Discogs.com API and the YouTube API to help users find music they are interested in. Renders dynamic results based on user input. Utilizes local storage to store persistent user data such as saving of users input and data including genres related to searches and previous search history.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
-        demoUrl:
-            "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
+            "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
+        gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
+        demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
         disclaimer: null,
         companyUrl: null,
     },
@@ -344,20 +343,6 @@ const portfolio = [
     },
     {
         id: 11,
-        openSource: true,
-        image: "./assets/images/portfolio/previous-portfolio.jpg",
-        modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
-        title: "My Previous Web Portfolio",
-        techSkills: [1, 3, 4, 5, 6, 23, 27],
-        details:
-            "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
-        gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
-        demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
-    {
-        id: 12,
         openSource: false,
         image: "./assets/images/portfolio/ts-inc.jpg",
         modalImage: "./assets/images/portfolio/ts-inc.jpg",
@@ -370,6 +355,21 @@ const portfolio = [
         disclaimer:
             "The software I worked on is proprietary so links to the source code and demo is not available.",
         companyUrl: "https://ts-inc.com/",
+    },
+    {
+        id: 12,
+        openSource: false,
+        image: "./assets/images/portfolio/zachry-group.jpg",
+        modalImage: "./assets/images/portfolio/zachry-group.jpg",
+        title: "Zachry Group IT Projects",
+        techSkills: [1, 5, 6, 7, 8, 10, 12, 14, 15, 26, 30, 32, 35, 38],
+        details:
+            "My intern project was adopted as the project timekeeping system for the IT Department. It integrated with historical software records via SOAP protocol. I was the lead developer on a mobile Windows Surface app to keep track of industrial plant construction progress in locations without reliable internet connection. I maintained all of the corporate WordPress sites and worked with clients to add features and updates.",
+        gitHubUrl: null,
+        demoUrl: null,
+        disclaimer:
+            "The software I worked on is proprietary so links to the source code and demo is not available.",
+        companyUrl: "https://zachrygroup.com/",
     },
 ];
 
