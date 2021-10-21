@@ -5,18 +5,21 @@ import { badges } from "../utils/data";
 
 const PortfolioAlt = () => {
     const [projectData, setProjectData] = useState(null);
+
     const handlePortfolioCardClick = (event) => {
         const clickedProjectsId =
             event.target.closest(".portfolio-card").dataset.id;
+
         const selectedProjectData = portfolio.find(
             (x) => x.id === parseInt(clickedProjectsId)
         );
+
         selectedProjectData.techSkills = getBadges(
             selectedProjectData.techSkills
         );
-        console.log(selectedProjectData);
         setProjectData(selectedProjectData);
     };
+
     const getBadges = (arr) => {
         const returnArray = [];
         arr.forEach((element) => {
@@ -24,6 +27,7 @@ const PortfolioAlt = () => {
         });
         return returnArray;
     };
+
     return (
         <>
             <section className="bg-light pt-9 pb-10">

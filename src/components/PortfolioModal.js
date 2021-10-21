@@ -57,27 +57,16 @@ const PortfolioModal = ({ projectData }) => {
                                                     )}
                                                 </div>
                                                 <div>
-                                                    <p>
-                                                        A Twitter content
-                                                        containerizer. Create an
-                                                        account and build custom
-                                                        feeds out of their
-                                                        favorite Twitter users.
-                                                        These feeds can be
-                                                        shared (links), followed
-                                                        and experienced as a
-                                                        group using the comment
-                                                        section. This creates a
-                                                        new way to experience
-                                                        any interest, from a
-                                                        live sporting event to
-                                                        your favorite
-                                                        personalities or any
-                                                        other subject.
-                                                    </p>
+                                                    <p>{projectData.details}</p>
                                                 </div>
                                                 <div className="btn-group mt-2 container">
-                                                    <a href="/" target="_blank">
+                                                    <a
+                                                        href={
+                                                            projectData.demoUrl
+                                                        }
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
                                                         <button className="btn bg-light m-1">
                                                             <div>
                                                                 <i className="icon-monitor fs-60"></i>
@@ -85,7 +74,13 @@ const PortfolioModal = ({ projectData }) => {
                                                             <div>View Demo</div>
                                                         </button>
                                                     </a>
-                                                    <a href="/" target="_blank">
+                                                    <a
+                                                        href={
+                                                            projectData.gitHubUrl
+                                                        }
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
                                                         <button className="btn bg-light m-1">
                                                             <div>
                                                                 <i className="icon-github fs-60"></i>
@@ -99,8 +94,8 @@ const PortfolioModal = ({ projectData }) => {
                                             </div>
                                             <div className="col-md-6">
                                                 <img
-                                                    src="./assets/images/demo/image-square-3.jpg"
-                                                    alt="blah"
+                                                    src={projectData.modalImage}
+                                                    alt={projectData.title}
                                                 />
                                             </div>
                                         </div>

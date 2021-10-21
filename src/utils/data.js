@@ -205,39 +205,51 @@ const portfolio = [
     },
     {
         id: 2,
-        image: "./assets/images/portfolio/cool-tech-blog.jpg",
+        image: "/assets/images/portfolio/cool-tech-blog.jpg",
+        modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
         title: "Cool Tech Blog",
+        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 34, 35],
+        details:
+            "A fullstack MVC tech blog. The project has dashboard to create, read, update and delete blog posts for the admin. Individual pages for users to create accounts, login and logout using the site using authentication and session management. The ability for users comment on blog posts and for admins to delete them.",
         gitHubUrl:
             "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
         demoUrl: "https://mighty-earth-36141.herokuapp.com/",
-        details: "test",
     },
     {
         id: 3,
         image: "./assets/images/portfolio/discogra.jpg",
+        modalImage: "./assets/images/portfolio/discogra.jpg",
         title: "Discogra: Music Finder",
+        techSkills: [1, 5, 6, 18, 23, 27, 31],
+        details:
+            "A tool using the Discogs.com API and the YouTube API to help users find music they are interested in. Renders dynamic results based on user input. Utilizes local storage to store persistent user data such as saving of users input and data including genres related to searches and previous search history.",
         gitHubUrl:
             "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
         demoUrl:
             "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
-        details: "test",
     },
     {
         id: 4,
         image: "./assets/images/portfolio/previous-portfolio.jpg",
+        modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
         title: "My Previous Web Portfolio",
+        techSkills: [1, 3, 4, 5, 6, 23, 27],
+        details:
+            "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
         gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
         demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
-        details: "test",
     },
     {
         id: 5,
         image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
         title: "DavidTunnell.com",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
+        details:
+            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
         gitHubUrl:
             "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
         demoUrl: "https://www.davidtunnell.com/",
-        details: "test",
     },
     {
         id: 6,
