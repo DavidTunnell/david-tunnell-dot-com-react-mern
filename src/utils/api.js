@@ -1,8 +1,8 @@
-const fetchCreate = (url, blog) => {
+const fetchCreate = (url, data) => {
     return fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(blog),
+        body: JSON.stringify(data),
     })
         .then((res) => {
             if (!res.ok) {
