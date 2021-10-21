@@ -67,6 +67,7 @@ const Contact = () => {
                 contactEntry
             ).then((returnData) => {
                 if (returnData) {
+                    sendEmail(contactEntry);
                     setUserFeedback(
                         "Your message has been received. Thank you."
                     );
@@ -94,6 +95,15 @@ const Contact = () => {
                 }
             });
         }
+    };
+
+    const sendEmail = async (contactEntry) => {
+        await fetchCreate(
+            process.env.REACT_APP_BASE_URL + "/api/contact/email",
+            contactEntry
+        ).then((returnData) => {
+            console.log(returnData);
+        });
     };
 
     //https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
