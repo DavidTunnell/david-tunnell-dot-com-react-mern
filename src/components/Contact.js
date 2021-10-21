@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { fetchCreate } from "../utils/api";
 
@@ -7,6 +7,8 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [isVisible, setIsVisible] = useState({ visibility: "hidden" });
 
     const recaptchaRef = React.createRef();
 
@@ -19,39 +21,41 @@ const Contact = () => {
         const { name, value } = e.target;
         switch (name) {
             case "name":
-                setName(value);
-                break;
+                return setName(value);
             case "email":
-                setEmail(value);
-                break;
+                return setEmail(value);
             case "phone":
-                setPhone(value);
-                break;
+                return setPhone(value);
             case "message":
-                setMessage(value);
-                break;
+                return setMessage(value);
             default:
                 console.log(`Error, invalid input field.`);
         }
     };
-
     const handleFormSubmit = async (e) => {
         //check for suspicious activity with Invisible reCAPTCHA - https://www.npmjs.com/package/react-google-recaptcha
         recaptchaRef.current.execute();
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
+        //Get button to inform user
         const contactEntry = { name, email, phone, message };
         await fetchCreate(
             process.env.REACT_APP_BASE_URL + "/api/contact/",
             contactEntry
         ).then((returnData) => {
             if (returnData.length !== 0) {
-                console.log("success");
+                setName("");
+                setEmail("");
+                setPhone("");
+                setMessage("");
+                setIsButtonDisabled(true);
+                setIsVisible({ visibility: "visible" });
             } else {
-                console.log("fail");
+                console.log("Error: " + returnData);
             }
         });
     };
+
     return (
         <>
             <section className="bg-light pt-10 pb-10">
@@ -75,6 +79,7 @@ const Contact = () => {
                                             placeholder="Name"
                                             name="name"
                                             onChange={handleInputChange}
+                                            value={name}
                                         />
                                     </div>
                                     <div className="col">
@@ -84,6 +89,7 @@ const Contact = () => {
                                             placeholder="Email"
                                             name="email"
                                             onChange={handleInputChange}
+                                            value={email}
                                         />
                                     </div>
                                     <div className="col">
@@ -93,6 +99,7 @@ const Contact = () => {
                                             placeholder="Phone"
                                             name="phone"
                                             onChange={handleInputChange}
+                                            value={phone}
                                         />
                                     </div>
                                 </div>
@@ -100,11 +107,11 @@ const Contact = () => {
                                     <div className="col">
                                         <textarea
                                             className="form-control form-control-minimal"
-                                            id="exampleFormControlTextarea1"
                                             rows="3"
                                             placeholder="Your Message"
                                             name="message"
                                             onChange={handleInputChange}
+                                            value={message}
                                         ></textarea>
                                     </div>
                                 </div>
@@ -122,9 +129,17 @@ const Contact = () => {
                                         <button
                                             className="btn btn-primary px-5"
                                             onClick={handleFormSubmit}
+                                            disabled={isButtonDisabled}
                                         >
                                             Send Mail
                                         </button>
+                                        <span
+                                            className="ml-5 text-success"
+                                            style={isVisible}
+                                        >
+                                            Your message has been received.
+                                            Thank you.
+                                        </span>
                                     </div>
                                 </div>
                             </form>
