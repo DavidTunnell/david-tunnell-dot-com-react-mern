@@ -9,12 +9,12 @@ const PortfolioAlt = () => {
     const handlePortfolioCardClick = (event) => {
         const clickedProjectsId =
             event.target.closest(".portfolio-card").dataset.id;
-
+        console.log(clickedProjectsId);
         const selectedProjectData = portfolio.find(
             (x) => x.id === parseInt(clickedProjectsId)
         );
 
-        selectedProjectData.techSkills = getBadges(
+        selectedProjectData.techSkillsData = getBadges(
             selectedProjectData.techSkills
         );
         setProjectData(selectedProjectData);

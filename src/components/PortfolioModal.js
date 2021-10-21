@@ -39,7 +39,7 @@ const PortfolioModal = ({ projectData }) => {
                                                     </b>
                                                 </h2>
                                                 <div className="mb-2">
-                                                    {projectData.techSkills.map(
+                                                    {projectData.techSkillsData.map(
                                                         (element) => (
                                                             <div
                                                                 className="badge badge-pill badge-success"

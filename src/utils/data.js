@@ -192,7 +192,7 @@ const skills = [
 
 const portfolio = [
     {
-        id: 5,
+        id: 1,
         openSource: true,
         image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
         modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
@@ -207,7 +207,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 10,
+        id: 2,
         openSource: false,
         image: "./assets/images/portfolio/lmi.jpg",
         modalImage: "./assets/images/portfolio/lmi.jpg",
@@ -222,7 +222,7 @@ const portfolio = [
         companyUrl: "https://www.lmi.org/",
     },
     {
-        id: 1,
+        id: 3,
         openSource: true,
         image: "./assets/images/portfolio/feedster.jpg",
         modalImage: "./assets/images/portfolio/feedster.jpg",
@@ -237,7 +237,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 12,
+        id: 4,
         openSource: false,
         image: "./assets/images/portfolio/smart.jpg",
         modalImage: "./assets/images/portfolio/smart.jpg",
@@ -252,7 +252,7 @@ const portfolio = [
         companyUrl: "https://www.smartscholarship.org/smart",
     },
     {
-        id: 2,
+        id: 5,
         openSource: true,
         image: "/assets/images/portfolio/cool-tech-blog.jpg",
         modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
@@ -267,7 +267,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 9,
+        id: 6,
         openSource: false,
         image: "./assets/images/portfolio/zachry-group.jpg",
         modalImage: "./assets/images/portfolio/zachry-group.jpg",
@@ -282,7 +282,7 @@ const portfolio = [
         companyUrl: "https://zachrygroup.com/",
     },
     {
-        id: 6,
+        id: 7,
         openSource: true,
         image: "./assets/images/portfolio/microblog.jpg",
         modalImage: "./assets/images/portfolio/microblog.jpg",
@@ -297,7 +297,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 11,
+        id: 8,
         openSource: false,
         image: "./assets/images/portfolio/hintd.jpg",
         modalImage: "./assets/images/portfolio/hintd.jpg",
@@ -312,7 +312,7 @@ const portfolio = [
         companyUrl: "https://hinted.com/",
     },
     {
-        id: 3,
+        id: 9,
         openSource: true,
         image: "./assets/images/portfolio/discogra.jpg",
         modalImage: "./assets/images/portfolio/discogra.jpg",
@@ -328,7 +328,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 7,
+        id: 10,
         openSource: false,
         image: "./assets/images/portfolio/gerimed.jpg",
         modalImage: "./assets/images/portfolio/gerimed.jpg",
@@ -343,7 +343,7 @@ const portfolio = [
         companyUrl: "https://www.gerimedgso.com/pharmacy-type/ltc-pharmacies/",
     },
     {
-        id: 4,
+        id: 11,
         openSource: true,
         image: "./assets/images/portfolio/previous-portfolio.jpg",
         modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
@@ -357,7 +357,7 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 8,
+        id: 12,
         openSource: false,
         image: "./assets/images/portfolio/ts-inc.jpg",
         modalImage: "./assets/images/portfolio/ts-inc.jpg",
