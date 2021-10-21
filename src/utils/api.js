@@ -1,4 +1,4 @@
-const fetchCreate = (url, data) => {
+const fetchCreate = async (url, data) => {
     return fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

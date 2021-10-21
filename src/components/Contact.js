@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { fetchCreate } from "../utils/api";
 
 const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
+
+    const recaptchaRef = React.createRef();
+
+    function onChange(value) {
+        console.log("Captcha value:", value);
+    }
 
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
@@ -27,13 +35,22 @@ const Contact = () => {
         }
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
+        //check for suspicious activity with Invisible reCAPTCHA - https://www.npmjs.com/package/react-google-recaptcha
+        recaptchaRef.current.execute();
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
-        console.log(name);
-        console.log(email);
-        console.log(phone);
-        console.log(message);
+        const contactEntry = { name, email, phone, message };
+        await fetchCreate(
+            process.env.REACT_APP_BASE_URL + "/api/contact/",
+            contactEntry
+        ).then((returnData) => {
+            if (returnData.length !== 0) {
+                console.log("success");
+            } else {
+                console.log("fail");
+            }
+        });
     };
     return (
         <>
@@ -93,6 +110,15 @@ const Contact = () => {
                                 </div>
                                 <div className="form-row mt-3">
                                     <div className="col">
+                                        <ReCAPTCHA
+                                            ref={recaptchaRef}
+                                            size="invisible"
+                                            sitekey={
+                                                process.env
+                                                    .REACT_APP_GOOGLE_SITE_KEY
+                                            }
+                                            onChange={onChange}
+                                        />
                                         <button
                                             className="btn btn-primary px-5"
                                             onClick={handleFormSubmit}

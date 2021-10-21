@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const microBlogSchema = new Schema({
+const contactSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
     },
-    title: String,
-    body: String,
-    author: String,
+    name: String,
+    email: String,
+    phone: String,
+    message: String,
 });
 
 // microBlogSchema.methods.getTotalDuration = function () {
@@ -20,6 +21,6 @@ const microBlogSchema = new Schema({
 //     return sum;
 // };
 
-const microBlog = mongoose.model("microBlog", microBlogSchema);
+const contact = mongoose.model("contact", contactSchema);
 
-module.exports = microBlog;
+module.exports = contact;
