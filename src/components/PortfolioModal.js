@@ -58,6 +58,13 @@ const PortfolioModal = ({ projectData }) => {
                                                 </div>
                                                 <div>
                                                     <p>{projectData.details}</p>
+                                                    {projectData.disclaimer && (
+                                                        <p>
+                                                            {
+                                                                projectData.disclaimer
+                                                            }
+                                                        </p>
+                                                    )}
                                                 </div>
                                                 <div className="btn-group mt-2 container">
                                                     <a

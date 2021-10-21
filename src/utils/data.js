@@ -192,7 +192,38 @@ const skills = [
 
 const portfolio = [
     {
+        id: 5,
+        openSource: true,
+        image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+        title: "DavidTunnell.com",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
+        details:
+            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
+        demoUrl: "https://www.davidtunnell.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 10,
+        openSource: false,
+        image: "./assets/images/portfolio/lmi.jpg",
+        modalImage: "./assets/images/portfolio/lmi.jpg",
+        title: "LMI IT Projects",
+        techSkills: [24, 25, 28, 29, 30, 31, 32],
+        details:
+            "I manage a team of 13 people and multi-million dollar budget to deliver complex software solutions and system integrations utilizing critical platforms as the ServiceNow Platform Lead that the organization as a whole relies on every day to complete work. To do this I continually motivated a diverse group of individuals while pursing relentless improvement and managing the needs of the all of the departments within the organization. This requires the need to make design and technical decisions with my team and delegating who is responsible for the implementation.",
+        gitHubUrl: null,
+        demoUrl: null,
+        disclaimer:
+            "The software I worked on is proprietary so links to the source code and demo is not available.",
+        companyUrl: "https://www.lmi.org/",
+    },
+    {
         id: 1,
+        openSource: true,
         image: "./assets/images/portfolio/feedster.jpg",
         modalImage: "./assets/images/portfolio/feedster.jpg",
         title: "Feedster",
@@ -202,9 +233,27 @@ const portfolio = [
         gitHubUrl:
             "https://github.com/DavidTunnell/feedster-content-containerizer-twitter-api-node-express-mysql-handlebars-sequelize-mvc-fullstack",
         demoUrl: "http://feedster-twitter.herokuapp.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 12,
+        openSource: false,
+        image: "./assets/images/portfolio/smart.jpg",
+        modalImage: "./assets/images/portfolio/smart.jpg",
+        title: "SMART DoD Scholarships",
+        techSkills: [7, 19, 25, 28, 29, 30, 32, 33],
+        details:
+            "The SMART Program provides STEM students with the tools needed to pursue higher education with a full scholarship and begin a career with the DoD. Helped turn around the project from a difficult situation. Developed Unit Tests, Page Object Models (XPath), and Gherkin based step automation using a proprietary .NET based automation testing framework build with NUnit, Selenium, and SpecFlow, coded in C#. Participated as a critical part of a fully Agile SCRUM team in all ceremonies. Hands on ServiceNow testing experience building manual test cases for complex requirements.",
+        gitHubUrl: null,
+        demoUrl: "https://www.smartscholarship.org/smart",
+        disclaimer:
+            "The software I worked on is proprietary so a link to the source code is not available. The official site contains the app I worked on, although much of the functionality is behind authentication.",
+        companyUrl: "https://www.smartscholarship.org/smart",
     },
     {
         id: 2,
+        openSource: true,
         image: "/assets/images/portfolio/cool-tech-blog.jpg",
         modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
         title: "Cool Tech Blog",
@@ -214,9 +263,57 @@ const portfolio = [
         gitHubUrl:
             "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
         demoUrl: "https://mighty-earth-36141.herokuapp.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 9,
+        openSource: false,
+        image: "./assets/images/portfolio/zachry-group.jpg",
+        modalImage: "./assets/images/portfolio/zachry-group.jpg",
+        title: "Zachry Group IT Projects",
+        techSkills: [1, 5, 6, 7, 8, 10, 12, 14, 15, 26, 30, 32, 35, 38],
+        details:
+            "My intern project was adopted as the project timekeeping system for the IT Department. It integrated with historical software records via SOAP protocol. I was the lead developer on a mobile Windows Surface app to keep track of industrial plant construction progress in locations without reliable internet connection. I maintained all of the corporate WordPress sites and worked with clients to add features and updates.",
+        gitHubUrl: null,
+        demoUrl: null,
+        disclaimer:
+            "The software I worked on is proprietary so links to the source code and demo is not available.",
+        companyUrl: "https://zachrygroup.com/",
+    },
+    {
+        id: 6,
+        openSource: true,
+        image: "./assets/images/portfolio/microblog.jpg",
+        modalImage: "./assets/images/portfolio/microblog.jpg",
+        title: "Microblog",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 23, 24, 27, 34, 35],
+        details:
+            "A fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the 'Full Modern React YouTube Tutorial' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. React-Router-Dom is used for URL routing, URL parameters, browser history stack usage, and linking without calling the server.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
+        demoUrl: "https://sheltered-river-02202.herokuapp.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 11,
+        openSource: false,
+        image: "./assets/images/portfolio/hintd.jpg",
+        modalImage: "./assets/images/portfolio/hintd.jpg",
+        title: "Hinted",
+        techSkills: [1, 5, 6, 8, 9, 12, 13, 16, 29],
+        details:
+            "A place where you can create lists of what you want to buy and discover what’s new and trending. Every day, you’ll discover new, exciting things on Hinted from curators, influencers, and most importantly, your friends. Worked as part of a remote professional team building out new functionality and fixing bugs as quested by the client via JIRA Kanban. Quickly picked up a new framework (Laravel) and provided meaningful contributions to the project quickly as a contractor.",
+        gitHubUrl: null,
+        demoUrl: "https://hinted.com/",
+        disclaimer:
+            "The software I worked on is proprietary so a link to the source code is not available. The official site contains the app I worked on.",
+        companyUrl: "https://hinted.com/",
     },
     {
         id: 3,
+        openSource: true,
         image: "./assets/images/portfolio/discogra.jpg",
         modalImage: "./assets/images/portfolio/discogra.jpg",
         title: "Discogra: Music Finder",
@@ -227,9 +324,27 @@ const portfolio = [
             "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
         demoUrl:
             "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+    {
+        id: 7,
+        openSource: false,
+        image: "./assets/images/portfolio/gerimed.jpg",
+        modalImage: "./assets/images/portfolio/gerimed.jpg",
+        title: "GeriMed",
+        techSkills: [1, 5, 6, 7, 12, 14, 24, 35, 36, 37, 38],
+        details:
+            "A group purchasing content management system for long term care pharmacies to manage and purchase perceptions for their clients. I was part of a fully remote professional team building new features and fixing bugs using a Kanban style workflow.",
+        gitHubUrl: null,
+        demoUrl: null,
+        disclaimer:
+            "The software I worked on is proprietary so links to the source code and demo is not available.",
+        companyUrl: "https://www.gerimedgso.com/pharmacy-type/ltc-pharmacies/",
     },
     {
         id: 4,
+        openSource: true,
         image: "./assets/images/portfolio/previous-portfolio.jpg",
         modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
         title: "My Previous Web Portfolio",
@@ -238,75 +353,23 @@ const portfolio = [
             "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
         gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
         demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
-    },
-    {
-        id: 5,
-        image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        title: "DavidTunnell.com",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
-        details:
-            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
-        demoUrl: "https://www.davidtunnell.com/",
-    },
-    {
-        id: 6,
-        image: "./assets/images/portfolio/microblog.jpg",
-        title: "Microblog",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
-        demoUrl: "https://sheltered-river-02202.herokuapp.com/",
-        details: "test",
-    },
-    {
-        id: 7,
-        image: "./assets/images/portfolio/gerimed.jpg",
-        title: "GeriMed",
-        gitHubUrl: null,
-        demoUrl: "https://www.gerimedgso.com/pharmacy-type/ltc-pharmacies/",
-        details: "test",
+        disclaimer: null,
+        companyUrl: null,
     },
     {
         id: 8,
+        openSource: false,
         image: "./assets/images/portfolio/ts-inc.jpg",
-        title: "Transfer Solutions",
+        modalImage: "./assets/images/portfolio/ts-inc.jpg",
+        title: "Visual Fast Mutual Fund Software",
+        techSkills: [7, 11, 14, 38],
+        details:
+            "A  powerful, scalable, flexible and cost effective transfer agency system that reduces shareholder servicing costs, increases servicing capabilities, and simplifies integration and customization. I worked with the founder to enhance the platform with new functionality requested by clients.",
         gitHubUrl: null,
-        demoUrl: "https://ts-inc.com/",
-        details: "test",
-    },
-    {
-        id: 9,
-        image: "./assets/images/portfolio/zachry-group.jpg",
-        title: "Zachry Group",
-        gitHubUrl: null,
-        demoUrl: "https://zachrygroup.com/",
-        details: "test",
-    },
-    {
-        id: 10,
-        image: "./assets/images/portfolio/lmi.jpg",
-        title: "LMI",
-        gitHubUrl: null,
-        demoUrl: "https://www.lmi.org/",
-        details: "test",
-    },
-    {
-        id: 11,
-        image: "./assets/images/portfolio/hintd.jpg",
-        title: "Hintd",
-        gitHubUrl: null,
-        demoUrl: "https://hinted.com/",
-        details: "test",
-    },
-    {
-        id: 12,
-        image: "./assets/images/portfolio/smart.jpg",
-        title: "SMART DoD Scholarships",
-        gitHubUrl: null,
-        demoUrl: "https://www.smartscholarship.org/smart",
-        details: "test",
+        demoUrl: null,
+        disclaimer:
+            "The software I worked on is proprietary so links to the source code and demo is not available.",
+        companyUrl: "https://ts-inc.com/",
     },
 ];
 
@@ -565,6 +628,24 @@ const badges = [
         id: 35,
         name: "Fullstack",
         bgColor: "#f94144",
+        textColor: "#FFFFFF",
+    },
+    {
+        id: 36,
+        name: "AngularJS",
+        bgColor: "#e22f35",
+        textColor: "#FFFFFF",
+    },
+    {
+        id: 37,
+        name: "ASP.NET MVC",
+        bgColor: "#0a72bb",
+        textColor: "#FFFFFF",
+    },
+    {
+        id: 38,
+        name: ".NET Framework",
+        bgColor: "#663f94",
         textColor: "#FFFFFF",
     },
 ];
