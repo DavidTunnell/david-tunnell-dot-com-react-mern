@@ -8,13 +8,13 @@ const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
                     <div className="container py-5">
                         <div className="row justify-content-between align-items-center">
                             <div className="col-md-5 text-center text-md-left">
-                                <ul className="nav">
+                                {/* <ul className="nav">
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/login">
                                             Login
                                         </Link>
                                     </li>
-                                </ul>
+                                </ul> */}
                             </div>
                             <div className="col-md-2 text-center">
                                 <Link

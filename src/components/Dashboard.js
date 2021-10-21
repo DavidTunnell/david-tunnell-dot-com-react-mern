@@ -52,7 +52,7 @@ const Dashboard = () => {
                                                             <div className="form-row">
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="firstName">
+                                                                        <label htmlFor="firstName">
                                                                             First
                                                                             Name
                                                                         </label>
@@ -67,7 +67,7 @@ const Dashboard = () => {
                                                                 </div>
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="secondName">
+                                                                        <label htmlFor="secondName">
                                                                             Second
                                                                             Name
                                                                         </label>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                                                             <div className="form-row">
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="userMail">
+                                                                        <label htmlFor="userMail">
                                                                             Email
                                                                             address
                                                                         </label>
@@ -119,7 +119,7 @@ const Dashboard = () => {
                                                             <div className="form-row">
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="userCity">
+                                                                        <label htmlFor="userCity">
                                                                             City
                                                                         </label>
                                                                         <input
@@ -133,7 +133,7 @@ const Dashboard = () => {
                                                                 </div>
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="userCountry">
+                                                                        <label htmlFor="userCountry">
                                                                             Country
                                                                         </label>
                                                                         <input
@@ -149,7 +149,7 @@ const Dashboard = () => {
                                                             <div className="form-row">
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="userTwitter">
+                                                                        <label htmlFor="userTwitter">
                                                                             Twitter
                                                                         </label>
                                                                         <div className="input-group">
@@ -173,7 +173,7 @@ const Dashboard = () => {
                                                             <div className="form-row">
                                                                 <div className="col">
                                                                     <div className="form-group">
-                                                                        <label for="exampleFormControlTextarea1">
+                                                                        <label htmlFor="exampleFormControlTextarea1">
                                                                             About
                                                                         </label>
                                                                         <textarea

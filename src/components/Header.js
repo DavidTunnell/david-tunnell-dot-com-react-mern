@@ -81,7 +81,7 @@ const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
                                     </a>
                                 </li>
                             </ul>
-                            <ul className="navbar-nav align-items-center mr-0">
+                            {/* <ul className="navbar-nav align-items-center mr-0">
                                 <li className="nav-item dropdown">
                                     <Link
                                         className="nav-link dropdown-toggle"
@@ -113,7 +113,7 @@ const Header = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
                                         </Link>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </nav>
                 </div>

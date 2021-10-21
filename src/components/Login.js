@@ -31,7 +31,7 @@ const Login = () => {
                                         <div className="accordion-content-wrapper">
                                             <form>
                                                 <div className="form-group">
-                                                    <label for="exampleFormControlInput1">
+                                                    <label htmlFor="exampleFormControlInput1">
                                                         Email address
                                                     </label>
                                                     <input
@@ -42,7 +42,7 @@ const Login = () => {
                                                     />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label for="exampleFormControlInput2">
+                                                    <label htmlFor="exampleFormControlInput2">
                                                         Password
                                                     </label>
                                                     <input
