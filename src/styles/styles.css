@@ -23,28 +23,6 @@
     }
 }
 
-.btn:focus {
-    outline: none !important;
-    outline-offset: none !important;
-}
-
-.btn:active,
-.btn:focus {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-    outline: 0;
-}
-
-.btn-default:focus {
-    outline: none;
-    box-shadow: none;
-}
-.btn-default:focus {
-    background-color: #fff;
-    border-color: #ccc;
-}
-.btn:focus {
-    background-color: #fff;
-    border-color: #ccc;
+.error-feedback {
+    color: red !important;
 }

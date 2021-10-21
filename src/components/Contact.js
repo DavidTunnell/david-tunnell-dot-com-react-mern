@@ -7,8 +7,12 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
-    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [isDisabled, setIsDisabled] = useState(false);
     const [isVisible, setIsVisible] = useState({ visibility: "hidden" });
+    const [errorFeedback, setErrorFeedback] = useState("");
+    const [userFeedback, setUserFeedback] = useState(
+        "Your message has been received. Thank you."
+    );
 
     const recaptchaRef = React.createRef();
 
@@ -40,18 +44,28 @@ const Contact = () => {
         //Get button to inform user
         const contactEntry = { name, email, phone, message };
         await fetchCreate(
-            process.env.REACT_APP_BASE_URL + "/api/contact/",
+            process.env.REACT_APP_BASE_URL + "/api/contact1/",
             contactEntry
         ).then((returnData) => {
-            if (returnData.length !== 0) {
+            if (returnData) {
                 setName("");
                 setEmail("");
                 setPhone("");
                 setMessage("");
-                setIsButtonDisabled(true);
+                setIsDisabled(true);
                 setIsVisible({ visibility: "visible" });
             } else {
-                console.log("Error: " + returnData);
+                console.log("Error submitting form.");
+                setIsDisabled(true);
+                setName("");
+                setEmail("");
+                setPhone("");
+                setMessage("");
+                setUserFeedback("There was an error, please try again later.");
+                setIsVisible({
+                    visibility: "visible",
+                });
+                setErrorFeedback("error-feedback");
             }
         });
     };
@@ -80,6 +94,7 @@ const Contact = () => {
                                             name="name"
                                             onChange={handleInputChange}
                                             value={name}
+                                            disabled={isDisabled}
                                         />
                                     </div>
                                     <div className="col">
@@ -90,6 +105,7 @@ const Contact = () => {
                                             name="email"
                                             onChange={handleInputChange}
                                             value={email}
+                                            disabled={isDisabled}
                                         />
                                     </div>
                                     <div className="col">
@@ -100,6 +116,7 @@ const Contact = () => {
                                             name="phone"
                                             onChange={handleInputChange}
                                             value={phone}
+                                            disabled={isDisabled}
                                         />
                                     </div>
                                 </div>
@@ -112,6 +129,7 @@ const Contact = () => {
                                             name="message"
                                             onChange={handleInputChange}
                                             value={message}
+                                            disabled={isDisabled}
                                         ></textarea>
                                     </div>
                                 </div>
@@ -129,16 +147,15 @@ const Contact = () => {
                                         <button
                                             className="btn btn-primary px-5"
                                             onClick={handleFormSubmit}
-                                            disabled={isButtonDisabled}
+                                            disabled={isDisabled}
                                         >
                                             Send Mail
                                         </button>
                                         <span
-                                            className="ml-5 text-success"
+                                            className={`ml-5 text-success user-feedback ${errorFeedback}`}
                                             style={isVisible}
                                         >
-                                            Your message has been received.
-                                            Thank you.
+                                            {userFeedback}
                                         </span>
                                     </div>
                                 </div>
