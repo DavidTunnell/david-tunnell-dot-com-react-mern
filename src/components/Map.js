@@ -38,10 +38,10 @@ const MapTest = () => {
                         }
                     ></GoogleMapReact>
                 </div>
-                <div className="col position-absolute mt-10 pt-1">
-                    <div class="container">
+                <div className="col position-absolute mt-10">
+                    <div className="container">
                         <div>
-                            <div className="boxed m-2 p-2">
+                            <div className="boxed contact-card m-2 p-3">
                                 <h2>Available Remote</h2>
                                 <ul className="list-group list-group-line">
                                     <li className="list-group-item d-flex align-items-center">
@@ -50,7 +50,9 @@ const MapTest = () => {
                                     </li>
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-mail fs-24 text-blue"></i>
-                                        <span>davidtunnell9@gmail.com</span>
+                                        <span className="email-text">
+                                            davidtunnell9@gmail.com
+                                        </span>
                                     </li>
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-phone2 fs-24 text-blue"></i>
