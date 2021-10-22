@@ -1,21 +1,24 @@
-@media only screen and (max-width: 600px) {
-    .mobile-modal {
-        margin: 0.1em;
-        padding: 0;
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .contact-card-container {
-        padding: 6em 2em 2em 2em !important;
-    }
-}
-
 .error-feedback {
     color: red !important;
 }
 
 .grecaptcha-badge {
     visibility: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+    .mobile-center {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* .boxed {
+        padding: 4em 0.5em 0.5em 1em !important;
+    } */
+    .mobile-modal {
+        margin: 0.1em;
+        padding: 0;
+        width: 100%;
+    }
 }

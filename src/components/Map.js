@@ -38,10 +38,10 @@ const MapTest = () => {
                         }
                     ></GoogleMapReact>
                 </div>
-                <div className="col position-absolute">
-                    <div className="row">
-                        <div className="col-lg-5 p-10 mt-1 contact-card-container">
-                            <div className="boxed p-4 contact-card">
+                <div className="col position-absolute mt-10 pt-1">
+                    <div class="container">
+                        <div>
+                            <div className="boxed m-2 p-2">
                                 <h2>Available Remote</h2>
                                 <ul className="list-group list-group-line">
                                     <li className="list-group-item d-flex align-items-center">
