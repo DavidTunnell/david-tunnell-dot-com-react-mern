@@ -13,7 +13,7 @@ const PortfolioModal = ({ projectData }) => {
                 aria-hidden="true"
             >
                 <div
-                    className="modal-dialog modal-dialog-centered modal-xl"
+                    className="modal-dialog modal-dialog-centered modal-xl modal-larger"
                     role="document"
                 >
                     <div className="modal-content">
@@ -70,7 +70,7 @@ const PortfolioModal = ({ projectData }) => {
                                                     )}
                                                 </div>
                                                 {projectData.openSource ? (
-                                                    <div className="btn-group mt-2 container mobile-modal">
+                                                    <div className="btn-group mt-2 container mobile-modal ">
                                                         <a
                                                             href={
                                                                 projectData.demoUrl
@@ -79,7 +79,7 @@ const PortfolioModal = ({ projectData }) => {
                                                             rel="noreferrer"
                                                         >
                                                             <button
-                                                                className="btn bg-light m-1"
+                                                                className="btn bg-light m-1 mobile-buttons"
                                                                 type="button"
                                                                 onClick={(
                                                                     e
@@ -105,7 +105,7 @@ const PortfolioModal = ({ projectData }) => {
                                                             rel="noreferrer"
                                                         >
                                                             <button
-                                                                className="btn bg-light m-1"
+                                                                className="btn bg-light m-1 mobile-buttons"
                                                                 type="button"
                                                                 onClick={(
                                                                     e
@@ -149,7 +149,7 @@ const PortfolioModal = ({ projectData }) => {
                                                     </div>
                                                 )}
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-image">
                                                 <img
                                                     src={projectData.modalImage}
                                                     alt={projectData.title}

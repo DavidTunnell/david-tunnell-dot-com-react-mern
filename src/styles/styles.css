@@ -22,6 +22,9 @@
     .contact-card {
         width: 33% !important;
     }
+    .modal-larger {
+        max-width: 1200px;
+    }
 }
 
 @media only screen and (min-width: 1600px) {
@@ -38,8 +41,29 @@
     }
 }
 
+@media only screen and (max-width: 1199px) {
+    .mobile-modal {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .modal-image {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 @media only screen and (max-width: 350px) {
     .email-text {
         font-size: 0.8rem !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .mobile-buttons {
+        padding: 0.75em !important;
+        margin-left: 0rem !important;
+    }
+    .mobile-buttons .m-1 {
+        margin-left: 0rem !important;
     }
 }

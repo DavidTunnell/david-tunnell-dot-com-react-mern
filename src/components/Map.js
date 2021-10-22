@@ -1,7 +1,7 @@
 import GoogleMapReact from "google-map-react";
 import { googleMapsArguments } from "../utils/mapSettings";
 
-const MapTest = () => {
+const Map = () => {
     const handleApiLoaded = (map, maps) => {
         // use map and maps objects
         const marker = new maps.Marker({
@@ -69,4 +69,4 @@ const MapTest = () => {
     );
 };
 
-export default MapTest;
+export default Map;
