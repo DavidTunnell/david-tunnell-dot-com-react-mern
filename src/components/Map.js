@@ -17,7 +17,7 @@ const MapTest = () => {
     };
 
     const styles = {
-        mapStyles: { height: "40em", width: "100%" },
+        mapStyles: { height: "35em" },
         preventRunoff: { overflow: "hidden" },
     };
 
@@ -40,9 +40,9 @@ const MapTest = () => {
                 </div>
                 <div className="col position-absolute">
                     <div className="row">
-                        <div className="col-lg-5 pt-10 mt-1 ml-10 pl-10 info-card-parent">
-                            <div className="boxed p-5 w-75 info-card">
-                                <h2>Available Remote / Worldwide</h2>
+                        <div className="col-lg-5 p-10 mt-1 contact-card-container">
+                            <div className="boxed p-4 contact-card">
+                                <h2>Available Remote</h2>
                                 <ul className="list-group list-group-line">
                                     <li className="list-group-item d-flex align-items-center">
                                         <i className="icon-map-pin2 fs-24 text-blue"></i>

@@ -3,7 +3,7 @@ const googleMapsArguments = {
         lat: 29.45916909688631,
         lng: -98.63856639845606,
     },
-    zoom: 12,
+    zoom: 11,
     stylesLight: [
         {
             elementType: "geometry",
