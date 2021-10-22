@@ -1,4 +1,4 @@
-# DavidTunnell.com
+# DavidTunnell.com - A Fullstack MERN Portfolio
 
 DavidTunnell.com is my home on the internet to showcase my experience, projects, resume, relevant links and contact information. In other words, it's my web portfolio. It is a Fullstack app with a React front-end and a Node.js/Express.js backend. The primary purpose of the server is to serve the React build directory and act as an API for the contact form, data submitted there is emailed to me and saved to a MongoDB.
 
