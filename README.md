@@ -1,4 +1,4 @@
-# Microblog - A Fullstack MERN App built with React, Node.js, Express.js, MongoDB and Mongoose
+# DavidTunnell.com - A Fullstack MERN App built with React, Node.js, Express.js, MongoDB and Mongoose
 
 ---
 
@@ -68,28 +68,29 @@ As far as deploying, the react project (root directory) contains the start comma
 
 Followed are the available API calls which are completely independent of the front end. If this is deployed replace `http://localhost:8000` with the correct domain information.
 
--   GET - http://localhost:8000/api/blogs/ - Get all microblogs
--   GET - http://localhost:8000/api/blogs/id - Get a specific microblog by id
-    -   Example return:
-    ```
-        {
-            "_id": "6168c32df1af5d117bfa154b",
-            "createdAt": "2021-10-12T23:54:21.147Z",
-            "title": "The standard Lorem Ipsum passage, used since the 1500s",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author": "Mario"
-        }
-    ```
--   DELETE - http://localhost:8000/api/blogs/id - Delete a specific microblog by id
--   POST - http://localhost:3001/api/feeds/ - create a new microblog
+-   POST - http://localhost:8000/api/contact/ - save record of contact form entry
 
     -   Body JSON example:
 
     ```
         {
-            "title": "Example title",
-            "body": "Example details.",
-            "author": "Mario"
+            "name": "David Tunnell",
+            "email": "cool@email.com",
+            "phone": "555-555-5555",
+            "message": "This is a test.",
+        }
+    ```
+
+-   POST - http://localhost:8000/api/email/ - email contact form data
+
+    -   Body JSON example:
+
+    ```
+        {
+            "name": "David Tunnell",
+            "email": "cool@email.com",
+            "phone": "555-555-5555",
+            "message": "This is a test.",
         }
     ```
 
@@ -97,16 +98,8 @@ Followed are the available API calls which are completely independent of the fro
 
 ### Homepage
 
-![Homepage](./assets/homepage.png)
+![Homepage](./assets/homepage-screenshot.png)
 
-### Post Details
+### Project Modal
 
-![Post Details](./assets/details.png)
-
-### Create Microblog
-
-![Create Microblog](./assets/create.png)
-
-### 404 Not found
-
-![404 Not found](./assets/404.png)
+![Project Modal](./assets/project-modal-screenshot.png)
