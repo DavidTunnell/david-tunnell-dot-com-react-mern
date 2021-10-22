@@ -13,6 +13,7 @@ const MapTest = () => {
         map.setOptions({
             styles: googleMapsArguments.stylesDark,
             disableDefaultUI: true,
+            gestureHandling: "none",
         });
     };
 
