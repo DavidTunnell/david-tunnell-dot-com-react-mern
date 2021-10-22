@@ -1,68 +1,31 @@
-# DavidTunnell.com - A Fullstack MERN App built with React, Node.js, Express.js, MongoDB and Mongoose
+# DavidTunnell.com
 
----
+DavidTunnell.com is my home on the internet to showcase my experience, projects, resume, relevant links and contact information. In other words, it's my web portfolio. It is a Fullstack app with a React front-end and a Node.js/Express.js backend. The primary purpose of the server is to serve the React build directory and act as an API for the contact form, data submitted there is emailed to me and saved to a MongoDB.
 
-TODO:
+The basis of the project was built on another one of my repositories. Since you can't fork your own repos, I had to clone the code to this new repo. [Microblog can be found here](https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express) for its source code and commit history. I used a premium Bootstrap theme called [GO](https://themes.getbootstrap.com/product/go-multipurpose-landing-page-template/) as a basis for styling. Open source images were obtained from [Unsplash.com](https://unsplash.com/), open source vector graphics from [Undraw.co](https://undraw.co/) and logos from [other sources](https://svgporn.com/).
 
--   update front page to be finished portfolio
-
--   update structure to client server folders?
--   create account system and session system
--   Github pages deployment?
--   setup contact form email server and DB saving
--   add scrolling skills section? https://i.imgur.com/qQL0JQi.png but with go template scrolling companies section?
-
-modal styles:
-https://mdbootstrap.com/docs/b4/jquery/modals/additional/ - https://i.imgur.com/8CEPGPB.png
-
----
-
-https://unsplash.com/photos/QwoNAhbmLLo
-svgporn.com
-https://themes.getbootstrap.com/product/go-multipurpose-landing-page-template/
-https://undraw.co/
-
-Microblog is a fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the '[Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. More details can be found in the [server folder](https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express/tree/main/server).
-
-[A live demo can be found here.](https://sheltered-river-02202.herokuapp.com/)
-
-It has the following features and functionality.
-
--   Independent [React](https://reactjs.org/) components and sub-components for the navbar, homepage, 404 page, create, list and view details of microblogs
--   View all created posts on the homepage
--   Create new microblog posts
--   See the details of a post
--   Delete an existing post
--   Dynamic interactivity with React based click and load events
--   Usage of state for data, user entry, API data loading feedback and more
--   UseEffect React data loading and custom hook creation
--   Utilization of AbortController to prevent errors based on user entry
--   API error handling on both client and server side
--   Dynamic URL routing via [react-router-dom](https://www.npmjs.com/package/react-router-dom)
--   Data persistence using [MongoDB](https://www.mongodb.com/)
--   Serves the React front end application via build folder
--   Connects to a MongoDB NoSQL database for data persistence
--   Models, connects and interacts with data/database using Mongoose
--   Provides an API for CRUD operations to the database server for the react application
--   Seed functionality to populate the collection with documents
--   Nodemon for more pleasant development
+[A live demo can be found here.](http://david-tunnell-dot-com.herokuapp.com/)
 
 This project uses the following technologies/libraries.
 
 -   [React](https://reactjs.org/) as a Fast and Powerful Frontend
+-   [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) to showcase my location as part of the homepage
+-   [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) as a CSS Framework
+-   [GO Bootstrap Template](https://themes.getbootstrap.com/product/go-multipurpose-landing-page-template/) as a template that was imported into React
+-   [React-Google-Recaptcha](https://www.npmjs.com/package/react-google-recaptcha) in invisible mode to prevent bots from spamming the contact form
 -   [Create-React-App](https://github.com/facebook/create-react-app) for project bootstrapping
 -   [React-Router-Dom](https://www.npmjs.com/package/react-router-dom) for URL routing, URL parameters, Browser History Stack Usage, and Linking without Calling the Server
 -   [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP Requests and Serving the React Build Directory Frontend
 -   [MongoDB](https://www.mongodb.com/) as a NoSQL Database
 -   [Mongoose](https://mongoosejs.com/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Collection Generation and Seeding
+-   [Nodemailer](https://nodemailer.com/about/) to send emails when the contact form is submitted
+-   [Nodemon](https://nodemon.io/) for more pleasant Node.js development
 
 ## Installation
 
-This repo consists of two independent projects that, for development at least, need to be setup separately. After cloning the repo to your system, run `npm i` at the project root to get the node project dependencies for the react project and then update the file `.env.EXAMPLE` to `.env` and change any settings if necessary. For development purposes use the command `npm run start-client` as `npm start` has a more complex script used for deployment. The application will be available by default at `http://localhost:3000/` if you are using a local development environment.
+This repo consists of two independent projects, a react client and a node server. The start command (`npm run build && (cd server && npm i && npm start)`) will allow them both able to be run on deployment to the same server. The dev command (`concurrently \"cd server && npm run dev\" \"react-scripts start\"`) allows both to run locally for development as well. You need to install Concurrently for this command to work. It can be installed with `npm install -g concurrently`.
 
-Then in a separate terminal navigate to the server folder. This project folder will need its own independent running of `npm install` to get node_module dependencies. Rename .`env.EXAMPLE` to `.env` so that the database name is available for local development. It's assumed you already have MongoDB running on your development computer. Run `npm run seed` in this folder to seed the database. As is present in the script section of `package.json` there are several other available commands as well. `npm run start` will start the server but for development `npm run dev` is recommended.
-
-As far as deploying, the react project (root directory) contains the start command needed to both build the react app and run the node server. However, it may not be easily accessible so the following two commands should be run via Heroku or other cloud server provider. First run npm run `post-install-server` to install the servers node modules and then `post-install-seed` to seed the database.
+After cloning the repo to your system, run `npm i` at the project root and on `./server/`to get the node project dependencies for both client and server projects and then update the files `.env.EXAMPLE` to `.env` in both projects and change any settings if necessary. The application will be available by default at `http://localhost:3000/` and API will be at `http://localhost:8000/` if you are using a local development environment. It's assumed you already have MongoDB running on your development computer.
 
 ## API Calls
 
