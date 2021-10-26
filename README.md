@@ -9,16 +9,17 @@ The basis of the project was built on another one of my repositories. Since you 
 This project uses the following technologies/libraries.
 
 -   [React](https://reactjs.org/) as a Fast and Powerful Frontend
--   [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) to showcase my location as part of the homepage
+-   [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) to Showcase My Location as Part of the Homepage
 -   [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) as a CSS Framework
--   [GO Bootstrap Template](https://themes.getbootstrap.com/product/go-multipurpose-landing-page-template/) as a template that was imported into React
--   [React-Google-Recaptcha](https://www.npmjs.com/package/react-google-recaptcha) in invisible mode to prevent bots from spamming the contact form
--   [Create-React-App](https://github.com/facebook/create-react-app) for project bootstrapping
--   [React-Router-Dom](https://www.npmjs.com/package/react-router-dom) for URL routing, URL parameters, Browser History Stack Usage, and Linking without Calling the Server
+-   [GO Bootstrap Template](https://themes.getbootstrap.com/product/go-multipurpose-landing-page-template/) as a Template that was Imported into React
+-   [React-Google-Recaptcha](https://www.npmjs.com/package/react-google-recaptcha) in Invisible Mode to Prevent Bots from Spamming the Contact Form
+-   [React-Ga](https://www.npmjs.com/package/react-ga) to Track Website Traffic data with Google Analytics
+-   [Create-React-App](https://github.com/facebook/create-react-app) for Project Bootstrapping
+-   [React-Router-Dom](https://www.npmjs.com/package/react-router-dom) for URL Routing, URL Parameters, Browser History Stack Usage, and Linking without Calling the Server
 -   [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP Requests and Serving the React Build Directory Frontend
 -   [MongoDB](https://www.mongodb.com/) as a NoSQL Database
 -   [Mongoose](https://mongoosejs.com/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Collection Generation and Seeding
--   [Nodemailer](https://nodemailer.com/about/) to send emails when the contact form is submitted
+-   [Nodemailer](https://nodemailer.com/about/) to Send Emails when the Contact Form is Submitted
 -   [Nodemon](https://nodemon.io/) for more pleasant Node.js development
 
 ## Installation

@@ -5,13 +5,17 @@ import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import ReactGA from "react-ga";
 //top use the react router package, surround the whole app with the router component
 function App() {
     const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
     const gitHubUrl = "https://github.com/DavidTunnell";
     const stackOverflowUrl =
         "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
+
+    //initialize and track google analytics - https://www.npmjs.com/package/react-ga
+    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_UA);
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
     //smooth scroll to top - used for on click links to same page
     const toTop = () => {
