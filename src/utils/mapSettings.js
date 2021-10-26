@@ -1,9 +1,11 @@
+//options for the google maps visual in the maps component, includes zoom, light and dark theme, location(lat, long), and pin graphic url
 const googleMapsArguments = {
     center: {
         lat: 29.45916909688631,
         lng: -98.63856639845606,
     },
     zoom: 11,
+    pin: "./assets/images/pin.svg",
     stylesLight: [
         {
             elementType: "geometry",
@@ -353,6 +355,5 @@ const googleMapsArguments = {
             ],
         },
     ],
-    pin: "./assets/images/pin.svg",
 };
 export { googleMapsArguments };

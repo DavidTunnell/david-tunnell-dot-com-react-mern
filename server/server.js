@@ -16,6 +16,7 @@ app.use(express.json());
 //serve react build folder
 app.use(express.static(path.join(__dirname, "..", "build")));
 
+//connect to MongoDB
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/" + process.env.DB_NAME,
     {
@@ -29,6 +30,7 @@ mongoose.connect(
 // Sets up the routes
 app.use(routes);
 
+//start server
 app.listen(PORT, () => {
     console.log(`Node running at: http://localhost:${PORT}`);
 });

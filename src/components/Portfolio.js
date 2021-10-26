@@ -6,6 +6,7 @@ import { badges } from "../utils/data";
 const PortfolioAlt = () => {
     const [projectData, setProjectData] = useState(null);
 
+    //on project card click, get relevant data for modal and set with state
     const handlePortfolioCardClick = (event) => {
         const clickedProjectsId =
             event.target.closest(".portfolio-card").dataset.id;
@@ -18,6 +19,7 @@ const PortfolioAlt = () => {
         setProjectData(selectedProjectData);
     };
 
+    //get badges from an elements array of ids 
     const getBadges = (arr) => {
         const returnArray = [];
         arr.forEach((element) => {

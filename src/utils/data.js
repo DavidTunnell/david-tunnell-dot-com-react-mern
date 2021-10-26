@@ -1,3 +1,4 @@
+//data for skill component
 const skills = [
     {
         graphic: "./assets/images/skills/sequelize.svg",
@@ -190,6 +191,7 @@ const skills = [
     },
 ];
 
+//data for portfolio cards and modals
 const portfolio = [
     {
         id: 1,
@@ -373,6 +375,7 @@ const portfolio = [
     },
 ];
 
+//placeholder data for carrousel component
 const carrouselCards = [
     {
         image: "./assets/images/carrousel/travel-1.jpg",
@@ -418,6 +421,7 @@ const carrouselCards = [
     },
 ];
 
+//portfolio tech/skill badge details for modals
 const badges = [
     {
         id: 1,

@@ -3,6 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { fetchCreate } from "../utils/api";
 
 const Contact = () => {
+    //state management
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -13,13 +14,15 @@ const Contact = () => {
     const [userFeedback, setUserFeedback] = useState(
         "Your message has been received. Thank you."
     );
-
+    //The component instance has some utility functions that can be called. These can be accessed via ref.
     const recaptchaRef = React.createRef();
 
+    //show that captcha is working
     function onChange(value) {
         console.log("Captcha value:", value);
     }
 
+    //handle state on user input
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
         const { name, value } = e.target;
@@ -36,67 +39,75 @@ const Contact = () => {
                 console.log(`Error, invalid input field.`);
         }
     };
+
+    //validate, save form data to mongoDB and send an email with form data on submit
     const handleFormSubmit = async (e) => {
         //check for suspicious activity with Invisible reCAPTCHA - https://www.npmjs.com/package/react-google-recaptcha
         recaptchaRef.current.execute();
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
 
+        //first validate entry
         if (
             name.length === 0 ||
             email.length === 0 ||
             phone.length === 0 ||
             message.length === 0
         ) {
-            setIsVisible({ visibility: "visible" });
-            setErrorFeedback("error-feedback");
-            setUserFeedback("Please make sure to fill out all fields.");
+            validationFeedback("Please make sure to fill out all fields.");
         } else if (!validateEmail(email)) {
-            setIsVisible({ visibility: "visible" });
-            setErrorFeedback("error-feedback");
-            setUserFeedback("Please use a valid email address.");
+            validationFeedback("Please use a valid email address.");
         } else if (!validatePhoneNumber(phone)) {
-            setIsVisible({ visibility: "visible" });
-            setErrorFeedback("error-feedback");
-            setUserFeedback("Please use a valid phone number.");
+            validationFeedback("Please use a valid phone number.");
         } else {
-            //Get button to inform user
             const contactEntry = { name, email, phone, message };
+            //save to db
             await fetchCreate(
                 process.env.REACT_APP_BASE_URL + "/api/contact/",
                 contactEntry
             ).then((returnData) => {
                 if (returnData) {
+                    //send email with form data
                     sendEmail(contactEntry);
-                    setUserFeedback(
-                        "Your message has been received. Thank you."
+                    //clear form and disable it
+                    clearDisableForm(
+                        "Your message has been received. Thank you.",
+                        ""
                     );
-                    setName("");
-                    setEmail("");
-                    setPhone("");
-                    setMessage("");
-                    setIsDisabled(true);
-                    setErrorFeedback("");
-                    setIsVisible({ visibility: "visible" });
                 } else {
                     console.log("Error submitting form.");
-                    setIsDisabled(true);
-                    setName("");
-                    setEmail("");
-                    setPhone("");
-                    setMessage("");
-                    setUserFeedback(
-                        "There was an error, please try again later."
+                    //clear form and disable it
+                    clearDisableForm(
+                        "There was an error, please try again later.",
+                        "error-feedback"
                     );
-                    setIsVisible({
-                        visibility: "visible",
-                    });
-                    setErrorFeedback("error-feedback");
                 }
             });
         }
     };
 
+    //clear and disable form after entry
+    const clearDisableForm = (feedback, errorFeedbackClass) => {
+        setIsDisabled(true);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setUserFeedback(feedback);
+        setIsVisible({
+            visibility: "visible",
+        });
+        setErrorFeedback(errorFeedbackClass);
+    };
+
+    //provide user with validation feedback
+    const validationFeedback = (feedback) => {
+        setIsVisible({ visibility: "visible" });
+        setErrorFeedback("error-feedback");
+        setUserFeedback(feedback);
+    };
+
+    //send an email to site owner with contact form data
     const sendEmail = async (contactEntry) => {
         await fetchCreate(
             process.env.REACT_APP_BASE_URL + "/api/contact/email",

@@ -1,6 +1,7 @@
 import { carrouselCards } from "../utils/data";
 
 const Portfolio = () => {
+    //prevent screen overflow
     const styles = {
         preventRunoff: { overflow: "hidden" },
     };

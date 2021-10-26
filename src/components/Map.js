@@ -16,7 +16,8 @@ const Map = () => {
             gestureHandling: "none",
         });
     };
-
+    
+    //styling for map
     const styles = {
         mapStyles: { height: "35em" },
         preventRunoff: { overflow: "hidden" },

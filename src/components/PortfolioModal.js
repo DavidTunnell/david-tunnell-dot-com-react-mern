@@ -1,4 +1,5 @@
 const PortfolioModal = ({ projectData }) => {
+    //prevent button from staying active after click
     const removeActive = (e) => {
         e.target.closest("button").blur();
     };

@@ -1,6 +1,7 @@
 import { skills } from "../utils/data";
 
 const Skills = () => {
+    //set skill/tech graphics size
     const styles = {
         graphics: {
             height: "100px",
@@ -9,7 +10,6 @@ const Skills = () => {
     };
     return (
         <>
-            {/* separator-top */}
             <section className="bg-white">
                 <div className="container pt-4 pb-4">
                     <div className="row justify-content-center">

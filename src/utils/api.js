@@ -1,3 +1,4 @@
+//generic create fetch function
 const fetchCreate = async (url, data) => {
     return fetch(url, {
         method: "POST",
@@ -15,6 +16,7 @@ const fetchCreate = async (url, data) => {
         });
 };
 
+//generic delete fetch function
 const fetchDelete = (url, id) => {
     return fetch(url + id, {
         method: "DELETE",

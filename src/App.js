@@ -12,6 +12,8 @@ function App() {
     const gitHubUrl = "https://github.com/DavidTunnell";
     const stackOverflowUrl =
         "https://stackoverflow.com/users/1524210/david-tunnell?tab=profile";
+
+    //smooth scroll to top - used for on click links to same page
     const toTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
