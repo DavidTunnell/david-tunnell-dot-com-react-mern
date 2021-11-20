@@ -196,20 +196,21 @@ const portfolio = [
     {
         id: 1,
         openSource: true,
-        image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        title: "DavidTunnell.com",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
+        image: "./assets/images/portfolio/upstudy.io.jpg",
+        modalImage: "./assets/images/portfolio/upstudy.io.jpg",
+        title: "Upstudy.io",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 27, 31, 35, 39, 40],
         details:
-            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
+            "Upstudy is a new way to find relevant learning content by allowing the highest quality material for any subject rise to the top. Currently, there are many different places to look when searching for study material on a particular topic. You might find results at YouTube, Khan Academy or Stack Overflow but which is the best place to spend your time learning? Upstudy allows users to delve into specific study topics and be presented with the top content links as voted by the community as well as meta discussions and moderation on the study topic.",
         gitHubUrl:
-            "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
-        demoUrl: "https://www.davidtunnell.com/",
-        disclaimer: null,
+            "https://github.com/DavidTunnell/upstudy-fullstack-react-redux-graphql-apollo-server-node-express-mongodb",
+        demoUrl: "https://upstudy.herokuapp.com/",
+        disclaimer:
+            "I am actively developing this app and the demo server is updated and tested on.",
         companyUrl: null,
     },
     {
-        id: 2,
+        id: 3,
         openSource: false,
         image: "./assets/images/portfolio/lmi.jpg",
         modalImage: "./assets/images/portfolio/lmi.jpg",
@@ -224,7 +225,7 @@ const portfolio = [
         companyUrl: "https://www.lmi.org/",
     },
     {
-        id: 3,
+        id: 4,
         openSource: true,
         image: "./assets/images/portfolio/feedster.jpg",
         modalImage: "./assets/images/portfolio/feedster.jpg",
@@ -239,7 +240,23 @@ const portfolio = [
         companyUrl: null,
     },
     {
-        id: 4,
+        id: 2,
+        openSource: true,
+        image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+        title: "DavidTunnell.com",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
+        details:
+            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
+        demoUrl: "https://www.davidtunnell.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+
+    {
+        id: 5,
         openSource: false,
         image: "./assets/images/portfolio/smart.jpg",
         modalImage: "./assets/images/portfolio/smart.jpg",
@@ -254,37 +271,7 @@ const portfolio = [
         companyUrl: "https://www.smartscholarship.org/smart",
     },
     {
-        id: 5,
-        openSource: true,
-        image: "/assets/images/portfolio/cool-tech-blog.jpg",
-        modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
-        title: "Cool Tech Blog",
-        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 34, 35],
-        details:
-            "A fullstack MVC tech blog. The project has dashboard to create, read, update and delete blog posts for the admin. Individual pages for users to create accounts, login and logout using the site using authentication and session management. The ability for users comment on blog posts and for admins to delete them.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
-        demoUrl: "https://mighty-earth-36141.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
-    {
-        id: 6,
-        openSource: true,
-        image: "./assets/images/portfolio/microblog.jpg",
-        modalImage: "./assets/images/portfolio/microblog.jpg",
-        title: "Microblog",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 23, 24, 27, 34, 35],
-        details:
-            "A fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the 'Full Modern React YouTube Tutorial' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. React-Router-Dom is used for URL routing, URL parameters, browser history stack usage, and linking without calling the server.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
-        demoUrl: "https://sheltered-river-02202.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
-    {
-        id: 7,
+        id: 8,
         openSource: true,
         image: "./assets/images/portfolio/discogra.jpg",
         modalImage: "./assets/images/portfolio/discogra.jpg",
@@ -299,8 +286,25 @@ const portfolio = [
         disclaimer: null,
         companyUrl: null,
     },
+
     {
-        id: 8,
+        id: 7,
+        openSource: true,
+        image: "./assets/images/portfolio/microblog.jpg",
+        modalImage: "./assets/images/portfolio/microblog.jpg",
+        title: "Microblog",
+        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 23, 24, 27, 34, 35],
+        details:
+            "A fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the 'Full Modern React YouTube Tutorial' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. React-Router-Dom is used for URL routing, URL parameters, browser history stack usage, and linking without calling the server.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
+        demoUrl: "https://sheltered-river-02202.herokuapp.com/",
+        disclaimer: null,
+        companyUrl: null,
+    },
+
+    {
+        id: 9,
         openSource: false,
         image: "./assets/images/portfolio/hintd.jpg",
         modalImage: "./assets/images/portfolio/hintd.jpg",
@@ -315,21 +319,36 @@ const portfolio = [
         companyUrl: "https://hinted.com/",
     },
     {
-        id: 9,
+        id: 6,
         openSource: true,
-        image: "./assets/images/portfolio/previous-portfolio.jpg",
-        modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
-        title: "My Previous Web Portfolio",
-        techSkills: [1, 3, 4, 5, 6, 23, 27],
+        image: "/assets/images/portfolio/cool-tech-blog.jpg",
+        modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
+        title: "Cool Tech Blog",
+        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 34, 35],
         details:
-            "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
-        gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
-        demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
+            "A fullstack MVC tech blog. The project has dashboard to create, read, update and delete blog posts for the admin. Individual pages for users to create accounts, login and logout using the site using authentication and session management. The ability for users comment on blog posts and for admins to delete them.",
+        gitHubUrl:
+            "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
+        demoUrl: "https://mighty-earth-36141.herokuapp.com/",
         disclaimer: null,
         companyUrl: null,
     },
+    // {
+    //     id: 10,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/previous-portfolio.jpg",
+    //     modalImage: "./assets/images/portfolio/previous-portfolio.jpg",
+    //     title: "My Previous Web Portfolio",
+    //     techSkills: [1, 3, 4, 5, 6, 23, 27],
+    //     details:
+    //         "The previous iteration of my web portfolio. It has a Node.js/Express.js server to serve the index.html and associated files (which is vanilla JS/HTML/CSS) and to have an API call that allows for emails to be sent via the form via gmail servers using Nodemailer.",
+    //     gitHubUrl: "https://github.com/DavidTunnell/my-web-portfolio",
+    //     demoUrl: "https://david-tunnell-web-portfolio-v1.herokuapp.com/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
     {
-        id: 10,
+        id: 11,
         openSource: false,
         image: "./assets/images/portfolio/gerimed.jpg",
         modalImage: "./assets/images/portfolio/gerimed.jpg",
@@ -344,7 +363,7 @@ const portfolio = [
         companyUrl: "https://www.gerimedgso.com/pharmacy-type/ltc-pharmacies/",
     },
     {
-        id: 11,
+        id: 12,
         openSource: false,
         image: "./assets/images/portfolio/ts-inc.jpg",
         modalImage: "./assets/images/portfolio/ts-inc.jpg",
@@ -359,7 +378,7 @@ const portfolio = [
         companyUrl: "https://ts-inc.com/",
     },
     {
-        id: 12,
+        id: 13,
         openSource: false,
         image: "./assets/images/portfolio/zachry-group.jpg",
         modalImage: "./assets/images/portfolio/zachry-group.jpg",
@@ -650,6 +669,18 @@ const badges = [
         id: 38,
         name: ".NET Framework",
         bgColor: "#663f94",
+        textColor: "#FFFFFF",
+    },
+    {
+        id: 39,
+        name: "Redux",
+        bgColor: "#764abc",
+        textColor: "#FFFFFF",
+    },
+    {
+        id: 40,
+        name: "GraphQL",
+        bgColor: "#e00397",
         textColor: "#FFFFFF",
     },
 ];

@@ -5,7 +5,8 @@ const Hero = () => {
         "./assets/files/David-Tunnell-Resume-2021-ATS-Template.pdf";
     const onePageResumePdf =
         "./assets/files/David-Tunnell-Resume-2021-One-Page.pdf";
-    const bgColor = "#f94144";
+    // const bgColor = "#f94144";
+    const bgColor = "#e6574a";
     return (
         <>
             {/* to set !important in react: https://joshtronic.com/2018/03/22/how-to-important-inline-styles-in-react/ */}
