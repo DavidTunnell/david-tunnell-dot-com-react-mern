@@ -31,24 +31,25 @@ const Login = () => {
                                         <div className="accordion-content-wrapper">
                                             <form>
                                                 <div className="form-group">
-                                                    <label htmlFor="exampleFormControlInput1">
+                                                    <label htmlFor="email-field">
                                                         Email address
                                                     </label>
                                                     <input
                                                         type="email"
                                                         className="form-control"
-                                                        id="exampleFormControlInput1"
+                                                        id="email-field"
                                                         placeholder="name@example.com"
                                                     />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="exampleFormControlInput2">
+                                                    <label htmlFor="password-field">
                                                         Password
                                                     </label>
                                                     <input
                                                         type="password"
                                                         className="form-control"
-                                                        id="exampleFormControlInput2"
+                                                        placeholder="********"
+                                                        id="password-field"
                                                     />
                                                 </div>
                                                 <Link

@@ -21,6 +21,6 @@ const contactSchema = new Schema({
 //     return sum;
 // };
 
-const contact = mongoose.model("contact", contactSchema);
+const Contact = mongoose.model("contact", contactSchema);
 
-module.exports = contact;
+module.exports = Contact;

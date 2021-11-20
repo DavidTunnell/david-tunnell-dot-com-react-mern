@@ -1,7 +1,19 @@
 const router = require("express").Router();
-const { contact } = require("../models");
+const { Contact } = require("../models");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
+const { auth } = require("../middleware/Authorization");
+const {
+    RegisterUser,
+    LoginUser,
+    LogoutUser,
+    getUserDetails,
+} = require("../controllers/AuthenticationController");
+
+router.post("/users/register", RegisterUser);
+router.post("/users/login", LoginUser);
+router.get("/users/auth", auth, getUserDetails);
+router.get("/users/logout", auth, LogoutUser);
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
@@ -25,7 +37,7 @@ router.post("/contact/", (req, res) => {
             message: req.body.message,
         },
     ];
-    contact.create(contactData, function (err, results) {
+    Contact.create(contactData, function (err, results) {
         if (err) {
             res.status(400).json(err);
         }
