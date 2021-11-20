@@ -58,6 +58,34 @@ Followed are the available API calls which are completely independent of the fro
         }
     ```
 
+-   POST - http://localhost:8000/users/register/ - create user - Body JSON example:
+
+    ```
+        {
+            "email": "test@gmail.com",
+            "password": "12345",
+            "firstName": "David",
+            "lastName": "Tunnell"
+        }
+    ```
+
+-   POST - http://localhost:8000/users/login/ - login user - Body JSON example:
+
+    ```
+        {
+            "email": "test@gmail.com",
+            "password": "12345",
+        }
+    ```
+
+-   POST - http://localhost:8000/users/auth/ - get logged in user info/if they are authenticated
+
+-   GET - http://localhost:8000/users/logout/ - logout user
+
+    ```
+
+    ```
+
 ## Screenshots
 
 ### Homepage

@@ -7,7 +7,7 @@ exports.RegisterUser = async (req, res) => {
             return res.status(422).json({ errors: err });
         } else {
             const userData = {
-                firtsName: doc.firstName,
+                firstName: doc.firstName,
                 lastName: doc.lastName,
                 email: doc.email,
             };

@@ -62,7 +62,7 @@ userSchema.methods.comparePassword = function (candidatePassword, callBack) {
 //for generating token when loggedin
 userSchema.methods.generateToken = function (callBack) {
     var user = this;
-    var token = jwt.sign(user._id.toHexString(), process.env.SECRETE);
+    var token = jwt.sign(user._id.toHexString(), process.env.JWT_SECRET);
     user.token = token;
     user.save(function (err, user) {
         if (err) return callBack(err);
@@ -73,7 +73,7 @@ userSchema.methods.generateToken = function (callBack) {
 //validating token for auth routes middleware
 userSchema.statics.findByToken = function (token, callBack) {
     var user = this;
-    jwt.verify(token, process.env.SECRETE, function (err, decode) {
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decode) {
         //this decode must give user_id if token is valid .ie decode=user_id
 
         user.findOne({ _id: decode, token: token }, function (err, user) {
