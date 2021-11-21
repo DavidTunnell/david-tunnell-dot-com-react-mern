@@ -18,7 +18,7 @@ const Login = ({ userId, setUserId }) => {
             console.log(returnData);
             if (returnData.success) {
                 history.push("/dashboard");
-                setUserId(returnData.userData.userId);
+                setUserId(returnData.userData.userID);
             } else {
                 console.log("error logging in");
                 //TODO, show user whether login works or not - validation
