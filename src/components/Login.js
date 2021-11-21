@@ -6,6 +6,9 @@ import { useHistory } from "react-router-dom";
 const Login = ({ userId, setUserId }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const [showMessage, setShowMessage] = useState(false);
+
     const bgImage = "./assets/images/login-bg.jpg";
     useScrollToTop();
     //use react router history
@@ -18,10 +21,12 @@ const Login = ({ userId, setUserId }) => {
             if (returnData.success) {
                 history.push("/dashboard");
                 setUserId(returnData.userData.userID);
+                setShowMessage(false);
             } else {
                 console.log("error logging in");
                 //TODO, show user whether login works or not - validation
                 setUserId(null);
+                setShowMessage(true);
             }
         });
     };
@@ -95,6 +100,12 @@ const Login = ({ userId, setUserId }) => {
                                                     Sign In
                                                 </button>
                                             </form>
+                                            {showMessage && (
+                                                <div className="text-danger mt-4 text-center">
+                                                    Error logging in. Are the
+                                                    credentials correct?
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

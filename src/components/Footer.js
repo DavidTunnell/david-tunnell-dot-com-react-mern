@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 // import { fetchGet } from "../utils/api";
 import auth from "../utils/auth";
+import { useHistory } from "react-router-dom";
 
 const Footer = ({
     linkedInUrl,
@@ -23,14 +24,15 @@ const Footer = ({
                 logoutState();
             }
         });
-    }, [userId, userIsLoggedIn]);
-    //[userIsLoggedIn]
+    }, [userId, userIsLoggedIn, loginState, logoutState]);
+    const history = useHistory();
+
     const logoutHandler = () => {
         const isLoggedOut = auth.logout(userId);
         isLoggedOut.then((returnData) => {
-            console.log(returnData);
             logoutState();
             setUserId(null);
+            history.push("/login");
         });
     };
     return (
@@ -52,13 +54,12 @@ const Footer = ({
                                         </li>
                                     ) : (
                                         <li className="nav-item">
-                                            <Link
+                                            <span
                                                 className="nav-link"
-                                                to="/logout"
                                                 onClick={logoutHandler}
                                             >
                                                 Logout
-                                            </Link>
+                                            </span>
                                         </li>
                                     )}
                                 </ul>
