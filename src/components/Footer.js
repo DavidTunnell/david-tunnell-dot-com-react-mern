@@ -11,7 +11,7 @@ const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
         // }
         // let isloggedIn = isLoggedIn();
         console.log("every time?");
-        
+        auth.isAuthenticated();
     });
 
     // const isLoggedIn = async () => {

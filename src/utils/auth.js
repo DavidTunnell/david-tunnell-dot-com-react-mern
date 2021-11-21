@@ -1,10 +1,18 @@
 import { fetchGet, fetchCreate } from "./api";
 
 class AuthService {
-    async getLoggedInUser() {
+    getToken() {
+        // Retrieves the user token from localStorage
+        return localStorage.getItem("user_logged_in_token");
+    }
+
+    async isAuthenticated() {
         // return decode(this.getToken());
+        const userToken = this.getToken();
         await fetchGet(
-            process.env.REACT_APP_BASE_URL + "/api/users/auth/"
+            process.env.REACT_APP_BASE_URL +
+                "/api/users/auth?userToken=" +
+                userToken
         ).then((returnData) => {
             console.log(returnData);
             // if (returnData?.success) {
@@ -14,11 +22,6 @@ class AuthService {
             //     console.log("error logging in");
             // }
         });
-    }
-
-    getToken() {
-        // Retrieves the user token from localStorage
-        return localStorage.getItem("user_logged_in_token");
     }
 
     async login(loginInput) {
