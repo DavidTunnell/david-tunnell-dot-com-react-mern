@@ -1,8 +1,25 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import useScrollToTop from "../utils/useScrollToTop";
+import auth from "../utils/auth";
+import { useHistory } from "react-router-dom";
+
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const bgImage = "./assets/images/login-bg.jpg";
     useScrollToTop();
+    //use react router history
+    const history = useHistory();
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const loginInput = { email, password };
+        const isSuccessful = auth.login(loginInput);
+        if (isSuccessful) {
+            history.push("/dashboard");
+        } else {
+            console.log("error logging in");
+        }
+    };
     return (
         <>
             <div className="viewport">
@@ -39,6 +56,13 @@ const Login = () => {
                                                         className="form-control"
                                                         id="email-field"
                                                         placeholder="name@example.com"
+                                                        value={email}
+                                                        onChange={(event) => {
+                                                            setEmail(
+                                                                event.target
+                                                                    .value
+                                                            );
+                                                        }}
                                                     />
                                                 </div>
                                                 <div className="form-group">
@@ -50,14 +74,21 @@ const Login = () => {
                                                         className="form-control"
                                                         placeholder="********"
                                                         id="password-field"
+                                                        value={password}
+                                                        onChange={(event) => {
+                                                            setPassword(
+                                                                event.target
+                                                                    .value
+                                                            );
+                                                        }}
                                                     />
                                                 </div>
-                                                <Link
-                                                    to="/dashboard"
+                                                <button
+                                                    onClick={onSubmit}
                                                     className="btn btn-primary btn-block"
                                                 >
                                                     Sign In
-                                                </Link>
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
