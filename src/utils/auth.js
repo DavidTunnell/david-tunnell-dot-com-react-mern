@@ -42,21 +42,22 @@ class AuthService {
     }
 
     async logout(userId) {
-        await fetchGet(
+        // Clear user token and profile data from localStorage
+        localStorage.removeItem("user_logged_in_token");
+
+        return await fetchGet(
             process.env.REACT_APP_BASE_URL +
                 "/api/users/logout?userId=" +
                 userId
         ).then((returnData) => {
             console.log("logout in auth client side");
-            console.log(returnData.isAuth);
+            console.log(returnData);
             console.log("logout in auth client side");
-            if (!returnData?.isAuth) {
-                return false;
+            if (returnData?.success) {
+                return true;
             }
-            return "Something strange happened";
+            return false;
         });
-        // Clear user token and profile data from localStorage
-        localStorage.removeItem("user_logged_in_token");
     }
 
     // // check if user's logged in

@@ -23,12 +23,15 @@ const Footer = ({
                 logoutState();
             }
         });
-    });
+    }, [userId, userIsLoggedIn]);
     //[userIsLoggedIn]
     const logoutHandler = () => {
-        console.log("logoutHandler");
-        console.log(userId);
-        auth.logout(userId);
+        const isLoggedOut = auth.logout(userId);
+        isLoggedOut.then((returnData) => {
+            console.log(returnData);
+            logoutState();
+            setUserId(null);
+        });
     };
     return (
         <>
