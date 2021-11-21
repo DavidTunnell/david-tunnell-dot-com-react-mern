@@ -41,7 +41,20 @@ class AuthService {
         });
     }
 
-    logout() {
+    async logout(userId) {
+        await fetchGet(
+            process.env.REACT_APP_BASE_URL +
+                "/api/users/logout?userId=" +
+                userId
+        ).then((returnData) => {
+            console.log("logout in auth client side");
+            console.log(returnData.isAuth);
+            console.log("logout in auth client side");
+            if (!returnData?.isAuth) {
+                return false;
+            }
+            return "Something strange happened";
+        });
         // Clear user token and profile data from localStorage
         localStorage.removeItem("user_logged_in_token");
     }

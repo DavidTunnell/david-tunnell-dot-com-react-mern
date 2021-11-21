@@ -13,7 +13,7 @@ const {
 router.post("/users/register", RegisterUser);
 router.post("/users/login", LoginUser);
 router.get("/users/auth", auth, getUserDetails);
-router.get("/users/logout", auth, LogoutUser);
+router.get("/users/logout", LogoutUser);
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({

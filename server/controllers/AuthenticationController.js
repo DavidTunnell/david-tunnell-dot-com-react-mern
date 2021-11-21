@@ -63,7 +63,8 @@ exports.LoginUser = (req, res) => {
 };
 
 exports.LogoutUser = (req, res) => {
-    User.findByIdAndUpdate({ _id: req.user._id }, { token: "" }, (err) => {
+    let userId = req.query.userId;
+    User.findByIdAndUpdate({ _id: userId }, { token: "" }, (err) => {
         if (err) return res.json({ success: false, err });
         return res
             .status(200)

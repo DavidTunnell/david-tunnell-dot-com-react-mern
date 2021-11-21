@@ -15,7 +15,6 @@ const Login = ({ userId, setUserId }) => {
         const loginInput = { email, password };
         const loggedInUser = auth.login(loginInput);
         loggedInUser.then((returnData) => {
-            console.log(returnData);
             if (returnData.success) {
                 history.push("/dashboard");
                 setUserId(returnData.userData.userID);

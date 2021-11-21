@@ -28,6 +28,7 @@ const Footer = ({
     const logoutHandler = () => {
         console.log("logoutHandler");
         console.log(userId);
+        auth.logout(userId);
     };
     return (
         <>
