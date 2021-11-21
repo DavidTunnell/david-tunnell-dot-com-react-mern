@@ -6,8 +6,10 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ReactGA from "react-ga";
+import React, { useState, useEffect } from "react";
 //top use the react router package, surround the whole app with the router component
 function App() {
+    const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
     const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
     const gitHubUrl = "https://github.com/DavidTunnell";
     const stackOverflowUrl =
@@ -21,6 +23,14 @@ function App() {
     const toTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+    const loginState = () => {
+        setUserIsLoggedIn(true);
+    };
+    const logoutState = () => {
+        setUserIsLoggedIn(false);
+    };
+
     return (
         <Router>
             {/* ^ Here the app is wrapped with the router */}
@@ -59,6 +69,9 @@ function App() {
                     gitHubUrl={gitHubUrl}
                     stackOverflowUrl={stackOverflowUrl}
                     toTop={toTop}
+                    userIsLoggedIn={userIsLoggedIn}
+                    loginState={loginState}
+                    logoutState={logoutState}
                 />
             </div>
         </Router>

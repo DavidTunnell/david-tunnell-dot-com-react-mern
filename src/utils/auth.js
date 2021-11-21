@@ -9,18 +9,16 @@ class AuthService {
     async isAuthenticated() {
         // return decode(this.getToken());
         const userToken = this.getToken();
-        await fetchGet(
+        return await fetchGet(
             process.env.REACT_APP_BASE_URL +
                 "/api/users/auth?userToken=" +
                 userToken
         ).then((returnData) => {
-            console.log(returnData);
-            // if (returnData?.success) {
-            //     history.push("/dashboard");
-            // } else {
-            //     //validation error
-            //     console.log("error logging in");
-            // }
+            // console.log(returnData);
+            if (returnData?.isAuthenticated) {
+                return true;
+            }
+            return false;
         });
     }
 

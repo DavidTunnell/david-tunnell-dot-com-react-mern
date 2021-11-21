@@ -26,7 +26,6 @@ const fetchGet = async (url, data) => {
         body: JSON.stringify(data),
     })
         .then((res) => {
-            console.log(res);
             if (!res.ok) {
                 throw Error("Could not get the data.");
             }

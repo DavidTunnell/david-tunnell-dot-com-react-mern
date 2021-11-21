@@ -3,30 +3,27 @@ import { useState, useEffect } from "react";
 // import { fetchGet } from "../utils/api";
 import auth from "../utils/auth";
 
-const Footer = ({ linkedInUrl, gitHubUrl, stackOverflowUrl, toTop }) => {
+const Footer = ({
+    linkedInUrl,
+    gitHubUrl,
+    stackOverflowUrl,
+    toTop,
+    userIsLoggedIn,
+    loginState,
+    logoutState,
+}) => {
     useEffect(() => {
-        //if the user isn't logged in send them to login screen
-        // if (!Auth.loggedIn()) {
-        //     history.push("/login");
-        // }
-        // let isloggedIn = isLoggedIn();
         console.log("every time?");
-        auth.isAuthenticated();
+        console.log(userIsLoggedIn);
+        console.log(loginState);
+        console.log(logoutState);
+
+        auth.isAuthenticated().then((data) => {
+            console.log(data);
+            //set state in parent by passing function here
+        });
     });
 
-    // const isLoggedIn = async () => {
-    //     await fetchGet(
-    //         process.env.REACT_APP_BASE_URL + "/api/users/auth/"
-    //     ).then((returnData) => {
-    //         console.log(returnData);
-    //         // if (returnData?.success) {
-    //         //     history.push("/dashboard");
-    //         // } else {
-    //         //     //validation error
-    //         //     console.log("error logging in");
-    //         // }
-    //     });
-    // };
     // let isloggedIn = isLoggedIn();
     return (
         <>
