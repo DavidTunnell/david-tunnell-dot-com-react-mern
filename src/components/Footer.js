@@ -11,20 +11,24 @@ const Footer = ({
     userIsLoggedIn,
     loginState,
     logoutState,
+    userId,
+    setUserId,
 }) => {
     useEffect(() => {
-        console.log("every time?");
-        console.log(userIsLoggedIn);
-        console.log(loginState);
-        console.log(logoutState);
-
         auth.isAuthenticated().then((data) => {
-            console.log(data);
             //set state in parent by passing function here
+            if (data) {
+                loginState();
+            } else {
+                logoutState();
+            }
         });
     });
-
-    // let isloggedIn = isLoggedIn();
+    //[userIsLoggedIn]
+    const logoutHandler = () => {
+        console.log("logoutHandler");
+        console.log(userId);
+    };
     return (
         <>
             <footer className="bg-dark text-white">
@@ -33,16 +37,26 @@ const Footer = ({
                         <div className="row justify-content-between align-items-center">
                             <div className="col-md-5 text-center text-md-left">
                                 <ul className="nav">
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/login">
-                                            Login
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/login">
-                                            Test
-                                        </Link>
-                                    </li>
+                                    {!userIsLoggedIn ? (
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to="/login"
+                                            >
+                                                Login
+                                            </Link>
+                                        </li>
+                                    ) : (
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to="/logout"
+                                                onClick={logoutHandler}
+                                            >
+                                                Logout
+                                            </Link>
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
                             <div className="col-md-2 text-center">

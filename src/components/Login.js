@@ -3,7 +3,7 @@ import useScrollToTop from "../utils/useScrollToTop";
 import auth from "../utils/auth";
 import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ userId, setUserId }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const bgImage = "./assets/images/login-bg.jpg";
@@ -13,12 +13,18 @@ const Login = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const loginInput = { email, password };
-        const isSuccessful = auth.login(loginInput);
-        if (isSuccessful) {
-            history.push("/dashboard");
-        } else {
-            console.log("error logging in");
-        }
+        const loggedInUser = auth.login(loginInput);
+        loggedInUser.then((returnData) => {
+            console.log(returnData);
+            if (returnData.success) {
+                history.push("/dashboard");
+                setUserId(returnData.userData.userId);
+            } else {
+                console.log("error logging in");
+                //TODO, show user whether login works or not - validation
+                setUserId(null);
+            }
+        });
     };
     return (
         <>

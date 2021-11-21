@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 //top use the react router package, surround the whole app with the router component
 function App() {
     const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
+    const [userId, setUserId] = useState(null);
     const linkedInUrl = "https://www.linkedin.com/in/david-tunnell/";
     const gitHubUrl = "https://github.com/DavidTunnell";
     const stackOverflowUrl =
@@ -50,7 +51,7 @@ function App() {
                             <Home />
                         </Route>
                         <Route exact path="/login">
-                            <Login />
+                            <Login userId={userId} setUserId={setUserId} />
                         </Route>
                         <Route exact path="/dashboard">
                             <Dashboard />
@@ -72,6 +73,8 @@ function App() {
                     userIsLoggedIn={userIsLoggedIn}
                     loginState={loginState}
                     logoutState={logoutState}
+                    userId={userId}
+                    setUserId={setUserId}
                 />
             </div>
         </Router>

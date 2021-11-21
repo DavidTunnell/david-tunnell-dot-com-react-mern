@@ -23,17 +23,18 @@ class AuthService {
     }
 
     async login(loginInput) {
-        await fetchCreate(
+        return await fetchCreate(
             process.env.REACT_APP_BASE_URL + "/api/users/login/",
             loginInput
         ).then((returnData) => {
             if (returnData?.success) {
+                // console.log(returnData);
                 // Saves user token to localStorage
                 localStorage.setItem(
                     "user_logged_in_token",
                     returnData.userData.token
                 );
-                return true;
+                return returnData;
             } else {
                 return false;
             }
