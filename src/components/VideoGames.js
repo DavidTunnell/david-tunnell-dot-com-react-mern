@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { fetchGet } from "../utils/api";
+import { fetchGet, fetchDelete } from "../utils/api";
 import React, { useState } from "react";
 import moment from "moment";
 const VideoGames = () => {
@@ -16,7 +16,29 @@ const VideoGames = () => {
             );
         };
         getVgData();
-    }, [videoGames]);
+    }, []);
+
+    const handleDeleteRow = (event) => {
+        const deleteVgRecord = async (id) => {
+            await fetchDelete(
+                process.env.REACT_APP_BASE_URL + "/api/vg/" + id
+            ).then((returnData) => {
+                //filter out and update state
+                setVideoGames(filterOutId(id));
+            });
+        };
+        const userResponse = window.confirm(
+            "Are you sure you want to delete this?"
+        );
+        if (userResponse) {
+            const id = event.target.getAttribute("data-id");
+            deleteVgRecord(id);
+        }
+    };
+
+    const filterOutId = (id) => {
+        return videoGames.filter((el) => el._id !== id);
+    };
 
     return (
         <section className="viewport pt-2">
@@ -95,6 +117,9 @@ const VideoGames = () => {
                                                             <th scope="col">
                                                                 Date
                                                             </th>
+                                                            <th scope="col">
+                                                                Delete
+                                                            </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -104,7 +129,11 @@ const VideoGames = () => {
                                                                     gameBeaten,
                                                                     index
                                                                 ) => (
-                                                                    <tr>
+                                                                    <tr
+                                                                        key={
+                                                                            gameBeaten._id
+                                                                        }
+                                                                    >
                                                                         <th scope="row">
                                                                             {index +
                                                                                 1}
@@ -130,6 +159,23 @@ const VideoGames = () => {
                                                                             ).format(
                                                                                 "MM-DD-YYYY"
                                                                             )}
+                                                                        </td>
+                                                                        <td>
+                                                                            <span
+                                                                                class="btn btn-danger btn-xs"
+                                                                                data-id={
+                                                                                    gameBeaten._id
+                                                                                }
+                                                                                onClick={(
+                                                                                    event
+                                                                                ) =>
+                                                                                    handleDeleteRow(
+                                                                                        event
+                                                                                    )
+                                                                                }
+                                                                            >
+                                                                                Delete
+                                                                            </span>
                                                                         </td>
                                                                     </tr>
                                                                 )

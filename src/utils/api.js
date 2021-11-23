@@ -37,8 +37,8 @@ const fetchGet = async (url, data) => {
 };
 
 //generic delete fetch function
-const fetchDelete = (url, id) => {
-    return fetch(url + id, {
+const fetchDelete = (url) => {
+    return fetch(url, {
         method: "DELETE",
     })
         .then((res) => {
