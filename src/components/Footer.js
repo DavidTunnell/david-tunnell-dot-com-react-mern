@@ -53,14 +53,24 @@ const Footer = ({
                                             </Link>
                                         </li>
                                     ) : (
-                                        <li className="nav-item">
-                                            <span
-                                                className="nav-link"
-                                                onClick={logoutHandler}
-                                            >
-                                                Logout
-                                            </span>
-                                        </li>
+                                        <>
+                                            <li className="nav-item">
+                                                <span
+                                                    className="nav-link"
+                                                    onClick={logoutHandler}
+                                                >
+                                                    Logout
+                                                </span>
+                                            </li>
+                                            <li className="nav-item">
+                                                <Link
+                                                    className="nav-link"
+                                                    to="/dashboard"
+                                                >
+                                                    Dashboard
+                                                </Link>
+                                            </li>
+                                        </>
                                     )}
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/vg">
