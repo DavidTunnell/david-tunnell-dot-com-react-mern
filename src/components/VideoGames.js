@@ -1,5 +1,23 @@
+import { useEffect } from "react";
+import { fetchGet } from "../utils/api";
+import React, { useState } from "react";
+import moment from "moment";
 const VideoGames = () => {
     const bgImage = "./assets/images/original-uo-art.jpeg";
+    const [videoGames, setVideoGames] = useState();
+
+    useEffect(() => {
+        const getVgData = async () => {
+            await fetchGet(process.env.REACT_APP_BASE_URL + "/api/vg/").then(
+                (returnData) => {
+                    console.log(returnData);
+                    setVideoGames(returnData);
+                }
+            );
+        };
+        getVgData();
+    }, [videoGames]);
+
     return (
         <section className="viewport pt-2">
             <div
@@ -80,18 +98,42 @@ const VideoGames = () => {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <th scope="row">
-                                                                1
-                                                            </th>
-                                                            <td>
-                                                                The Legend of
-                                                                Zelda
-                                                            </td>
-                                                            <td></td>
-                                                            <td>NES</td>
-                                                            <td></td>
-                                                        </tr>
+                                                        {videoGames &&
+                                                            videoGames.map(
+                                                                (
+                                                                    gameBeaten,
+                                                                    index
+                                                                ) => (
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            {index +
+                                                                                1}
+                                                                        </th>
+                                                                        <td>
+                                                                            {
+                                                                                gameBeaten.title
+                                                                            }
+                                                                        </td>
+                                                                        <td>
+                                                                            {
+                                                                                gameBeaten.difficulty
+                                                                            }
+                                                                        </td>
+                                                                        <td>
+                                                                            {
+                                                                                gameBeaten.notes
+                                                                            }
+                                                                        </td>
+                                                                        <td>
+                                                                            {moment(
+                                                                                gameBeaten.date
+                                                                            ).format(
+                                                                                "MM-DD-YYYY"
+                                                                            )}
+                                                                        </td>
+                                                                    </tr>
+                                                                )
+                                                            )}
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -20,6 +20,7 @@ const Dashboard = () => {
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const handleVgSubmit = async (event) => {
+
         event.preventDefault();
         if (validatorVgSubmit.allValid()) {
             //add to db via fetch
@@ -29,7 +30,6 @@ const Dashboard = () => {
                 vgInput
             ).then((returnData) => {
                 if (returnData) {
-                    console.log(returnData);
                     setTitle("");
                     setDifficulty("");
                     setNotes("");
