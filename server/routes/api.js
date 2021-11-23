@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Contact } = require("../models");
+const { Contact, VideoGame } = require("../models");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const { auth } = require("../middleware/Authorization");
@@ -10,10 +10,30 @@ const {
     getUserDetails,
 } = require("../controllers/AuthenticationController");
 
+//apply routes to user functions that are in the Authentication Controller
 router.post("/users/register", RegisterUser);
 router.post("/users/login", LoginUser);
 router.get("/users/auth", auth, getUserDetails);
 router.get("/users/logout", LogoutUser);
+
+//POST - create video game beat record in db
+router.post("/vg/", (req, res) => {
+    var videoGameData = [
+        {
+            createdAt: Date.now(),
+            title: req.body.title,
+            difficulty: req.body.difficulty,
+            date: req.body.date,
+            notes: req.body.notes,
+        },
+    ];
+    VideoGame.create(videoGameData, function (err, results) {
+        if (err) {
+            res.status(400).json(err);
+        }
+        res.send(results);
+    });
+});
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({

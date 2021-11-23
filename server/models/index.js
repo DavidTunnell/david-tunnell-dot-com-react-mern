@@ -3,4 +3,5 @@
 module.exports = {
     Contact: require("./Contact"),
     User: require("./User"),
+    VideoGame: require("./VideoGame"),
 };
