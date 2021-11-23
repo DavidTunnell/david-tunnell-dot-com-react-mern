@@ -45,6 +45,16 @@ router.post("/vg/", (req, res) => {
     });
 });
 
+router.delete("/vg/:id", (req, res) => {
+    const id = req.params.id;
+    VideoGame.findOneAndRemove({ _id: id }, function (err, results) {
+        if (err) {
+            res.status(400).json(err);
+        }
+        res.send(results);
+    });
+});
+
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
     port: 465,
