@@ -1,35 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import useScrollToTop from "../utils/useScrollToTop";
 import auth from "../utils/auth";
 import { useHistory } from "react-router-dom";
+import SimpleReactValidator from "simple-react-validator";
 
 const Login = ({ userId, setUserId }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
     const [showMessage, setShowMessage] = useState(false);
+    const [validatorLogin] = useState(new SimpleReactValidator());
+    // eslint-disable-next-line
+    const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const bgImage = "./assets/images/login-bg.jpg";
+
     useScrollToTop();
+
     //use react router history
     const history = useHistory();
+
     const onSubmit = async (event) => {
         event.preventDefault();
-        const loginInput = { email, password };
-        const loggedInUser = auth.login(loginInput);
-        loggedInUser.then((returnData) => {
-            if (returnData.success) {
-                history.push("/dashboard");
-                setUserId(returnData.userData.userID);
-                setShowMessage(false);
-            } else {
-                console.log("error logging in");
-                //TODO, show user whether login works or not - validation
-                setUserId(null);
-                setShowMessage(true);
-            }
-        });
+        if (validatorLogin.allValid()) {
+            const loginInput = { email, password };
+            const loggedInUser = auth.login(loginInput);
+            loggedInUser.then((returnData) => {
+                if (returnData.success) {
+                    history.push("/dashboard");
+                    setUserId(returnData.userData.userID);
+                    setShowMessage(false);
+                } else {
+                    setUserId(null);
+                    setShowMessage(true);
+                }
+            });
+        } else {
+            validatorLogin.showMessages();
+        }
+        forceUpdate();
     };
+
     return (
         <>
             <div className="viewport">
@@ -74,6 +84,11 @@ const Login = ({ userId, setUserId }) => {
                                                             );
                                                         }}
                                                     />
+                                                    {validatorLogin.message(
+                                                        "email",
+                                                        email,
+                                                        "required|email"
+                                                    )}
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="password-field">
@@ -92,6 +107,11 @@ const Login = ({ userId, setUserId }) => {
                                                             );
                                                         }}
                                                     />
+                                                    {validatorLogin.message(
+                                                        "password",
+                                                        password,
+                                                        "required"
+                                                    )}
                                                 </div>
                                                 <button
                                                     onClick={onSubmit}
@@ -109,26 +129,6 @@ const Login = ({ userId, setUserId }) => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <div className="accordion" data-accordion>
-                                    <div
-                                        className="accordion-control"
-                                        data-control
-                                    >
-                                        <h5>Create Account</h5>
-                                    </div>
-                                    <div
-                                        className="accordion-content"
-                                        data-content
-                                    >
-                                        <div className="accordion-content-wrapper">
-                                            <p>
-                                                Create account is currently
-                                                disabled for everyone except
-                                                David.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>
