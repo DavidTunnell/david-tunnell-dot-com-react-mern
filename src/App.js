@@ -4,9 +4,10 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import VideoGames from "./components/VideoGames";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ReactGA from "react-ga";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //top use the react router package, surround the whole app with the router component
 function App() {
     const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
@@ -55,6 +56,9 @@ function App() {
                         </Route>
                         <Route exact path="/dashboard">
                             <Dashboard />
+                        </Route>
+                        <Route exact path="/vg">
+                            <VideoGames />
                         </Route>
                         {/* all other routes go to a 404 page - must be at bottom*/}
                         <Route path="/404">

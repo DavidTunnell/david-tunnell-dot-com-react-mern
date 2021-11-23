@@ -62,6 +62,11 @@ const Footer = ({
                                             </span>
                                         </li>
                                     )}
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/vg">
+                                            VG
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="col-md-2 text-center">
