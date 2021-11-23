@@ -58,7 +58,7 @@ function App() {
                             <Dashboard />
                         </Route>
                         <Route exact path="/vg">
-                            <VideoGames />
+                            <VideoGames userIsLoggedIn={userIsLoggedIn} />
                         </Route>
                         {/* all other routes go to a 404 page - must be at bottom*/}
                         <Route path="/404">

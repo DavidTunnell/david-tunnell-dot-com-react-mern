@@ -2,11 +2,15 @@ import { useEffect } from "react";
 import { fetchGet, fetchDelete } from "../utils/api";
 import React, { useState } from "react";
 import moment from "moment";
-const VideoGames = () => {
+
+const VideoGames = ({ userIsLoggedIn }) => {
     const bgImage = "./assets/images/original-uo-art.jpeg";
     const [videoGames, setVideoGames] = useState();
 
     useEffect(() => {
+        console.log("userIsLoggedIn");
+        console.log(userIsLoggedIn);
+        console.log("userIsLoggedIn");
         const getVgData = async () => {
             await fetchGet(process.env.REACT_APP_BASE_URL + "/api/vg/").then(
                 (returnData) => {
@@ -117,9 +121,11 @@ const VideoGames = () => {
                                                             <th scope="col">
                                                                 Date
                                                             </th>
-                                                            <th scope="col">
-                                                                Delete
-                                                            </th>
+                                                            {userIsLoggedIn && (
+                                                                <th scope="col">
+                                                                    Delete
+                                                                </th>
+                                                            )}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -160,23 +166,25 @@ const VideoGames = () => {
                                                                                 "MM-DD-YYYY"
                                                                             )}
                                                                         </td>
-                                                                        <td>
-                                                                            <span
-                                                                                class="btn btn-danger btn-xs"
-                                                                                data-id={
-                                                                                    gameBeaten._id
-                                                                                }
-                                                                                onClick={(
-                                                                                    event
-                                                                                ) =>
-                                                                                    handleDeleteRow(
+                                                                        {userIsLoggedIn && (
+                                                                            <td>
+                                                                                <span
+                                                                                    class="btn btn-danger btn-xs"
+                                                                                    data-id={
+                                                                                        gameBeaten._id
+                                                                                    }
+                                                                                    onClick={(
                                                                                         event
-                                                                                    )
-                                                                                }
-                                                                            >
-                                                                                Delete
-                                                                            </span>
-                                                                        </td>
+                                                                                    ) =>
+                                                                                        handleDeleteRow(
+                                                                                            event
+                                                                                        )
+                                                                                    }
+                                                                                >
+                                                                                    Delete
+                                                                                </span>
+                                                                            </td>
+                                                                        )}
                                                                     </tr>
                                                                 )
                                                             )}
