@@ -50,9 +50,6 @@ class AuthService {
                 "/api/users/logout?userId=" +
                 userId
         ).then((returnData) => {
-            console.log("logout in auth client side");
-            console.log(returnData);
-            console.log("logout in auth client side");
             if (returnData?.success) {
                 return true;
             }

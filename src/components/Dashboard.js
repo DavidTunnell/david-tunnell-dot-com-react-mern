@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import SimpleReactValidator from "simple-react-validator";
+import { fetchCreate } from "../utils/api";
 
 const Dashboard = () => {
     const bgImage = "./assets/images/login-bg.jpg";
@@ -11,13 +13,40 @@ const Dashboard = () => {
     const [difficulty, setDifficulty] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [notes, setNotes] = useState("");
+    const [userFeedback, setUserFeedback] = useState("");
+    const [userFeedbackColor, setUserFeedbackColor] = useState(true);
 
-    const handleVgSubmit = (event) => {
+    const [validatorVgSubmit] = useState(new SimpleReactValidator());
+    const [_, forceUpdate] = useReducer((x) => x + 1, 0);
+
+    const handleVgSubmit = async (event) => {
         event.preventDefault();
-        console.log(title);
-        console.log(difficulty);
-        console.log(startDate);
-        console.log(notes);
+        if (validatorVgSubmit.allValid()) {
+            //add to db via fetch
+            const vgInput = { title, difficulty, date: startDate, notes };
+            await fetchCreate(
+                process.env.REACT_APP_BASE_URL + "/api/vg/",
+                vgInput
+            ).then((returnData) => {
+                if (returnData) {
+                    console.log(returnData);
+                    setTitle("");
+                    setDifficulty("");
+                    setNotes("");
+                    setUserFeedbackColor(true);
+                    setUserFeedback("The game was added to the db.");
+                } else {
+                    setUserFeedbackColor(false);
+                    setUserFeedback("There was an issue adding the game.");
+                }
+            });
+        } else {
+            validatorVgSubmit.showMessages();
+        }
+        forceUpdate();
+        setTimeout(function () {
+            setUserFeedback("");
+        }, 3000);
     };
 
     return (
@@ -84,7 +113,12 @@ const Dashboard = () => {
                                                                                         .value
                                                                                 );
                                                                             }}
-                                                                        />
+                                                                        />{" "}
+                                                                        {validatorVgSubmit.message(
+                                                                            "title",
+                                                                            title,
+                                                                            "required"
+                                                                        )}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -165,7 +199,7 @@ const Dashboard = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="form-row mt-1 align-items-center">
-                                                                <div className="col-3">
+                                                                <div className="col-12">
                                                                     <button
                                                                         className="btn btn-secondary"
                                                                         onClick={
@@ -175,6 +209,19 @@ const Dashboard = () => {
                                                                         Save
                                                                         Changes
                                                                     </button>
+                                                                    {userFeedback && (
+                                                                        <span
+                                                                            className={
+                                                                                userFeedbackColor
+                                                                                    ? "text-success p-4"
+                                                                                    : "text-danger p-4"
+                                                                            }
+                                                                        >
+                                                                            {
+                                                                                userFeedback
+                                                                            }
+                                                                        </span>
+                                                                    )}
                                                                 </div>
                                                             </div>
                                                         </form>
