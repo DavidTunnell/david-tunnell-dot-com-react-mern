@@ -68,8 +68,8 @@ const VideoGames = ({ userIsLoggedIn }) => {
             >
                 <div className="row justify-content-center align-items-center">
                     <div className="col-lg-12 ">
-                        <div>
-                            <div class=" text-black p-5">
+                        <div class="row">
+                            <div class="text-black p-5">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
@@ -110,6 +110,35 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                             added it. It's my list after all!
                                         </p>
                                     </div>
+                                    <div>
+                                        <span className="text-center">
+                                            <h5 className="mt-1">Ratings</h5>
+                                        </span>
+                                        <div className="row d-flex justify-content-center flex-nowrap">
+                                            <div className="btn-group p-2">
+                                                <label className="btn bg-success">
+                                                    <span className="m-1">
+                                                        Normal
+                                                    </span>
+                                                </label>
+                                                <label className="btn btn-primary">
+                                                    <div>
+                                                        <span className="m-1">
+                                                            Incredible
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                                <label className="btn btn-warning">
+                                                    <div>
+                                                        <span className="m-1">
+                                                            ALl Time Great
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <div class="col">
                                             <div class="table-responsive-md">
