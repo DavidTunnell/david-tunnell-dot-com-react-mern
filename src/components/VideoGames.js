@@ -55,22 +55,27 @@ const VideoGames = ({ userIsLoggedIn }) => {
     };
 
     return (
-        <section className="viewport pt-2">
+        <section
+            className="viewport pt-2 col-lg-12 col-sm-6"
+            style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: "1920px 1080px",
+                // backgroundRepeat: "no-repeat",
+                backgroundColor: "#323335",
+            }}
+        >
+            <div className="image"></div>
             <div
-                className="image "
-                style={{ backgroundImage: `url(${bgImage})` }}
-            ></div>
-            <div
-                className="container p-2 mt-10 mb-10 card"
+                className="container p-2 mt-10 mb-10 card col-lg-9 col-sm-6"
                 style={{
                     opacity: "0.9",
                 }}
             >
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-lg-12 ">
+                    <div className="">
                         <div class="row">
                             <div class="text-black p-5">
-                                <div class="container">
+                                <div class="container col-lg-9 col-sm-6 vg-mobile">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h2>
@@ -205,11 +210,12 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                                                             }
                                                                         </td>
                                                                         <td>
-                                                                            {moment(
-                                                                                gameBeaten.date
-                                                                            ).format(
-                                                                                "MM-DD-YYYY"
-                                                                            )}
+                                                                            {gameBeaten.date &&
+                                                                                moment(
+                                                                                    gameBeaten.date
+                                                                                ).format(
+                                                                                    "MM-DD-YYYY"
+                                                                                )}
                                                                         </td>
                                                                         {userIsLoggedIn && (
                                                                             <td>
