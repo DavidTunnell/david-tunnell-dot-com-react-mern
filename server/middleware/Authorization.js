@@ -1,4 +1,4 @@
-const { User } = require("../models/User");
+const  User  = require("../models/User");
 const auth = (req, res, next) => {
     // res.setHeader("Access-Control-Allow-Origin", "*");
     let token = req.cookies.authToken || req.query.userToken;
