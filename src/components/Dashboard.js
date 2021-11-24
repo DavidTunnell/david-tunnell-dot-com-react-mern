@@ -14,7 +14,6 @@ const Dashboard = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [notes, setNotes] = useState("");
     const [userFeedback, setUserFeedback] = useState("");
-    const [selectedOption, setSelectedOption] = useState("");
     const [userFeedbackColor, setUserFeedbackColor] = useState(true);
 
     const [validatorVgSubmit] = useState(new SimpleReactValidator());
@@ -25,33 +24,42 @@ const Dashboard = () => {
         const selectedRating = document
             .querySelector(".rating-options")
             .querySelector(".selectric")
-            .querySelector(".label");
-        console.log(selectedRating);
-        // if (validatorVgSubmit.allValid()) {
-        //     //add to db via fetch
-        //     const vgInput = { title, difficulty, date: startDate, notes };
-        //     await fetchCreate(
-        //         process.env.REACT_APP_BASE_URL + "/api/vg/",
-        //         vgInput
-        //     ).then((returnData) => {
-        //         if (returnData) {
-        //             setTitle("");
-        //             setDifficulty("");
-        //             setNotes("");
-        //             setUserFeedbackColor(true);
-        //             setUserFeedback("The game was added to the db.");
-        //         } else {
-        //             setUserFeedbackColor(false);
-        //             setUserFeedback("There was an issue adding the game.");
-        //         }
-        //     });
-        // } else {
-        //     validatorVgSubmit.showMessages();
-        // }
-        // forceUpdate();
-        // setTimeout(function () {
-        //     setUserFeedback("");
-        // }, 3000);
+            .querySelector(".label").innerHTML;
+
+        // const firstSelection = document.querySelector("[data-index='0']");
+        if (validatorVgSubmit.allValid()) {
+            //add to db via fetch
+            const vgInput = {
+                title,
+                difficulty,
+                date: startDate,
+                notes,
+                rating: selectedRating,
+            };
+
+            await fetchCreate(
+                process.env.REACT_APP_BASE_URL + "/api/vg/",
+                vgInput
+            ).then((returnData) => {
+                if (returnData) {
+                    setTitle("");
+                    setDifficulty("");
+                    setNotes("");
+                    setUserFeedbackColor(true);
+                    setUserFeedback("The game was added to the db.");
+                    // firstSelection.selected = true;
+                } else {
+                    setUserFeedbackColor(false);
+                    setUserFeedback("There was an issue adding the game.");
+                }
+            });
+        } else {
+            validatorVgSubmit.showMessages();
+        }
+        forceUpdate();
+        setTimeout(function () {
+            setUserFeedback("");
+        }, 3000);
     };
 
     return (
@@ -202,7 +210,7 @@ const Dashboard = () => {
                                                                                 >
                                                                                     All
                                                                                     Time
-                                                                                    Greatest
+                                                                                    Great
                                                                                 </option>
                                                                             </select>
                                                                         </div>

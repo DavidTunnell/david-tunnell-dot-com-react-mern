@@ -41,6 +41,19 @@ const VideoGames = ({ userIsLoggedIn }) => {
         return videoGames.filter((el) => el._id !== id);
     };
 
+    const getColorClass = (rating) => {
+        switch (rating) {
+            case "Normal":
+                return "text-success";
+            case "Incredible":
+                return "text-primary";
+            case "All Time Great":
+                return "text-warning";
+            default:
+                return "";
+        }
+    };
+
     return (
         <section className="viewport pt-2">
             <div
@@ -142,9 +155,15 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                                                                 1}
                                                                         </th>
                                                                         <td>
-                                                                            {
-                                                                                gameBeaten.title
-                                                                            }
+                                                                            <span
+                                                                                className={getColorClass(
+                                                                                    gameBeaten.rating
+                                                                                )}
+                                                                            >
+                                                                                {
+                                                                                    gameBeaten.title
+                                                                                }
+                                                                            </span>
                                                                         </td>
                                                                         <td>
                                                                             {

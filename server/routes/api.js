@@ -35,6 +35,7 @@ router.post("/vg/", (req, res) => {
             difficulty: req.body.difficulty,
             date: req.body.date,
             notes: req.body.notes,
+            rating: req.body.rating,
         },
     ];
     VideoGame.create(videoGameData, function (err, results) {

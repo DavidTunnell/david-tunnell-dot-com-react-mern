@@ -13,6 +13,7 @@ const videoGameSchema = new Schema({
         type: Date,
     },
     notes: String,
+    rating: String,
 });
 
 const VideoGame = mongoose.model("videoGame", videoGameSchema);
