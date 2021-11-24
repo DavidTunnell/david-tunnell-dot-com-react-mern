@@ -50,7 +50,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
             case "All Time Great":
                 return "text-warning";
             default:
-                return "";
+                return "text-danger";
         }
     };
 
