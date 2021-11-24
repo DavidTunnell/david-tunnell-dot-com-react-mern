@@ -14,39 +14,44 @@ const Dashboard = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [notes, setNotes] = useState("");
     const [userFeedback, setUserFeedback] = useState("");
+    const [selectedOption, setSelectedOption] = useState("");
     const [userFeedbackColor, setUserFeedbackColor] = useState(true);
 
     const [validatorVgSubmit] = useState(new SimpleReactValidator());
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const handleVgSubmit = async (event) => {
-
         event.preventDefault();
-        if (validatorVgSubmit.allValid()) {
-            //add to db via fetch
-            const vgInput = { title, difficulty, date: startDate, notes };
-            await fetchCreate(
-                process.env.REACT_APP_BASE_URL + "/api/vg/",
-                vgInput
-            ).then((returnData) => {
-                if (returnData) {
-                    setTitle("");
-                    setDifficulty("");
-                    setNotes("");
-                    setUserFeedbackColor(true);
-                    setUserFeedback("The game was added to the db.");
-                } else {
-                    setUserFeedbackColor(false);
-                    setUserFeedback("There was an issue adding the game.");
-                }
-            });
-        } else {
-            validatorVgSubmit.showMessages();
-        }
-        forceUpdate();
-        setTimeout(function () {
-            setUserFeedback("");
-        }, 3000);
+        const selectedRating = document
+            .querySelector(".rating-options")
+            .querySelector(".selectric")
+            .querySelector(".label");
+        console.log(selectedRating);
+        // if (validatorVgSubmit.allValid()) {
+        //     //add to db via fetch
+        //     const vgInput = { title, difficulty, date: startDate, notes };
+        //     await fetchCreate(
+        //         process.env.REACT_APP_BASE_URL + "/api/vg/",
+        //         vgInput
+        //     ).then((returnData) => {
+        //         if (returnData) {
+        //             setTitle("");
+        //             setDifficulty("");
+        //             setNotes("");
+        //             setUserFeedbackColor(true);
+        //             setUserFeedback("The game was added to the db.");
+        //         } else {
+        //             setUserFeedbackColor(false);
+        //             setUserFeedback("There was an issue adding the game.");
+        //         }
+        //     });
+        // } else {
+        //     validatorVgSubmit.showMessages();
+        // }
+        // forceUpdate();
+        // setTimeout(function () {
+        //     setUserFeedback("");
+        // }, 3000);
     };
 
     return (
@@ -168,6 +173,39 @@ const Dashboard = () => {
                                                                                 )
                                                                             }
                                                                         />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-row">
+                                                                <div className="col">
+                                                                    <div className="form-group">
+                                                                        <label htmlFor="notes">
+                                                                            Rating
+                                                                        </label>
+                                                                        <div className="form-group rating-options">
+                                                                            <select className="form-control">
+                                                                                <option
+                                                                                    value="0"
+                                                                                    className="text-success"
+                                                                                >
+                                                                                    Normal
+                                                                                </option>
+                                                                                <option
+                                                                                    value="1"
+                                                                                    className="text-primary"
+                                                                                >
+                                                                                    Incredible
+                                                                                </option>
+                                                                                <option
+                                                                                    value="2"
+                                                                                    className="text-warning"
+                                                                                >
+                                                                                    All
+                                                                                    Time
+                                                                                    Greatest
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

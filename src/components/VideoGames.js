@@ -8,9 +8,6 @@ const VideoGames = ({ userIsLoggedIn }) => {
     const [videoGames, setVideoGames] = useState();
 
     useEffect(() => {
-        console.log("userIsLoggedIn");
-        console.log(userIsLoggedIn);
-        console.log("userIsLoggedIn");
         const getVgData = async () => {
             await fetchGet(process.env.REACT_APP_BASE_URL + "/api/vg/").then(
                 (returnData) => {
