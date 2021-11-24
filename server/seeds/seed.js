@@ -327,7 +327,7 @@ const vgSeed = [
         title: "Call of Duty: Black Ops",
         difficulty: "",
         date: null,
-        notes: "",
+        notes: "I'm almost positive I beat it on hardened but the difficulty wasn't written down.",
         rating: "Normal",
     },
     {
@@ -340,10 +340,10 @@ const vgSeed = [
     },
     {
         createdAt: Date.now(),
-        title: "Medal of Honor",
+        title: "Medal of Honor (2010)",
         difficulty: "",
         date: null,
-        notes: "2010",
+        notes: "",
         rating: "Normal",
     },
     {
@@ -612,7 +612,7 @@ const vgSeed = [
     },
     {
         createdAt: Date.now(),
-        title: "Lost Oddessy",
+        title: "Lost Odyssey",
         difficulty: "",
         date: null,
         notes: "",
@@ -652,10 +652,10 @@ const vgSeed = [
     },
     {
         createdAt: Date.now(),
-        title: "Prince of Persia",
+        title: "Prince of Persia (2008)",
         difficulty: "",
         date: null,
-        notes: "2008",
+        notes: "",
         rating: "Normal",
     },
     {
@@ -711,7 +711,7 @@ const vgSeed = [
         title: "World of Warcraft: Wrath of the Lich King",
         difficulty: "",
         date: null,
-        notes: "WOTLK Level 80",
+        notes: "WotLK Level 80",
         rating: "Incredible",
     },
     {
@@ -783,7 +783,7 @@ const vgSeed = [
         title: "Gears of War",
         difficulty: "Hardcore",
         date: null,
-        notes: "I thought I played this on hard.",
+        notes: "",
         rating: "All Time Great",
     },
     {
@@ -868,10 +868,10 @@ const vgSeed = [
     },
     {
         createdAt: Date.now(),
-        title: "Tomb Raider",
+        title: "Tomb Raider (2013)",
         difficulty: "Hard",
         date: null,
-        notes: "2013",
+        notes: "",
         rating: "Normal",
     },
     {
@@ -879,7 +879,7 @@ const vgSeed = [
         title: "Final Fantasy 14: A Realm Reborn",
         difficulty: "",
         date: null,
-        notes: "Level 50",
+        notes: "Level 50, completed main story.",
         rating: "Normal",
     },
     {
@@ -965,7 +965,7 @@ const vgSeed = [
     {
         createdAt: Date.now(),
         title: "Destiny",
-        difficulty: "Hardened",
+        difficulty: "",
         date: null,
         notes: "Completed main storyline.",
         rating: "Normal",
@@ -1063,7 +1063,7 @@ const vgSeed = [
         title: "The Witcher 3: Heart of Stone",
         difficulty: "",
         date: null,
-        notes: "Telltale Games",
+        notes: "I thought I beat this on hard too.",
         rating: "Incredible",
     },
     {
@@ -1192,6 +1192,14 @@ const vgSeed = [
         difficulty: "Hard",
         date: null,
         notes: "",
+        rating: "Normal",
+    },
+    {
+        createdAt: Date.now(),
+        title: "The Witcher 3: Blood and Wine",
+        difficulty: "",
+        date: null,
+        notes: "I thought I beat this on hard too.",
         rating: "Normal",
     },
     {
@@ -1646,7 +1654,7 @@ const vgSeed = [
         createdAt: Date.now(),
         title: "Lovers in a Dangerous Spacetime",
         difficulty: "",
-        date: null,
+        date: "12/01/2018",
         notes: "With Joyce",
         rating: "Incredible",
     },
@@ -1654,7 +1662,7 @@ const vgSeed = [
         createdAt: Date.now(),
         title: "Roundabout",
         difficulty: "",
-        date: "12/01/2018",
+        date: null,
         notes: "Game was ridiculous lol",
         rating: "Normal",
     },
@@ -2173,22 +2181,20 @@ const vgSeed = [
 ];
 
 //first delete data in database and then populate with seed data
-setTimeout(function () {
-    User.deleteMany({})
-        .then(() => User.insertMany(userSeed))
-        .then((data) => {
-            console.log(
-                data.length +
-                    " " +
-                    Object.keys({ userSeed })[0] +
-                    " records inserted."
-            );
-        })
-        .catch((err) => {
-            console.error(err);
-            process.exit(1);
-        });
-}, 1000);
+User.deleteMany({})
+    .then(() => User.insertMany(userSeed))
+    .then((data) => {
+        console.log(
+            data.length +
+                " " +
+                Object.keys({ userSeed })[0] +
+                " records inserted."
+        );
+    })
+    .catch((err) => {
+        console.error(err);
+        process.exit(1);
+    });
 
 setTimeout(function () {
     Contact.deleteMany({})
@@ -2223,4 +2229,4 @@ setTimeout(function () {
             console.error(err);
             process.exit(1);
         });
-}, 1000);
+}, 2000);
