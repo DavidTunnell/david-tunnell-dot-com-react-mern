@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import SimpleReactValidator from "simple-react-validator";
 import { fetchCreate } from "../utils/api";
+// import $ from "jquery";
 
 const Dashboard = () => {
     const bgImage = "./assets/images/login-bg.jpg";
@@ -36,7 +37,6 @@ const Dashboard = () => {
                 notes,
                 rating: selectedRating,
             };
-
             await fetchCreate(
                 process.env.REACT_APP_BASE_URL + "/api/vg/",
                 vgInput
@@ -192,22 +192,13 @@ const Dashboard = () => {
                                                                         </label>
                                                                         <div className="form-group rating-options">
                                                                             <select className="form-control">
-                                                                                <option
-                                                                                    value="0"
-                                                                                    className="text-success"
-                                                                                >
+                                                                                <option className="text-success">
                                                                                     Normal
                                                                                 </option>
-                                                                                <option
-                                                                                    value="1"
-                                                                                    className="text-primary"
-                                                                                >
+                                                                                <option className="text-primary">
                                                                                     Incredible
                                                                                 </option>
-                                                                                <option
-                                                                                    value="2"
-                                                                                    className="text-warning"
-                                                                                >
+                                                                                <option className="text-warning">
                                                                                     All
                                                                                     Time
                                                                                     Great

@@ -63,12 +63,12 @@ const Footer = ({
                                                 </span>
                                             </li>
                                             <li className="nav-item">
-                                                <Link
+                                                <a
+                                                    href="/dashboard"
                                                     className="nav-link"
-                                                    to="/dashboard"
                                                 >
                                                     Dashboard
-                                                </Link>
+                                                </a>
                                             </li>
                                         </>
                                     )}

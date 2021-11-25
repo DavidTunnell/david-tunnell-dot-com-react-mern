@@ -17,7 +17,7 @@ const Login = ({ userId, setUserId }) => {
     useScrollToTop();
 
     //use react router history
-    const history = useHistory();
+    // const history = useHistory();
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -26,7 +26,8 @@ const Login = ({ userId, setUserId }) => {
             const loggedInUser = auth.login(loginInput);
             loggedInUser.then((returnData) => {
                 if (returnData.success) {
-                    history.push("/dashboard");
+                    // history.push("/dashboard");
+                    window.location.href = "/dashboard";
                     setUserId(returnData.userData.userID);
                     setShowMessage(false);
                 } else {
