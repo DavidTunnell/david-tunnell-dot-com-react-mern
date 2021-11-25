@@ -8,8 +8,11 @@ class AuthService {
 
     //check if the user is authenticated
     async isAuthenticated() {
-        // return decode(this.getToken());
         const userToken = this.getToken();
+        if (!userToken) {
+            console.log("no user token");
+            return false;
+        }
         return await fetchGet(
             process.env.REACT_APP_BASE_URL +
                 "/api/users/auth?userToken=" +
@@ -45,6 +48,7 @@ class AuthService {
     async logout(userId) {
         // Clear user token and profile data from localStorage
         localStorage.removeItem("user_logged_in_token");
+        //TODO: if no userId get token and remove from user record instead
         return await fetchGet(
             process.env.REACT_APP_BASE_URL +
                 "/api/users/logout?userId=" +
