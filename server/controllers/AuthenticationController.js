@@ -1,5 +1,6 @@
 const User = require("../models/User");
 
+//create user in database
 exports.RegisterUser = async (req, res) => {
     const user = new User(req.body);
     await user.save((err, doc) => {
@@ -20,6 +21,7 @@ exports.RegisterUser = async (req, res) => {
     });
 };
 
+//log user in and generate a token for them
 exports.LoginUser = (req, res) => {
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user) {
@@ -62,6 +64,7 @@ exports.LoginUser = (req, res) => {
     });
 };
 
+//user logout
 exports.LogoutUser = (req, res) => {
     let userId = req.query.userId;
     User.findByIdAndUpdate({ _id: userId }, { token: "" }, (err) => {

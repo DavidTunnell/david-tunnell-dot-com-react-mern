@@ -13,14 +13,6 @@ const contactSchema = new Schema({
     message: String,
 });
 
-// microBlogSchema.methods.getTotalDuration = function () {
-//     let sum = 0;
-//     this.exercises.forEach((element) => {
-//         sum += element.duration;
-//     });
-//     return sum;
-// };
-
 const Contact = mongoose.model("contact", contactSchema);
 
 module.exports = Contact;

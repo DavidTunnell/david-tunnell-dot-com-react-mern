@@ -1,8 +1,8 @@
-const  User  = require("../models/User");
+const User = require("../models/User");
+
+//ensure the token in local storage is also the same generated on the server side on all requested calls
 const auth = (req, res, next) => {
-    // res.setHeader("Access-Control-Allow-Origin", "*");
     let token = req.cookies.authToken || req.query.userToken;
-    //here is the issue, not getting the token.. do I need to save it client side and send it??
 
     User.findByToken(token, (err, user) => {
         if (err) throw err;

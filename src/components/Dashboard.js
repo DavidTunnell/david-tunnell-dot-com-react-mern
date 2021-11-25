@@ -10,27 +10,29 @@ const Dashboard = () => {
     const bgImage = "./assets/images/login-bg.jpg";
     const cardBgColor = "#f5f5f5";
 
+    //local component state
     const [title, setTitle] = useState("");
     const [difficulty, setDifficulty] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [notes, setNotes] = useState("");
     const [userFeedback, setUserFeedback] = useState("");
     const [userFeedbackColor, setUserFeedbackColor] = useState(true);
-
     const [validatorVgSubmit] = useState(new SimpleReactValidator());
     // eslint-disable-next-line
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
+    //submit new video game event
     const handleVgSubmit = async (event) => {
         event.preventDefault();
+        //get selection from DOM
         const selectedRating = document
             .querySelector(".rating-options")
             .querySelector(".selectric")
             .querySelector(".label").innerHTML;
 
-        // const firstSelection = document.querySelector("[data-index='0']");
+        //ensure there aren't validation issues
         if (validatorVgSubmit.allValid()) {
-            //add to db via fetch
+            //get data from state/input and make api post call
             const vgInput = {
                 title,
                 difficulty,
@@ -43,13 +45,14 @@ const Dashboard = () => {
                 vgInput
             ).then((returnData) => {
                 if (returnData) {
+                    //reset form
                     setTitle("");
                     setDifficulty("");
                     setNotes("");
                     setUserFeedbackColor(true);
                     setUserFeedback("The game was added to the db.");
-                    // firstSelection.selected = true;
                 } else {
+                    //let user know there was an error
                     setUserFeedbackColor(false);
                     setUserFeedback("There was an issue adding the game.");
                 }
@@ -58,6 +61,7 @@ const Dashboard = () => {
             validatorVgSubmit.showMessages();
         }
         forceUpdate();
+        //give user feedback and then reset for if there are additional entries
         setTimeout(function () {
             setUserFeedback("");
         }, 3000);

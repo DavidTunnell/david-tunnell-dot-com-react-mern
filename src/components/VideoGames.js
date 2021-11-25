@@ -10,29 +10,35 @@ const VideoGames = ({ userIsLoggedIn }) => {
         useState("btn-group-vertical");
 
     useEffect(() => {
+        //get all video games via api call
         const getVgData = async () => {
             await fetchGet(process.env.REACT_APP_BASE_URL + "/api/vg/").then(
                 (returnData) => {
+                    //set data from call in state
                     setVideoGames(returnData);
                 }
             );
         };
+        //call asynchronously in a non async function
         getVgData();
     }, []);
 
     useEffect(() => {
+        //update class for ratings chart for based on screen size
         ratingsClassShownUpdate();
     });
 
+    //delete a record
     const handleDeleteRow = (event) => {
         const deleteVgRecord = async (id) => {
             await fetchDelete(
                 process.env.REACT_APP_BASE_URL + "/api/vg/" + id
             ).then((returnData) => {
-                //filter out and update state
+                //filter out deleted record and update state
                 setVideoGames(filterOutId(id));
             });
         };
+        //ensure that delete is intentional
         const userResponse = window.confirm(
             "Are you sure you want to delete this?"
         );
@@ -42,10 +48,12 @@ const VideoGames = ({ userIsLoggedIn }) => {
         }
     };
 
+    //filter out a record by id from array
     const filterOutId = (id) => {
         return videoGames.filter((el) => el._id !== id);
     };
 
+    //update class for ratings chart for based on screen size
     const ratingsClassShownUpdate = () => {
         var width = window.innerWidth;
         if (width > 600) {
@@ -53,6 +61,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
         }
     };
 
+    //get correct class color for titles of games based on the rating in the database
     const getColorClass = (rating) => {
         switch (rating) {
             case "Normal":

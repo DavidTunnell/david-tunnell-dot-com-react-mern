@@ -25,7 +25,8 @@ function App() {
     const toTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
-
+    
+    //create functions to update state in parents and pass them to children to be run on event
     const loginState = () => {
         setUserIsLoggedIn(true);
     };

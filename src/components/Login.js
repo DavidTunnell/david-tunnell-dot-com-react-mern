@@ -18,14 +18,18 @@ const Login = ({ userId, setUserId }) => {
     //use react router history
     // const history = useHistory();
 
+    //on submitting login form
     const onSubmit = async (event) => {
         event.preventDefault();
+        //check client side validation
         if (validatorLogin.allValid()) {
             const loginInput = { email, password };
+            //log user in
             const loggedInUser = auth.login(loginInput);
             loggedInUser.then((returnData) => {
                 if (returnData.success) {
                     // history.push("/dashboard");
+                    //forward to dashboard
                     window.location.href = "/dashboard";
                     setUserId(returnData.userData.userID);
                     setShowMessage(false);

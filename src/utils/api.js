@@ -18,7 +18,7 @@ const fetchCreate = async (url, data) => {
         });
 };
 
-//generic create fetch function
+//generic get fetch function
 const fetchGet = async (url, data) => {
     return fetch(url, {
         method: "GET",

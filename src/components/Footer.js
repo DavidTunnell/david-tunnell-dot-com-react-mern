@@ -16,6 +16,7 @@ const Footer = ({
     setUserId,
 }) => {
     useEffect(() => {
+        //check if user is authenticated and set state accordingly
         auth.isAuthenticated().then((data) => {
             //set state in parent by passing function here
             if (data) {
@@ -25,8 +26,11 @@ const Footer = ({
             }
         });
     }, [userId, userIsLoggedIn, loginState, logoutState]);
+
+    //use browser history
     const history = useHistory();
 
+    //hand user logout
     const logoutHandler = () => {
         const isLoggedOut = auth.logout(userId);
         isLoggedOut.then((returnData) => {

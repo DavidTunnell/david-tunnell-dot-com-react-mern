@@ -20,7 +20,7 @@ const hashPassword = (password) => {
     return bcrypt.hashSync(password, 10);
 };
 
-//data object to be inserted in to db
+//data objects to be inserted in to db
 const userSeed = [
     {
         email: "davidtunnell9@gmail.com",
@@ -2180,7 +2180,8 @@ const vgSeed = [
     },
 ];
 
-//first delete data in database and then populate with seed data
+//first delete data in database and then populate with seed data for each set of data for each table
+//slowing down execution helps on the heroku server (prod) to make sure everything gets populated correctly
 User.deleteMany({})
     .then(() => User.insertMany(userSeed))
     .then((data) => {

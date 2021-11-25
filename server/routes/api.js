@@ -16,6 +16,7 @@ router.post("/users/login", LoginUser);
 router.get("/users/auth", auth, getUserDetails);
 router.get("/users/logout", LogoutUser);
 
+//get all video games
 router.get("/vg/", (req, res) => {
     VideoGame.find({}, function (err, result) {
         if (err) {
@@ -26,7 +27,7 @@ router.get("/vg/", (req, res) => {
     });
 });
 
-//POST - create video game beat record in db
+//Create video game beat record in db
 router.post("/vg/", (req, res) => {
     var videoGameData = [
         {
@@ -46,6 +47,7 @@ router.post("/vg/", (req, res) => {
     });
 });
 
+//delete video game by id
 router.delete("/vg/:id", (req, res) => {
     const id = req.params.id;
     VideoGame.findOneAndRemove({ _id: id }, function (err, results) {
@@ -67,7 +69,7 @@ const transporter = nodemailer.createTransport({
     secure: true,
 });
 
-//POST - create contact record in db
+// Create contact record in db
 router.post("/contact/", (req, res) => {
     var contactData = [
         {
