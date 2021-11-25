@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { fetchGet, fetchDelete } from "../utils/api";
 import React, { useState } from "react";
 import moment from "moment";
@@ -21,6 +21,9 @@ const VideoGames = ({ userIsLoggedIn }) => {
         };
         //call asynchronously in a non async function
         getVgData();
+        //make sure the top of the page is shown after data loading
+        const element = document.getElementById("vg-top");
+        if (element) element.scrollIntoView({ behavior: "smooth" });
     }, []);
 
     useEffect(() => {
@@ -78,6 +81,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
     return (
         <section
             className="viewport pt-2"
+            id="vg-top"
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "1920px 1080px",
