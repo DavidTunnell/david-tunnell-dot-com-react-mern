@@ -2,8 +2,9 @@ import React, { useState, useReducer } from "react";
 import useScrollToTop from "../utils/useScrollToTop";
 import auth from "../utils/auth";
 import SimpleReactValidator from "simple-react-validator";
+import { useHistory } from "react-router-dom";
 
-const Login = ({ userId, setUserId }) => {
+const Login = ({ setUserId }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showMessage, setShowMessage] = useState(false);
@@ -16,7 +17,7 @@ const Login = ({ userId, setUserId }) => {
     useScrollToTop();
 
     //use react router history
-    // const history = useHistory();
+    const history = useHistory();
 
     //on submitting login form
     const onSubmit = async (event) => {
@@ -28,11 +29,10 @@ const Login = ({ userId, setUserId }) => {
             const loggedInUser = auth.login(loginInput);
             loggedInUser.then((returnData) => {
                 if (returnData.success) {
-                    // history.push("/dashboard");
-                    //forward to dashboard
-                    window.location.href = "/dashboard";
                     setUserId(returnData.userData.userID);
                     setShowMessage(false);
+                    //forward to dashboard after data loads into state
+                    history.push("/dashboard");
                 } else {
                     setUserId(null);
                     setShowMessage(true);

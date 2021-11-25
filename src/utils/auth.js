@@ -45,7 +45,6 @@ class AuthService {
     async logout(userId) {
         // Clear user token and profile data from localStorage
         localStorage.removeItem("user_logged_in_token");
-
         return await fetchGet(
             process.env.REACT_APP_BASE_URL +
                 "/api/users/logout?userId=" +
