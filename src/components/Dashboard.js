@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useReducer } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import SimpleReactValidator from "simple-react-validator";
@@ -18,6 +18,7 @@ const Dashboard = () => {
     const [userFeedbackColor, setUserFeedbackColor] = useState(true);
 
     const [validatorVgSubmit] = useState(new SimpleReactValidator());
+    // eslint-disable-next-line
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const handleVgSubmit = async (event) => {

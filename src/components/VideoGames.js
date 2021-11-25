@@ -13,7 +13,6 @@ const VideoGames = ({ userIsLoggedIn }) => {
         const getVgData = async () => {
             await fetchGet(process.env.REACT_APP_BASE_URL + "/api/vg/").then(
                 (returnData) => {
-                    console.log(returnData);
                     setVideoGames(returnData);
                 }
             );
@@ -86,11 +85,11 @@ const VideoGames = ({ userIsLoggedIn }) => {
             >
                 <div className="row justify-content-center align-items-center">
                     <div className="">
-                        <div class="row">
-                            <div class="text-black p-5">
-                                <div class="container vg-mobile">
-                                    <div class="row">
-                                        <div class="col text-center">
+                        <div className="row">
+                            <div className="text-black p-5">
+                                <div className="container vg-mobile">
+                                    <div className="row">
+                                        <div className="col text-center">
                                             <h2>
                                                 Video <b>Games</b>
                                             </h2>
@@ -159,10 +158,10 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="table-responsive-md">
-                                                <table class="table table-lined">
+                                    <div className="row">
+                                        <div className="col">
+                                            <div className="table-responsive-md">
+                                                <table className="table table-lined">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">
@@ -235,7 +234,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                                                         {userIsLoggedIn && (
                                                                             <td>
                                                                                 <span
-                                                                                    class="btn btn-danger btn-xs"
+                                                                                    className="btn btn-danger btn-xs"
                                                                                     data-id={
                                                                                         gameBeaten._id
                                                                                     }

@@ -1,7 +1,6 @@
 import React, { useState, useReducer } from "react";
 import useScrollToTop from "../utils/useScrollToTop";
 import auth from "../utils/auth";
-import { useHistory } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
 
 const Login = ({ userId, setUserId }) => {
