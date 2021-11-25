@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const { User, Contact, VideoGame } = require("../models");
 const bcrypt = require("bcrypt");
 const path = require("path");
@@ -6,6 +7,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 //get mongoose connection object
 mongoose.connect(
+    //process.env.MONGODB_URI
     process.env.MONGODB_URI || "mongodb://localhost/" + process.env.DB_NAME,
     {
         useNewUrlParser: true,
@@ -109,7 +111,7 @@ const vgSeed = [
     {
         createdAt: Date.now(),
         title: "Diablo",
-        difficulty: "Hardened",
+        difficulty: "",
         date: null,
         notes: "",
         rating: "Incredible",
