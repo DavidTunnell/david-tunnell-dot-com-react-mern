@@ -6,6 +6,8 @@ import moment from "moment";
 const VideoGames = ({ userIsLoggedIn }) => {
     const bgImage = "./assets/images/original-uo-art.jpeg";
     const [videoGames, setVideoGames] = useState();
+    const [ratingsClassShown, setRatingsClassShown] =
+        useState("btn-group-vertical");
 
     useEffect(() => {
         const getVgData = async () => {
@@ -18,6 +20,10 @@ const VideoGames = ({ userIsLoggedIn }) => {
         };
         getVgData();
     }, []);
+
+    useEffect(() => {
+        ratingsClassShownUpdate();
+    });
 
     const handleDeleteRow = (event) => {
         const deleteVgRecord = async (id) => {
@@ -41,6 +47,13 @@ const VideoGames = ({ userIsLoggedIn }) => {
         return videoGames.filter((el) => el._id !== id);
     };
 
+    const ratingsClassShownUpdate = () => {
+        var width = window.innerWidth;
+        if (width > 600) {
+            setRatingsClassShown("btn-group");
+        }
+    };
+
     const getColorClass = (rating) => {
         switch (rating) {
             case "Normal":
@@ -56,7 +69,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
 
     return (
         <section
-            className="viewport pt-2 col-lg-12 col-sm-6"
+            className="viewport pt-2"
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "1920px 1080px",
@@ -66,7 +79,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
         >
             <div className="image"></div>
             <div
-                className="container p-2 mt-10 mb-10 card col-lg-9 col-sm-6"
+                className="container p-2 mt-10 mb-10 card vg-mobile-card"
                 style={{
                     opacity: "0.9",
                 }}
@@ -75,7 +88,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
                     <div className="">
                         <div class="row">
                             <div class="text-black p-5">
-                                <div class="container col-lg-9 col-sm-6 vg-mobile">
+                                <div class="container vg-mobile">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h2>
@@ -115,28 +128,30 @@ const VideoGames = ({ userIsLoggedIn }) => {
                                             added it. It's my list after all!
                                         </p>
                                     </div>
-                                    <div>
+                                    <div className="btn-ratings">
                                         <span className="text-center">
                                             <h5 className="mt-1">Ratings</h5>
                                         </span>
-                                        <div className="row d-flex justify-content-center flex-nowrap">
-                                            <div className="btn-group p-2">
+                                        <div className="row justify-content-center ">
+                                            <div
+                                                className={`${ratingsClassShown} p-2`}
+                                            >
                                                 <label className="btn bg-success">
-                                                    <span className="m-1">
+                                                    <span className="m-1 vg-text">
                                                         Normal
                                                     </span>
                                                 </label>
                                                 <label className="btn btn-primary">
                                                     <div>
-                                                        <span className="m-1">
+                                                        <span className="m-1 vg-text">
                                                             Incredible
                                                         </span>
                                                     </div>
                                                 </label>
                                                 <label className="btn btn-warning">
                                                     <div>
-                                                        <span className="m-1">
-                                                            ALl Time Great
+                                                        <span className="m-1 vg-text">
+                                                            All Time Great
                                                         </span>
                                                     </div>
                                                 </label>
