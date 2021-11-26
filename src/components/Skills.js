@@ -58,28 +58,6 @@ const Skills = () => {
                                     </div>
                                 ))}
                             </OwlCarousel>
-                            ;
-                            {/* <div
-                                className="owl-carousel"
-                                data-items="[6,4,2]"
-                                data-loop="true"
-                                data-autoplay="true"
-                            >
-                                {allSkills.map((element) => (
-                                    <div key={element.id}>
-                                        <div className="logo">
-                                            <img
-                                                src={element.graphic}
-                                                alt={element.title}
-                                                style={styles.graphics}
-                                            />
-                                        </div>
-                                        <div className="mt-3 text-muted">
-                                            {element.title}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div> */}
                         </div>
                     </div>
                 </div>
