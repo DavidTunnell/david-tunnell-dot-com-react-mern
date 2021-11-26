@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { fetchGet, fetchDelete } from "../utils/api";
 import React, { useState } from "react";
 import moment from "moment";
