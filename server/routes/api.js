@@ -18,13 +18,15 @@ router.get("/users/logout", LogoutUser);
 
 //get all video games
 router.get("/vg/", (req, res) => {
-    VideoGame.find({}, function (err, result) {
-        if (err) {
-            res.status(400).json(err);
-        } else {
-            res.json(result);
-        }
-    });
+    VideoGame.find({})
+        .sort({ createdAt: 1 })
+        .exec(function (err, docs) {
+            if (err) {
+                res.status(400).json(err);
+            } else {
+                res.json(docs);
+            }
+        });
 });
 
 //Create video game beat record in db

@@ -84,7 +84,7 @@ const VideoGames = ({ userIsLoggedIn }) => {
             id="vg-top"
             style={{
                 backgroundImage: `url(${bgImage})`,
-                backgroundSize: "1920px 1080px",
+                backgroundSize: "2304px 1296px",
                 // backgroundRepeat: "no-repeat",
                 backgroundColor: "#323335",
             }}

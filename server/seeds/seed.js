@@ -126,6 +126,14 @@ const vgSeed = [
     },
     {
         createdAt: Date.now(),
+        title: "Ultima Online: The Second Age",
+        difficulty: "",
+        date: null,
+        notes: "The best time I ever had gaming. Thousands and thousands of hours. I did everything there was to do. So much PvP. Pacific 98'-02'. UO Hybrid, IPY, T2A, and other FreeShards.",
+        rating: "All Time Great",
+    },
+    {
+        createdAt: Date.now(),
         title: "The Legend of Zelda: The Wind Waker",
         difficulty: "",
         date: null,
