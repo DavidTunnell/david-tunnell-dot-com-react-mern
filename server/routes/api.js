@@ -19,7 +19,7 @@ router.get("/users/logout", LogoutUser);
 //get all video games
 router.get("/vg/", (req, res) => {
     VideoGame.find({})
-        .sort({ createdAt: 1 })
+        .sort({ $natural: 1 })
         .exec(function (err, docs) {
             if (err) {
                 res.status(400).json(err);
