@@ -193,22 +193,22 @@ const skills = [
 
 //data for portfolio cards and modals
 const portfolio = [
-    {
-        id: 1,
-        openSource: true,
-        image: "./assets/images/portfolio/upstudy.io.jpg",
-        modalImage: "./assets/images/portfolio/upstudy.io.jpg",
-        title: "Upstudy.io",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 27, 31, 35, 39, 40],
-        details:
-            "Upstudy is a new way to find relevant learning content by allowing the highest quality material for any subject rise to the top. Currently, there are many different places to look when searching for study material on a particular topic. You might find results at YouTube, Khan Academy or Stack Overflow but which is the best place to spend your time learning? Upstudy allows users to delve into specific study topics and be presented with the top content links as voted by the community as well as meta discussions and moderation on the study topic.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/upstudy-fullstack-react-redux-graphql-apollo-server-node-express-mongodb",
-        demoUrl: "https://upstudy.herokuapp.com/",
-        disclaimer:
-            "I am actively developing this app and the demo server is updated and tested on.",
-        companyUrl: null,
-    },
+    // {
+    //     id: 1,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/upstudy.io.jpg",
+    //     modalImage: "./assets/images/portfolio/upstudy.io.jpg",
+    //     title: "Upstudy.io",
+    //     techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 27, 31, 35, 39, 40],
+    //     details:
+    //         "Upstudy is a new way to find relevant learning content by allowing the highest quality material for any subject rise to the top. Currently, there are many different places to look when searching for study material on a particular topic. You might find results at YouTube, Khan Academy or Stack Overflow but which is the best place to spend your time learning? Upstudy allows users to delve into specific study topics and be presented with the top content links as voted by the community as well as meta discussions and moderation on the study topic.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/upstudy-fullstack-react-redux-graphql-apollo-server-node-express-mongodb",
+    //     demoUrl: "https://upstudy.herokuapp.com/",
+    //     disclaimer:
+    //         "I am actively developing this app and the demo server is updated and tested on.",
+    //     companyUrl: null,
+    // },
     {
         id: 3,
         openSource: false,
@@ -224,36 +224,36 @@ const portfolio = [
             "The software I worked on is proprietary so links to the source code and demo is not available.",
         companyUrl: "https://www.lmi.org/",
     },
-    {
-        id: 4,
-        openSource: true,
-        image: "./assets/images/portfolio/feedster.jpg",
-        modalImage: "./assets/images/portfolio/feedster.jpg",
-        title: "Feedster",
-        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 31, 34, 35],
-        details:
-            "A Twitter content containerizer. Create an account and build custom feeds out of their favorite Twitter users. These feeds can be shared (links), followed and experienced as a group using the comment section. This creates a new way to experience any interest, from a live sporting event to your favorite personalities or any other subject.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/feedster-content-containerizer-twitter-api-node-express-mysql-handlebars-sequelize-mvc-fullstack",
-        demoUrl: "http://feedster-twitter.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
-    {
-        id: 2,
-        openSource: true,
-        image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
-        title: "DavidTunnell.com",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
-        details:
-            "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
-        demoUrl: "https://www.davidtunnell.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
+    // {
+    //     id: 4,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/feedster.jpg",
+    //     modalImage: "./assets/images/portfolio/feedster.jpg",
+    //     title: "Feedster",
+    //     techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 31, 34, 35],
+    //     details:
+    //         "A Twitter content containerizer. Create an account and build custom feeds out of their favorite Twitter users. These feeds can be shared (links), followed and experienced as a group using the comment section. This creates a new way to experience any interest, from a live sporting event to your favorite personalities or any other subject.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/feedster-content-containerizer-twitter-api-node-express-mysql-handlebars-sequelize-mvc-fullstack",
+    //     demoUrl: "http://feedster-twitter.herokuapp.com/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
+    // {
+    //     id: 2,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+    //     modalImage: "./assets/images/portfolio/david-tunnell-dot-com.jpg",
+    //     title: "DavidTunnell.com",
+    //     techSkills: [1, 2, 3, 4, 5, 6, 13, 17, 21, 23, 27, 31, 34, 35],
+    //     details:
+    //         "The new iteration of my web portfolio/presence build with a React front-end. The goal is to highlight my experience, projects and capabilities. There is a connection to the Google Maps API to provide location information. The server is used to serve the React application, provide an API that talks to a MongoDB instance for data persistence and send emails when the form is submitted.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/david-tunnell-dot-com-react-mern",
+    //     demoUrl: "https://www.davidtunnell.com/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
 
     {
         id: 5,
@@ -270,38 +270,38 @@ const portfolio = [
             "The software I worked on is proprietary so a link to the source code is not available. The official site contains the app I worked on, although much of the functionality is behind authentication.",
         companyUrl: "https://www.smartscholarship.org/smart",
     },
-    {
-        id: 8,
-        openSource: true,
-        image: "./assets/images/portfolio/discogra.jpg",
-        modalImage: "./assets/images/portfolio/discogra.jpg",
-        title: "Discogra: Music Finder",
-        techSkills: [1, 5, 6, 18, 23, 27, 31],
-        details:
-            "A tool using the Discogs.com API and the YouTube API to help users find music they are interested in. Renders dynamic results based on user input. Utilizes local storage to store persistent user data such as saving of users input and data including genres related to searches and previous search history.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
-        demoUrl:
-            "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
-        disclaimer: null,
-        companyUrl: null,
-    },
+    // {
+    //     id: 8,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/discogra.jpg",
+    //     modalImage: "./assets/images/portfolio/discogra.jpg",
+    //     title: "Discogra: Music Finder",
+    //     techSkills: [1, 5, 6, 18, 23, 27, 31],
+    //     details:
+    //         "A tool using the Discogs.com API and the YouTube API to help users find music they are interested in. Renders dynamic results based on user input. Utilizes local storage to store persistent user data such as saving of users input and data including genres related to searches and previous search history.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/music-discography-multiple-third-party-apis",
+    //     demoUrl:
+    //         "https://davidtunnell.github.io/music-discography-multiple-third-party-apis/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
 
-    {
-        id: 7,
-        openSource: true,
-        image: "./assets/images/portfolio/microblog.jpg",
-        modalImage: "./assets/images/portfolio/microblog.jpg",
-        title: "Microblog",
-        techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 23, 24, 27, 34, 35],
-        details:
-            "A fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the 'Full Modern React YouTube Tutorial' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. React-Router-Dom is used for URL routing, URL parameters, browser history stack usage, and linking without calling the server.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
-        demoUrl: "https://sheltered-river-02202.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
+    // {
+    //     id: 7,
+    //     openSource: true,
+    //     image: "./assets/images/portfolio/microblog.jpg",
+    //     modalImage: "./assets/images/portfolio/microblog.jpg",
+    //     title: "Microblog",
+    //     techSkills: [1, 2, 3, 4, 5, 6, 13, 21, 23, 24, 27, 34, 35],
+    //     details:
+    //         "A fullstack MERN app that allows for submitting, as might be expected, microblog posts. It was based on the 'Full Modern React YouTube Tutorial' and then modified to replace the json-server pseudo-database to a full MongoDB. Thus it has it's own node server. React-Router-Dom is used for URL routing, URL parameters, browser history stack usage, and linking without calling the server.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/microblog-react-router-mongodb-mongoose-node-express",
+    //     demoUrl: "https://sheltered-river-02202.herokuapp.com/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
 
     {
         id: 9,
@@ -318,21 +318,21 @@ const portfolio = [
             "The software I worked on is proprietary so a link to the source code is not available. The official site contains the app I worked on.",
         companyUrl: "https://hinted.com/",
     },
-    {
-        id: 6,
-        openSource: true,
-        image: "/assets/images/portfolio/cool-tech-blog.jpg",
-        modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
-        title: "Cool Tech Blog",
-        techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 34, 35],
-        details:
-            "A fullstack MVC tech blog. The project has dashboard to create, read, update and delete blog posts for the admin. Individual pages for users to create accounts, login and logout using the site using authentication and session management. The ability for users comment on blog posts and for admins to delete them.",
-        gitHubUrl:
-            "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
-        demoUrl: "https://mighty-earth-36141.herokuapp.com/",
-        disclaimer: null,
-        companyUrl: null,
-    },
+    // {
+    //     id: 6,
+    //     openSource: true,
+    //     image: "/assets/images/portfolio/cool-tech-blog.jpg",
+    //     modalImage: "/assets/images/portfolio/cool-tech-blog.jpg",
+    //     title: "Cool Tech Blog",
+    //     techSkills: [1, 3, 4, 5, 6, 16, 18, 20, 22, 23, 24, 27, 34, 35],
+    //     details:
+    //         "A fullstack MVC tech blog. The project has dashboard to create, read, update and delete blog posts for the admin. Individual pages for users to create accounts, login and logout using the site using authentication and session management. The ability for users comment on blog posts and for admins to delete them.",
+    //     gitHubUrl:
+    //         "https://github.com/DavidTunnell/tech-blog-fullstack-mvc-node-express-mysql-handlebars-authentication",
+    //     demoUrl: "https://mighty-earth-36141.herokuapp.com/",
+    //     disclaimer: null,
+    //     companyUrl: null,
+    // },
     // {
     //     id: 10,
     //     openSource: true,

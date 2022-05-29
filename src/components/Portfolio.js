@@ -19,7 +19,7 @@ const PortfolioAlt = () => {
         setProjectData(selectedProjectData);
     };
 
-    //get badges from an elements array of ids 
+    //get badges from an elements array of ids
     const getBadges = (arr) => {
         const returnArray = [];
         arr.forEach((element) => {
@@ -34,10 +34,10 @@ const PortfolioAlt = () => {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-10 col-lg-6 text-md-center">
-                            <h2>Projects / Portfolio</h2>
+                            <h2>Professional Projects</h2>
                             <p>
-                                Some app demos may be asleep and take a few
-                                moments to spin up before loading.
+                                Some projects that I have worked on in diverse
+                                professional settings.
                             </p>
                         </div>
                     </div>
