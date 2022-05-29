@@ -22,7 +22,7 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "start": "serve -s build",
+        "start": "npx serve -s build",
         "dev": "concurrently \"cd server && npm run dev\" \"react-scripts start\"",
         "start-client": "react-scripts start",
         "build": "react-scripts build",
